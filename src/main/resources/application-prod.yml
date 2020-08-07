@@ -1,0 +1,23 @@
+# profile [prod]
+
+# datasource
+spring:
+    h2:
+        console:
+            enabled: false
+            path: /prod_db
+    datasource:
+        driverClassName: org.h2.Driver
+        url: jdbc:h2:file:./data/prod_db;AUTO_SERVER=TRUE
+        username: sa
+        password: 
+
+# logging
+logging:
+    level:
+        org:
+            springframework:
+                jdbc:
+                    core:
+                        JdbcTemplate: INFO
+

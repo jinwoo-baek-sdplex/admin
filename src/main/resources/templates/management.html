@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>oncueManagement.html</title>
+    <!--
+        컨텐츠 페이지 고유 스타일 추가
+        title 과 함께 자동으로 layout에 추가됨.
+    -->
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Content Wrapper. Contains page content -->
+<div layout:fragment="content" class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">OnCue Management</h1>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">OnCue Management</li>
+                    </ol>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">OnCue Service List</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                            title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"
+                            title="Remove">
+                        <i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card-body p-0" style="display: block;">
+                <table class="table table-striped projects">
+                    <thead>
+                    <tr>
+                        <th style="width: 1%">
+                            No
+                        </th>
+                        <th style="width: 20%">
+                            Server Alias
+                        </th>
+                        <th style="width: 20%">
+                            Running Device
+                        </th>
+                        <th style="width: 20%" class="text-center">
+                            Processing Speed
+                        </th>
+                        <th style="width: 8%" class="text-center">
+                            Status
+                        </th>
+                        <th style="width: 20%">
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <a>
+                                CJ Line 6
+                            </a>
+                            <br>
+                            <small>
+                                Created 01.01.2019
+                            </small>
+                        </td>
+                        <td class="project_progress">
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-green" role="progressbar" aria-volumenow="74"
+                                     aria-volumemin="0" aria-volumemax="100" style="width: 74%">
+                                </div>
+                            </div>
+                            <small>
+                                74 / 100 (74% Connection)
+                            </small>
+                        </td>
+                        <td class="text-center">
+                            203 / min
+                        </td>
+                        <td class="project-state">
+                            <span class="badge badge-success">Running</span>
+                        </td>
+                        <td class="project-actions text-right">
+                            <a class="btn btn-primary btn-sm" href="/management/detail">
+                                <i class="fas fa-folder">
+                                </i>
+                                View
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="/">
+                                <i class="fas fa-trash">
+                                </i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <a>
+                                CJ Line 7
+                            </a>
+                            <br>
+                            <small>
+                                Created 01.01.2019
+                            </small>
+                        </td>
+                        <td class="project_progress">
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-green" role="progressbar" aria-volumenow="12"
+                                     aria-volumemin="0" aria-volumemax="100" style="width: 12%">
+                                </div>
+                            </div>
+                            <small class="text-center">
+                                12 / 100 (12% Connection)
+                            </small>
+                        </td>
+                        <td class="text-center">
+                            117 / min
+                        </td>
+                        <td class="project-state">
+                            <span class="badge badge-danger">Stop</span>
+                        </td>
+                        <td class="project-actions text-right">
+                            <a class="btn btn-primary btn-sm" href="/">
+                                <i class="fas fa-folder">
+                                </i>
+                                View
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="/">
+                                <i class="fas fa-trash">
+                                </i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            <a>
+                                CJ Line 8
+                            </a>
+                            <br>
+                            <small>
+                                Created 01.01.2019
+                            </small>
+                        </td>
+                        <td class="project_progress">
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-green" role="progressbar" aria-volumenow="52"
+                                     aria-volumemin="0" aria-volumemax="100" style="width: 52%">
+                                </div>
+                            </div>
+                            <small>
+                                52 / 100 (52% Connection)
+                            </small>
+                        </td>
+                        <td class="text-center">
+                            102 / min
+                        </td>
+                        <td class="project-state">
+                            <span class="badge badge-danger">Stop</span>
+                        </td>
+                        <td class="project-actions text-right">
+                            <a class="btn btn-primary btn-sm" href="/">
+                                <i class="fas fa-folder">
+                                </i>
+                                View
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="/">
+                                <i class="fas fa-trash">
+                                </i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            <a>
+                                CJ Line 9
+                            </a>
+                            <br>
+                            <small>
+                                Created 01.01.2019
+                            </small>
+                        </td>
+                        <td class="project_progress">
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-green" role="progressbar" aria-volumenow="60"
+                                     aria-volumemin="0" aria-volumemax="100" style="width: 60%">
+                                </div>
+                            </div>
+                            <small>
+                                60 / 100 (60% Connection)
+                            </small>
+                        </td>
+                        <td class="text-center">
+                            311 / min
+                        </td>
+                        <td class="project-state">
+                            <span class="badge badge-success">Running</span>
+                        </td>
+                        <td class="project-actions text-right">
+                            <a class="btn btn-primary btn-sm" href="/">
+                                <i class="fas fa-folder">
+                                </i>
+                                View
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="/">
+                                <i class="fas fa-trash">
+                                </i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            5
+                        </td>
+                        <td>
+                            <a>
+                                CJ Line 10
+                            </a>
+                            <br>
+                            <small>
+                                Created 01.01.2019
+                            </small>
+                        </td>
+                        <td class="project_progress">
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-green" role="progressbar" aria-volumenow="21"
+                                     aria-volumemin="0" aria-volumemax="100" style="width: 21%">
+                                </div>
+                            </div>
+                            <small>
+                                21 / 100 (21% Connection)
+                            </small>
+                        </td>
+                        <td class="text-center">
+                            188 / min
+                        </td>
+                        <td class="project-state">
+                            <span class="badge badge-warning">Warning</span>
+                        </td>
+                        <td class="project-actions text-right">
+                            <a class="btn btn-primary btn-sm" href="/">
+                                <i class="fas fa-folder">
+                                </i>
+                                View
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="/">
+                                <i class="fas fa-trash">
+                                </i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            <a>
+                                CJ Line 11
+                            </a>
+                            <br>
+                            <small>
+                                Created 01.01.2019
+                            </small>
+                        </td>
+                        <td class="project_progress">
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-green" role="progressbar" aria-volumenow="77"
+                                     aria-volumemin="0" aria-volumemax="100" style="width: 77%">
+                                </div>
+                            </div>
+                            <small>
+                                77 / 100 (77% Connection)
+                            </small>
+                        </td>
+                        <td class="text-center">
+                            102 / min
+                        </td>
+                        <td class="project-state">
+                            <span class="badge badge-success">Running</span>
+                        </td>
+                        <td class="project-actions text-right">
+                            <a class="btn btn-primary btn-sm" href="/">
+                                <i class="fas fa-folder">
+                                </i>
+                                View
+                            </a>
+                            <!--                            <a class="btn btn-info btn-sm" href="#">-->
+                            <!--                                <i class="fas fa-pencil-alt">-->
+                            <!--                                </i>-->
+                            <!--                                Edit-->
+                            <!--                            </a>-->
+                            <a class="btn btn-danger btn-sm" href="/">
+                                <i class="fas fa-trash">
+                                </i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<th:block layout:fragment="pageScript">
+    <!-- 컨텐츠 페이지 고유 스크립트 추가 -->
+    <script>
+        //alert("hello.html");
+    </script>
+</th:block>
+</body>
+</html>

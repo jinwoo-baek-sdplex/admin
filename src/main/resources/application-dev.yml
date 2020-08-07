@@ -1,0 +1,37 @@
+# profile [dev]
+
+spring:
+
+    # h2 console
+    h2:
+        console:
+            enabled: true
+            path: /dev_db
+            
+    # datasource
+    datasource:
+        driverClassName: org.h2.Driver
+        url: jdbc:h2:file:./data/dev_db;AUTO_SERVER=TRUE
+        username: sa
+        password: 
+        
+    # thymeleaf
+    thymeleaf:
+        prefix: classpath:templates/
+        suffix: .html
+        cache: false
+        
+# 페이지 수정 자동 반영
+devtools:
+    livereload:
+        enabled: true
+
+# logging
+logging:
+    level:
+        org:
+            springframework:
+                jdbc:
+                    core:
+                        JdbcTemplate: DEBUG
+

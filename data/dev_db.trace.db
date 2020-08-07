@@ -1,0 +1,37 @@
+2020-06-24 15:44:02 jdbc[25]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TB_USER_INFO" not found; SQL statement:
+SELECT *
+FROM    TB_USER_INFO [42102-200]
+2020-06-24 15:44:20 jdbc[25]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TB_USER_INFO" not found; SQL statement:
+SELECT * FROM TB_USER_INFO [42102-200]
+2020-06-24 16:28:26 jdbc[36]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:725)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:711)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 18 more
+2020-06-24 19:29:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USER" not found; SQL statement:
+SELECT "USER"."ID" AS "ID", "USER"."SEQ" AS "SEQ", "USER"."NAME" AS "NAME", "USER"."PASSWORD" AS "PASSWORD", "USER"."IS_DELETED" AS "IS_DELETED", "USER"."AUTHORITY" AS "AUTHORITY", "USER"."CREATED_DATE" AS "CREATED_DATE", "USER"."UPDATED_DATE" AS "UPDATED_DATE" FROM "USER" [42102-200]
+2020-08-04 17:02:58 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USER" not found; SQL statement:
+select * from user [42102-200]

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Tell the browser to be responsive to screen width -->
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+<!-- favicon.ico 404 (Not Found) -->
+<link rel="icon" type="image/png" th:href="@{/images/favicon.png}">
+<!-- 공통 CSS 삽입 -->
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" th:href="@{/plugins/fontawesome-free/css/all.min.css}">
+<!-- Theme style -->
+<link rel="stylesheet" th:href="@{/dist/css/adminlte.min.css}">
+<!-- Ionicons 현재 CDN 형식이라 바꿔야함 -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
+
+<!-- 공통 SCRIPT 삽입 -->
+
+</head>
+<body>
+<div class="wrapper">
+	<!-- navbar fragment 사용 -->
+	<nav th:replace="fragments/navbar :: navbarFragment"></nav>
+	<!-- /.navbar -->
+
+	<!-- sidebar fragement 사용 -->
+	<aside th:replace="fragments/asideMain :: lsideFragment"></aside>
+	<!-- /.sidebar -->
+
+	<!--
+		content fragment 사용
+		현재 layout을 사용하는 content fragment의 내용을 삽입한다.
+    -->
+    <!-- Content Wrapper. Contains page content -->
+    <th:block layout:fragment="content"></th:block>
+    <!-- /.content-wrapper -->
+
+    <!-- sidebar fragement 사용 -->
+	<aside th:replace="fragments/asideControl :: rsideFragment"></aside>
+	<!-- /.sidebar -->
+
+    <!-- footer fragment 사용 -->
+    <footer th:replace="fragments/footer :: footerFragment"></footer>
+</div>
+
+<!-- jQuery -->
+<script th:src="@{/plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap 4 -->
+<script th:src="@{/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/dist/js/adminlte.min.js}"></script>
+<!-- JQuery Knob for chart -->
+<script th:src="@{/plugins/jquery-knob/jquery.knob.min.js}"></script>
+<!-- Chart JS -->
+<script th:src="@{/plugins/chart.js/Chart.min.js}"></script>
+
+<!-- 컨텐츠 페이지 SCRIPT 삽입 -->
+<th:block layout:fragment="pageScript"></th:block>
+
+</body>
+</html>

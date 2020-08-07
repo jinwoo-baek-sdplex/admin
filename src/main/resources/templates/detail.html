@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>oncueInformation.html</title>
+    <!--
+        컨텐츠 페이지 고유 스타일 추가
+        title 과 함께 자동으로 layout에 추가됨.
+    -->
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Content Wrapper. Contains page content -->
+<div layout:fragment="content" class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">OnCue Management</h1>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/management">OnCue Management</a></li>
+                        <li class="breadcrumb-item">CJ Line 6</li>
+                    </ol>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+            <!-- Default box -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">CJ Line 6 Server</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"
+                                title="Remove">
+                            <i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form role="form">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Oncue Host Name(Alias)</label>
+                                    <input type="text" class="form-control" placeholder="CJ Line 6">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Processing Speed</label>
+                                    <input type="text" class="form-control" placeholder="102 / min" readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Oncue Status</label>
+                                    <button type="button" class="btn btn-block bg-gradient-success">Running</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Oncue IP Adress</label>
+                                    <input type="text" class="form-control" placeholder="192.168.1.251">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Listening-port</label>
+                                    <input type="text" class="form-control" placeholder="9090">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Oncue Version</label>
+                                    <input type="text" class="form-control" placeholder="0.9.1" readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Active Thread Count</label>
+                                    <input type="text" class="form-control" placeholder="10" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Processing Data Count</label>
+                                    <input type="text" class="form-control" placeholder="15148" readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Time</label>
+                                    <input type="text" class="form-control" placeholder="2020.08.06 18:12" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--                    <div class="row">-->
+                        <!--                        <div class="col-sm-4">-->
+                        <!--                            &lt;!&ndash; text input &ndash;&gt;-->
+                        <!--                            <div class="form-group">-->
+                        <!--                                <label>CPU Usage</label>-->
+                        <!--                                <div class="col-6 text-center">-->
+                        <!--                                    <div style="display:inline;width:90px;height:90px;">-->
+                        <!--                                        <canvas width="90" height="90"></canvas>-->
+                        <!--                                        <input type="text" class="knob" value="50" data-width="90" data-height="90"-->
+                        <!--                                               data-fgcolor="#39CCCC"-->
+                        <!--                                               style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px; background: none; font: bold 18px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; appearance: none;">-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="col-sm-4">-->
+                        <!--                            &lt;!&ndash; text input &ndash;&gt;-->
+                        <!--                            <div class="form-group">-->
+                        <!--                                <label>Memory Usage</label>-->
+                        <!--                                <input type="text" class="form-control" placeholder="10" readonly>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="col-sm-4">-->
+                        <!--                            &lt;!&ndash; text input &ndash;&gt;-->
+                        <!--                            <div class="form-group">-->
+                        <!--                                <label>Dist Usage</label>-->
+                        <!--                                <input type="text" class="form-control" placeholder="0.9.1" readonly>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <div class="row">
+                            <div class="col-6 col-md-3 text-center">
+                                <div style="display:inline;width:90px;height:90px;">
+                                    <canvas width="90" height="90"></canvas>
+                                    <input type="text" class="knob" value="30" data-width="90" data-height="90"
+                                           data-fgcolor="#3c8dbc" data-readonly="true" readonly="readonly"
+                                           style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px; background: none; font: bold 18px Arial; text-align: center; color: rgb(60, 141, 188); padding: 0px; appearance: none;">
+                                </div>
+
+                                <div class="knob-label">data-width="90"</div>
+                            </div>
+                            <!-- ./col -->
+                            <div class="col-6 col-md-3 text-center">
+                                <div style="display:inline;width:120px;height:120px;">
+                                    <canvas width="120" height="120"></canvas>
+                                    <input type="text" class="knob" value="30" data-width="120" data-height="120"
+                                           data-fgcolor="#f56954"
+                                           style="width: 64px; height: 40px; position: absolute; vertical-align: middle; margin-top: 40px; margin-left: -92px; border: 0px; background: none; font: bold 24px Arial; text-align: center; color: rgb(245, 105, 84); padding: 0px; appearance: none;">
+                                </div>
+
+                                <div class="knob-label">data-width="120"</div>
+                            </div>
+                            <!-- ./col -->
+                            <div class="col-6 col-md-3 text-center">
+                                <div style="display:inline;width:90px;height:90px;">
+                                    <canvas width="90" height="90"></canvas>
+                                    <input type="text" class="knob" value="30" data-thickness="0.1" data-width="90"
+                                           data-height="90" data-fgcolor="#00a65a"
+                                           style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px; background: none; font: bold 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px; appearance: none;">
+                                </div>
+
+                                <div class="knob-label">data-thickness="0.1"</div>
+                            </div>
+                            <!-- ./col -->
+                            <div class="col-6 col-md-3 text-center">
+                                <div style="display:inline;width:120px;height:120px;">
+                                    <canvas width="120" height="120"></canvas>
+                                    <input type="text" class="knob" data-thickness="0.2" data-anglearc="250"
+                                           data-angleoffset="-125" value="30" data-width="120" data-height="120"
+                                           data-fgcolor="#00c0ef"
+                                           style="width: 64px; height: 40px; position: absolute; vertical-align: middle; margin-top: 40px; margin-left: -92px; border: 0px; background: none; font: bold 24px Arial; text-align: center; color: rgb(0, 192, 239); padding: 0px; appearance: none;">
+                                </div>
+
+                                <div class="knob-label">data-angleArc="250"</div>
+                            </div>
+                            <!-- ./col -->
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <div class="margin float-right">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <!--                    <button type="submit" class="btn btn-info">Edit</button>-->
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Default box -->
+            <div class="card card-info">
+                <div class="card-header">
+                    <h3 class="card-title">Protocol Modules</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"
+                                title="Remove">
+                            <i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form role="form">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Protocol Module Name</label>
+                                    <input type="text" class="form-control" placeholder="MODBUS" readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Protocol Module Version</label>
+                                    <input type="text" class="form-control" placeholder="2.2.2" readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Module Status</label>
+                                    <button type="button" class="btn btn-block bg-gradient-warning">Unlicensed</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Oncue IP Adress</label>
+                                    <input type="text" class="form-control" placeholder="192.168.1.251">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Listening-port</label>
+                                    <input type="text" class="form-control" placeholder="9090">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Oncue Version</label>
+                                    <input type="text" class="form-control" placeholder="0.9.1" readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Active Thread Count</label>
+                                    <input type="text" class="form-control" placeholder="10" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Processing Data Count</label>
+                                    <input type="text" class="form-control" placeholder="15148" readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Time</label>
+                                    <input type="text" class="form-control" placeholder="2020.08.06 18:12" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <div class="margin float-right">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <!--                    <button type="submit" class="btn btn-info">Edit</button>-->
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+            <!-- /.card -->
+    </section>
+
+
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<th:block layout:fragment="pageScript">
+    <!-- 컨텐츠 페이지 고유 스크립트 추가 -->
+
+</th:block>
+</body>
+</html>
