@@ -41,6 +41,11 @@ public class MainController {
         return "detail";
     }
 
+    @GetMapping("/management/detail2")
+    public String oncueInformation2() {
+        return "detail-2";
+    }
+
     @GetMapping("/test")
     public Iterable<User> getUsers() {
         return userRepository.findAll();
