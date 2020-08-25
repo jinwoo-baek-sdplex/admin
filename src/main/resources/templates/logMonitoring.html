@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>OnCue Log Monitoring.html</title>
+    <!-- 컨텐츠 페이지 고유 스타일 추가 title 과 함께 자동으로 layout에 추가됨. -->
+    <style tyle="text/css">
+        .log-tab {
+            margin-top: 10px;
+            height: calc(100vh - 580px);
+            overflow-y: scroll;
+            background: #000000;
+            color: #00ee00;
+            white-space: pre-line;
+        }
+
+        .log-layer {
+            height: 300px;
+            overflow-y: scroll;
+            background: #000000;
+            color: #00ee00;
+            white-space: pre-line;
+        }
+
+        .ui-resizable-helper {
+            z-index: 2000 !important;
+            border: 2px dotted #00F;
+        }
+
+        .modal {
+            overflow: hidden;
+        }
+
+        .modal-open .modal {
+            overflow: hidden;
+        }
+
+        .modal-dialog-log {
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            max-width: 1000px;
+        }
+
+        .modal-content {
+            -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
+            -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
+            -0-box-shadow: 0 5px 15px rgba(0,0,0,0);
+            box-shadow: 0 5px 15px rgba(0,0,0,0);
+        }
+
+        .modeless {
+            top: 10%;
+            left: 50%;
+            bottom: auto;
+            right: auto;
+            margin-left:-300px;
+        }
+
+        .modal-header {
+            cursor: move;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Content Wrapper. Contains page content -->
+<div layout:fragment="content" class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">OnCue Log</h1>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    </ol>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Monitoring</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                            title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="card-body">
+                <form role="form">
+                    <!-- Select log domain -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Log Domain</label>
+                                <div class="custom-control custom-radio vertical">
+                                    <input class="custom-control-input" type="radio" id="customRadio1"
+                                           name="customRadio" checked="">
+                                    <label for="customRadio1" class="custom-control-label">OnCue</label>
+                                </div>
+                                <div class="custom-control custom-radio vertical">
+                                    <input class="custom-control-input" type="radio" id="customRadio2"
+                                           name="customRadio">
+                                    <label for="customRadio2" class="custom-control-label">Protocol Module</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Select for detail search-->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>OnCue Host Name(Alias)</label>
+                                <select class="form-control">
+                                    <option>CJ Line 6</option>
+                                    <option>CJ Line 7</option>
+                                    <option>CJ Line 8</option>
+                                    <option>CJ Line 9</option>
+                                    <option>CJ Line 10</option>
+                                    <option>CJ Line 11</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Protocol Module</label>
+                                <select class="form-control">
+                                    <option>Modbus</option>
+                                    <option>OPC DA</option>
+                                    <option>CIP/EIP</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Log Level</label>
+                                <select class="form-control">
+                                    <option>Info</option>
+                                    <option>Debug</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Log Buffer Size</label>
+                                <input type="text" class="form-control" placeholder="8,100 byte">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <div class="margin float-right">
+                    <button type="submit" class="btn btn-primary">Apply</button>
+<!--                    <button type="submit" class="btn btn-primary">Start</button>-->
+<!--                    <button type="submit" class="btn btn-danger">Stop</button>-->
+                </div>
+            </div>
+        </div>
+        <!-- /.card -->
+
+        <div class="row h-10">
+            <div class="col">
+                <div class="card card-primary card-tabs">
+                    <div class="card-header p-0 pt-1">
+                        <ul class="nav nav-tabs" id="tabs" role="tablist">
+                            <li class="nav-item">
+                                <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1" class="nav-link active" role="tab">Tab1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#tab2" onclick="clickedTab(this);" data-url="/sample/tab2" class="nav-link" role="tab">Tab2</a><!-- data-toggle="pill"  -->
+                            </li>
+                            <li class="nav-item">
+                                <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3" class="nav-link" role="tab">Tab3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="custom-tabs-one-tabContent">
+                            <div class="tab-pane fade active show" id="tab1" role="tabpanel">
+                                <button type="button" class="btn btn-default" onclick="openLogLayer('tab1');">Layer로 띄우기</button>
+                                <button type="button" class="btn btn-default" onclick="startLog('tab1');">보기</button>
+                                <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>
+                                <div class="log-tab" id="tab1-log">tab1</div>
+                            </div>
+                            <div class="tab-pane fade" id="tab2" role="tabpanel">
+                                <button type="button" class="btn btn-default" onclick="openLogLayer('tab2');">Layer로 띄우기</button>
+                                <button type="button" class="btn btn-default" onclick="startLog('tab2');">보기</button>
+                                <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>
+                                <div class="log-tab" id="tab2-log">tab2</div>
+                            </div>
+                            <div class="tab-pane fade" id="tab3" role="tabpanel">
+                                <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>
+                                <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>
+                                <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>
+                                <div class="log-tab" id="tab3-log">tab3</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+
+        <!-- modal page -->
+        <div class="modal fade modeless" id="tab1-layer" style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
+            <div class="modal-dialog-log">
+                <div class="modal-content ui-widget-content" id="tab1-resizable" style="width:600px; height:400px;">
+                    <div class="modal-header">
+                        <h4 class="modal-title">tab1 log</h4>
+                        <button type="button" class="btn btn-default" onclick="startLayerLog('tab1');">보기</button>
+                        <button type="button" class="btn btn-default" onclick="stopLayerLog('tab1');">정지</button>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeLayer('tab1');">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="log-layer" id="tab1-layer-log"></div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade modeless" id="tab2-layer" style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
+            <div class="modal-dialog-log">
+                <div class="modal-content ui-widget-content" id="tab2-resizable" style="width:600px; height:400px;">
+                    <div class="modal-header">
+                        <h4 class="modal-title">tab2 log</h4>
+                        <button type="button" class="btn btn-default" onclick="startLayerLog('tab2');">보기</button>
+                        <button type="button" class="btn btn-default" onclick="stopLayerLog('tab2');">정지</button>
+                        <button type="button" class="close" onclick="closeLayer('tab2');">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="log-layer" id="tab2-layer-log"></div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade modeless" id="tab3-layer" style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
+            <div class="modal-dialog-log">
+                <div class="modal-content ui-widget-content" id="tab3-resizable" style="width:600px; height:400px;">
+                    <div class="modal-header">
+                        <h4 class="modal-title">tab3 log</h4>
+                        <button type="button" class="btn btn-default" onclick="startLayerLog('tab3');">보기</button>
+                        <button type="button" class="btn btn-default" onclick="stopLayerLog('tab3');">정지</button>
+                        <button type="button" class="close" onclick="closeLayer('tab3');">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="log-layer" id="tab3-layer-log"></div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<th:block layout:fragment="pageScript">
+    <script>
+        //alert("hello.html");
+        var timer;
+
+        function clickedTab(tabLink) {
+            var url = tabLink.getAttribute("data-url");
+            var href = tabLink.hash + "-log";
+            $(tabLink).tab("show");
+
+            if (timer) {
+                clearInterval(timer);
+            }
+
+            timer = setInterval(function() {setTabContent(url, href);}, 1000);
+        }
+
+        function setTabContent(url, href) {
+            $.get(url, function (result) {
+                $(href).append(result + "<br/>");
+                $(href).scrollTop($(href).prop('scrollHeight'));
+            });
+        }
+
+        function startLog(tab) {
+            timer = setInterval(function() {setTabContent("/sample/" + tab, "#" + tab + "-log");}, 1000);
+        }
+
+        function stopLog() {
+            clearInterval(timer);
+        }
+
+        var layerTimer = {};
+
+        function openLogLayer(tab) {
+            var layer = $("#" + tab + "-layer");
+            layer.draggable({handle: ".modal-header"});
+            layer.modal({backdrop: false});
+
+            layerTimer[tab] = setInterval(function() {setTabContent("/sample/" + tab, "#" + tab + "-layer-log");}, 1000);
+
+            $("#" + tab + "-resizable").resizable({
+                helper: "ui-resizable-helper",
+                maxHeight: 600,
+                maxWidth: 800,
+                minHeight: 200,
+                minWidth: 400,
+                stop: function(e, ui) {
+                    ui.element[0].children[1].children[0].style.height = (ui.size.height - 105) + "px";
+                }
+            });
+        }
+
+        function closeLayer(tab) {
+            clearInterval(layerTimer[tab]);
+            $("#" + tab + "-layer").modal("hide");
+        }
+
+        function startLayerLog(tab) {
+            layerTimer[tab] = setInterval(function() {setTabContent("/sample/" + tab, "#" + tab + "-layer-log");}, 1000);
+        }
+
+        function stopLayerLog(tab) {
+            clearInterval(layerTimer[tab]);
+        }
+
+        $(document).ready(function() {
+            timer = setInterval(function() {setTabContent("/sample/tab1", "#tab1-log");}, 1000);
+        });
+    </script>
+</th:block>
+</body>
+</html>

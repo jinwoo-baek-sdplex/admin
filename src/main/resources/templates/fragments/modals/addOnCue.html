@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body>
+<!-- add OnCue modal -->
+<div class="modal fade" id="addOnCueModal" th:fragment="addOnCue">
+    <div class="modal-dialog">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Add OnCue</h3>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <form role="form">
+                    <!-- Add OnCue info -->
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>OnCue Host Name(Alias)</label>
+                            <input type="text" class="form-control" placeholder="CJ Line 6">
+                        </div>
+                        <div class="form-group">
+                            <label>OnCue IP Address</label>
+                            <input type="text" class="form-control" placeholder="192.168.1.251">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <div class="margin float-right">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+
+    <!-- /.modal-dialog -->
+</div>
+</body>
+</html>

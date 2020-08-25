@@ -19,31 +19,62 @@ public class MainController {
     @Autowired
     private UserRepository userRepository;
 
-	/*
-	@GetMapping({ "/", "/signin", "/login" })
-	public String signin() {
-		return "signin";
-	}
-	*/
+    @GetMapping("/login")
+    public String logIn() {
+        return "login";
+    }
 
-    @GetMapping({"/", "/dashboard"})
+    @GetMapping({"/", "/sample"})
     public String mainUser() {
         return "dashboard";
     }
 
+    // 삭제 예정
     @GetMapping("/management")
-    public String oncueManagement() {
+    public String onCueManagement() {
         return "management";
     }
 
-    @GetMapping("/management/detail")
-    public String oncueInformation() {
+    // OnCue Detail 페이지 호출
+    @GetMapping("/detail")
+    public String onCueDetail() {
         return "detail";
     }
 
-    @GetMapping("/management/detail2")
-    public String oncueInformation2() {
-        return "detail-2";
+    // OnCue Detail2 페이지 호출
+    @GetMapping("/detail2")
+    public String onCueDetail2() {
+        return "detail2";
+    }
+
+    // NotificationBox 페이지 호출
+    @GetMapping("/notificationBox")
+    public String notificationBox() {
+        return "notificationBox";
+    }
+
+    // Notification Setting 페이지 호출
+    @GetMapping("/notificationSetting")
+    public String notificationSetting() {
+        return "notificationSetting";
+    }
+
+    // OnCue Log Monitoring 페이지 호출
+    @GetMapping("/logMonitoring")
+    public String logMonitoring() {
+        return "logMonitoring";
+    }
+
+    // OnCue Log Download 페이지 호출
+    @GetMapping("/logDownload")
+    public String logDownload() {
+        return "logDownload";
+    }
+
+    // OnCue User Management 페이지 호출
+    @GetMapping("/userManagement")
+    public String userManagement() {
+        return "userManagement";
     }
 
     @GetMapping("/test")

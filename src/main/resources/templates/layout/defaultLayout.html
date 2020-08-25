@@ -15,13 +15,11 @@
 <link rel="stylesheet" th:href="@{/plugins/fontawesome-free/css/all.min.css}">
 <!-- Theme style -->
 <link rel="stylesheet" th:href="@{/dist/css/adminlte.min.css}">
+<!-- jQuery-ui style -->
+<link rel="stylesheet" th:href="@{plugins/jquery-ui/jquery-ui.min.css}">
 <!-- Ionicons 현재 CDN 형식이라 바꿔야함 -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-
-
-<!-- 공통 SCRIPT 삽입 -->
-
+	<!-- 공통 SCRIPT 삽입 -->
 </head>
 <body>
 <div class="wrapper">
@@ -47,21 +45,24 @@
 
     <!-- footer fragment 사용 -->
     <footer th:replace="fragments/footer :: footerFragment"></footer>
+
+	<!-- Sidebar Modal -->
+	<div th:insert="fragments/modals/addOnCue :: addOnCue"></div>
 </div>
 
 <!-- jQuery -->
 <script th:src="@{/plugins/jquery/jquery.min.js}"></script>
+<!-- jQuery-ui -->
+<script th:src="@{plugins/jquery-ui/jquery-ui.min.js}"></script>
 <!-- Bootstrap 4 -->
 <script th:src="@{/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
 <!-- AdminLTE App -->
 <script th:src="@{/dist/js/adminlte.min.js}"></script>
-<!-- JQuery Knob for chart -->
-<script th:src="@{/plugins/jquery-knob/jquery.knob.min.js}"></script>
-<!-- Chart JS -->
-<script th:src="@{/plugins/chart.js/Chart.min.js}"></script>
 
 <!-- 컨텐츠 페이지 SCRIPT 삽입 -->
-<th:block layout:fragment="pageScript"></th:block>
+<th:block layout:fragment="pageScript">
+
+</th:block>
 
 </body>
 </html>

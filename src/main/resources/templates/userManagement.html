@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>OnCue Log Download.html</title>
+    <!-- 컨텐츠 페이지 고유 스타일 추가 title 과 함께 자동으로 layout에 추가됨. -->
+
+    <!-- dater range picker -->
+    <link rel="stylesheet" th:href="@{/plugins/daterangepicker/daterangepicker.css}">
+    <!-- jsGrid -->
+    <link rel="stylesheet" th:href="@{/plugins/jsgrid/jsgrid.min.css}">
+    <link rel="stylesheet" th:href="@{/plugins/jsgrid/jsgrid-theme.min.css}">
+
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Content Wrapper. Contains page content -->
+<div layout:fragment="content" class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">OnCue Admin User</h1>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    </ol>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Log download list -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Management</h3>
+                <div class="card-tools">
+                    <!-- JS로 새로고침 핸들링 (adminLTE Doc 참조)-->
+                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
+                            data-source="widgets.html" data-source-selector="#card-refresh-content"
+                            data-load-on-init="false">
+                        <i class="fas fa-sync-alt"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-togg
+                            le="tooltip"
+                            title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div id="jsGrid1" class="jsgrid" style="position: relative; height: 100%; width: 100%;">
+                    <div class="jsgrid-grid-header">
+                        <table class="jsgrid-table">
+                            <tr class="jsgrid-header-row">
+                                <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 10%;"><input type="checkbox"></th>
+                                <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 10%;">No</th>
+                                <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 20%;">Name</th>
+                                <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 20%;">Id</th>
+                                <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 20%;">Authority</th>
+                                <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 20%;">RegistDate</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="jsgrid-grid-body">
+                        <table class="jsgrid-table">
+                            <tbody>
+                                <tr class="jsgrid-row">
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 10%"><input type="checkbox"></td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 10%">1</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">HongGildong</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">gildong1234</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">Master</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">2019.04.21</td>
+                                </tr>
+                                <tr class="jsgrid-alt-row">
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 10%"><input type="checkbox"></td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 10%">2</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">John Doe</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">John1010</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">Member</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">2020.08.21</td>
+                                </tr>
+                                <tr class="jsgrid-row">
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 10%"><input type="checkbox"></td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 10%">3</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">ParkTest</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">park123</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">Member</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">2012.06.01</td>
+                                </tr>
+                                <tr class="jsgrid-alt-row">
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 10%"><input type="checkbox"></td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 10%">4</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">Jackson</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">JJ9999</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">Member</td>
+                                    <td class="jsgrid-cell jsgrid-align-center" style="width: 20%">2020.07.13</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="jsgrid-load-shader"
+                         style="display: none; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1000;"></div>
+                    <div class="jsgrid-load-panel"
+                         style="display: none; position: absolute; top: 50%; left: 50%; z-index: 1000;">Please, wait...
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <div class="margin float-right">
+                    <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#addUserModal">Add</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.card -->
+
+        <div class="modal fade" id="addUserModal">
+            <div class="modal-dialog">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Add User</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form role="form">
+                            <!-- Add OnCue info -->
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>Id</label>
+                                    <input type="text" class="form-control" placeholder="CJ Line 6">
+                                </div>
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" placeholder="192.168.1.251">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <div class="margin float-right">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<th:block layout:fragment="pageScript">
+
+    <!-- dater range picker -->
+    <script th:src="@{/plugins/daterangepicker/daterangepicker.js}"></script>
+    <!-- jsGrid -->
+    <script th:src="@{/plugins/jsgrid/jsgrid.min.js}"></script>
+    <script>
+        $(function () {
+            $('input[name="pickerTest"]').daterangepicker();
+
+            $("#jsGrid1").jsGrid({
+                height: "100%",
+                width: "100%",
+
+                sorting: true,
+                paging: true,
+
+                data: db.clients,
+
+                fields: [
+                    {name: "Married", type: "checkbox", title: "Is Married"},
+                    {name: "Age", type: "number", width: 50},
+                    {name: "Name", type: "text", width: 150},
+                    {name: "Address", type: "text", width: 200},
+                    {name: "Country", type: "select", items: db.countries, valueField: "Id", textField: "Name"}
+                ]
+            })
+        });
+    </script>
+</th:block>
+
+</body>
+</html>
