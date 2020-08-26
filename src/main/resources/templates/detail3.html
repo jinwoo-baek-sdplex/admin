@@ -6,11 +6,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Detail.html</title>
     <!-- 컨텐츠 페이지 고유 스타일 추가 title 과 함께 자동으로 layout에 추가됨. -->
-
-    <!-- Ion Slider --->
-    <link rel="stylesheet" th:href="@{/plugins/ion-rangeslider/css/ion.rangeSlider.min.css}">
-    <!-- Bootstrap Slider --->
-    <link rel="stylesheet" th:href="@{/plugins/bootstrap-slider/css/bootstrap-slider.min.css}">
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Content Wrapper. Contains page content -->
@@ -20,7 +15,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">CJ Line 6 Server</h1>
+                    <h1 class="m-0 text-dark">CJ Line 6 OnCue</h1>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-6">
@@ -59,27 +54,242 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div id="interactive1" style="height: 100px; padding: 0px; position: relative;"><canvas class="flot-base" width="617" height="375" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas><canvas class="flot-overlay" width="617" height="375" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas><div class="flot-svg" style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;"><svg style="width: 100%; height: 100%;"><g class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><text x="28" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">0</text><text x="69.86182133838383" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">10</text><text x="115.70020517676768" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">20</text><text x="161.53858901515153" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">30</text><text x="207.37697285353536" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">40</text><text x="253.21535669191923" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">50</text><text x="299.05374053030306" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">60</text><text x="344.8921243686869" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">70</text><text x="390.7305082070707" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">80</text><text x="436.56889204545456" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">90</text></g><g class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><text x="8.953125" y="269" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">0</text><text x="1" y="218.2" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">20</text><text x="1" y="167.4" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">40</text><text x="1" y="116.6" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">60</text><text x="1" y="65.8" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">80</text><text x="-6.953125" y="15" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">100</text></g></svg></div></div>
-                            <div id="interactive2" style="height: 100px; padding: 0px; position: relative;"><canvas class="flot-base" width="617" height="375" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas><canvas class="flot-overlay" width="617" height="375" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas><div class="flot-svg" style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;"><svg style="width: 100%; height: 100%;"><g class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><text x="28" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">0</text><text x="69.86182133838383" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">10</text><text x="115.70020517676768" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">20</text><text x="161.53858901515153" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">30</text><text x="207.37697285353536" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">40</text><text x="253.21535669191923" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">50</text><text x="299.05374053030306" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">60</text><text x="344.8921243686869" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">70</text><text x="390.7305082070707" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">80</text><text x="436.56889204545456" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">90</text></g><g class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><text x="8.953125" y="269" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">0</text><text x="1" y="218.2" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">20</text><text x="1" y="167.4" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">40</text><text x="1" y="116.6" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">60</text><text x="1" y="65.8" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">80</text><text x="-6.953125" y="15" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">100</text></g></svg></div></div>
-                            <div id="interactive3" style="height: 100px; padding: 0px; position: relative;"><canvas class="flot-base" width="617" height="375" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas><canvas class="flot-overlay" width="617" height="375" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas><div class="flot-svg" style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;"><svg style="width: 100%; height: 100%;"><g class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><text x="28" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">0</text><text x="69.86182133838383" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">10</text><text x="115.70020517676768" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">20</text><text x="161.53858901515153" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">30</text><text x="207.37697285353536" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">40</text><text x="253.21535669191923" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">50</text><text x="299.05374053030306" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">60</text><text x="344.8921243686869" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">70</text><text x="390.7305082070707" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">80</text><text x="436.56889204545456" y="294" class="flot-tick-label tickLabel" style="position: absolute; text-align: center;">90</text></g><g class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><text x="8.953125" y="269" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">0</text><text x="1" y="218.2" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">20</text><text x="1" y="167.4" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">40</text><text x="1" y="116.6" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">60</text><text x="1" y="65.8" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">80</text><text x="-6.953125" y="15" class="flot-tick-label tickLabel" style="position: absolute; text-align: right;">100</text></g></svg></div></div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div id="interactive1" style="height: 280px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="617" height="375"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
+                                        <canvas class="flot-overlay" width="617" height="375"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
+                                        <div class="flot-svg"
+                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                            <svg style="width: 100%; height: 100%;">
+                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="28" y="294" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">0
+                                                    </text>
+                                                    <text x="69.86182133838383" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">10
+                                                    </text>
+                                                    <text x="115.70020517676768" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">20
+                                                    </text>
+                                                    <text x="161.53858901515153" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">30
+                                                    </text>
+                                                    <text x="207.37697285353536" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">40
+                                                    </text>
+                                                    <text x="253.21535669191923" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">50
+                                                    </text>
+                                                    <text x="299.05374053030306" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">60
+                                                    </text>
+                                                    <text x="344.8921243686869" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">70
+                                                    </text>
+                                                    <text x="390.7305082070707" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">80
+                                                    </text>
+                                                    <text x="436.56889204545456" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">90
+                                                    </text>
+                                                </g>
+                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="8.953125" y="269" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">0
+                                                    </text>
+                                                    <text x="1" y="218.2" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">20
+                                                    </text>
+                                                    <text x="1" y="167.4" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">40
+                                                    </text>
+                                                    <text x="1" y="116.6" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">60
+                                                    </text>
+                                                    <text x="1" y="65.8" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">80
+                                                    </text>
+                                                    <text x="-6.953125" y="15" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">100
+                                                    </text>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div id="interactive2" style="height: 280px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="617" height="375"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
+                                        <canvas class="flot-overlay" width="617" height="375"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
+                                        <div class="flot-svg"
+                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                            <svg style="width: 100%; height: 100%;">
+                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="28" y="294" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">0
+                                                    </text>
+                                                    <text x="69.86182133838383" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">10
+                                                    </text>
+                                                    <text x="115.70020517676768" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">20
+                                                    </text>
+                                                    <text x="161.53858901515153" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">30
+                                                    </text>
+                                                    <text x="207.37697285353536" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">40
+                                                    </text>
+                                                    <text x="253.21535669191923" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">50
+                                                    </text>
+                                                    <text x="299.05374053030306" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">60
+                                                    </text>
+                                                    <text x="344.8921243686869" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">70
+                                                    </text>
+                                                    <text x="390.7305082070707" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">80
+                                                    </text>
+                                                    <text x="436.56889204545456" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">90
+                                                    </text>
+                                                </g>
+                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="8.953125" y="269" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">0
+                                                    </text>
+                                                    <text x="1" y="218.2" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">20
+                                                    </text>
+                                                    <text x="1" y="167.4" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">40
+                                                    </text>
+                                                    <text x="1" y="116.6" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">60
+                                                    </text>
+                                                    <text x="1" y="65.8" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">80
+                                                    </text>
+                                                    <text x="-6.953125" y="15" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">100
+                                                    </text>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div id="interactive3" style="height: 280px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="617" height="375"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
+                                        <canvas class="flot-overlay" width="617" height="375"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
+                                        <div class="flot-svg"
+                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                            <svg style="width: 100%; height: 100%;">
+                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="28" y="294" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">0
+                                                    </text>
+                                                    <text x="69.86182133838383" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">10
+                                                    </text>
+                                                    <text x="115.70020517676768" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">20
+                                                    </text>
+                                                    <text x="161.53858901515153" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">30
+                                                    </text>
+                                                    <text x="207.37697285353536" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">40
+                                                    </text>
+                                                    <text x="253.21535669191923" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">50
+                                                    </text>
+                                                    <text x="299.05374053030306" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">60
+                                                    </text>
+                                                    <text x="344.8921243686869" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">70
+                                                    </text>
+                                                    <text x="390.7305082070707" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">80
+                                                    </text>
+                                                    <text x="436.56889204545456" y="294"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">90
+                                                    </text>
+                                                </g>
+                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="8.953125" y="269" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">0
+                                                    </text>
+                                                    <text x="1" y="218.2" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">20
+                                                    </text>
+                                                    <text x="1" y="167.4" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">40
+                                                    </text>
+                                                    <text x="1" y="116.6" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">60
+                                                    </text>
+                                                    <text x="1" y="65.8" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">80
+                                                    </text>
+                                                    <text x="-6.953125" y="15" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">100
+                                                    </text>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.card-body-->
                     </div>
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">Connected Devices</h3>
-
-                            <div class="card-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control float-right"
-                                           placeholder="Search">
-
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
@@ -158,6 +368,51 @@
                                     <td class="text-center">2</td>
                                     <td class="text-center">3</td>
                                 </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="text-center">connectionName1</td>
+                                    <td class="text-center">Modbus</td>
+                                    <td class="text-center">
+                                        192.168.1.12
+                                    </td>
+                                    <td class="project-state text-center">
+                                        <span class="badge badge-success">Loaded</span>
+                                    </td>
+                                    <td class="text-center">7.25</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">2</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="text-center">connectionName2</td>
+                                    <td class="text-center">Modbus</td>
+                                    <td class="text-center">
+                                        192.168.1.12
+                                    </td>
+                                    <td class="project-state text-center">
+                                        <span class="badge badge-success">Loaded</span>
+                                    </td>
+                                    <td class="text-center">7.25</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">0</td>
+                                    <td class="text-center">3</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td class="text-center">connectionName3</td>
+                                    <td class="text-center">Modbus</td>
+                                    <td class="text-center">
+                                        192.168.1.12
+                                    </td>
+                                    <td class="project-state text-center">
+                                        <span class="badge badge-warning">Unlicensed</span>
+                                    </td>
+                                    <td class="text-center">7.25</td>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">4</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -189,47 +444,72 @@
                                     <b>Started Date</b> <a class="float-right">2020-08-19</a>
                                 </li>
                             </ul>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">OnCue Host Name</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                       placeholder="CJ Line 6">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">OnCue IP Address</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                       placeholder="192.168.1.251">
+                            </div>
+                            <div class="form-group">
+                                <label>Log File Save Period (Days)</label>
+                                <input type="text" class="form-control" placeholder="192.168.1.251">
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                                    <label class="custom-control-label" for="customSwitch3">OnCue Switch </label>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.card-body -->
-                    </div>
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">OnCue Setting</h3>
+                        <div class="card-footer text-right">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-danger">Delete</button>
                         </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
-                        <form role="form">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">OnCue Host Name</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                           placeholder="CJ Line 6">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">OnCue IP Address</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                           placeholder="192.168.1.251">
-                                </div>
-                                <div class="form-group">
-                                    <label>Log File Save Period (Days)</label>
-                                    <input type="text" class="form-control" placeholder="192.168.1.251">
-                                </div>
-                                <div class="form-group">
-                                    <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch3">
-                                        <label class="custom-control-label" for="customSwitch3">OnCue Switch </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.card-body -->
-
-                            <div class="card-footer text-right">
-                                <button type="submit" class="btn btn-primary">Save</button>
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </div>
-                        </form>
                     </div>
+                    <!--                    <div class="card card-primary">-->
+                    <!--                        <div class="card-header">-->
+                    <!--                            <h3 class="card-title">OnCue Setting</h3>-->
+                    <!--                        </div>-->
+                    <!--                        &lt;!&ndash; /.card-header &ndash;&gt;-->
+                    <!--                        &lt;!&ndash; form start &ndash;&gt;-->
+                    <!--                        <form role="form">-->
+                    <!--                            <div class="card-body">-->
+                    <!--                                <div class="form-group">-->
+                    <!--                                    <label for="exampleInputEmail1">OnCue Host Name</label>-->
+                    <!--                                    <input type="email" class="form-control" id="exampleInputEmail1"-->
+                    <!--                                           placeholder="CJ Line 6">-->
+                    <!--                                </div>-->
+                    <!--                                <div class="form-group">-->
+                    <!--                                    <label for="exampleInputPassword1">OnCue IP Address</label>-->
+                    <!--                                    <input type="password" class="form-control" id="exampleInputPassword1"-->
+                    <!--                                           placeholder="192.168.1.251">-->
+                    <!--                                </div>-->
+                    <!--                                <div class="form-group">-->
+                    <!--                                    <label>Log File Save Period (Days)</label>-->
+                    <!--                                    <input type="text" class="form-control" placeholder="192.168.1.251">-->
+                    <!--                                </div>-->
+                    <!--                                <div class="form-group">-->
+                    <!--                                    <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">-->
+                    <!--                                        <input type="checkbox" class="custom-control-input" id="customSwitch3">-->
+                    <!--                                        <label class="custom-control-label" for="customSwitch3">OnCue Switch </label>-->
+                    <!--                                    </div>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                            &lt;!&ndash; /.card-body &ndash;&gt;-->
+
+                    <!--                            <div class="card-footer text-right">-->
+                    <!--                                <button type="submit" class="btn btn-primary">Save</button>-->
+                    <!--                                <button type="submit" class="btn btn-danger">Delete</button>-->
+                    <!--                            </div>-->
+                    <!--                        </form>-->
+                    <!--                    </div>-->
                 </div>
+
             </div>
             <!--            <div class="row">-->
             <!--                <div class="col-md-9">-->
@@ -753,14 +1033,24 @@
                 }
             )
 
-            var updateInterval = 1000 //Fetch data ever x milliseconds
+            var updateInterval = 3000 //Fetch data ever x milliseconds
             var realtime = 'on' //If == to on then fetch data every x seconds. else stop fetching
             function update() {
 
-                interactive_plot.setData([getRandomData()])
+                interactive1_plot.setData([getRandomData()])
+                interactive2_plot.setData([getRandomData()])
+                interactive3_plot.setData([getRandomData()])
 
                 // Since the axes don't change, we don't need to call plot.setupGrid()
-                interactive_plot.draw()
+                interactive1_plot.draw()
+                if (realtime === 'on') {
+                    setTimeout(update, updateInterval)
+                }
+                interactive2_plot.draw()
+                if (realtime === 'on') {
+                    setTimeout(update, updateInterval)
+                }
+                interactive3_plot.draw()
                 if (realtime === 'on') {
                     setTimeout(update, updateInterval)
                 }

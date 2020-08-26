@@ -17,14 +17,9 @@ public class SampleController {
 
 	private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-	@GetMapping("/sample")
-	public String sample() {
-		return "dashboard";
-	}
-
 	@GetMapping("/tab1")
 	public String tab1() {
-		return  sdf.format(new Date()) + " jfdksla;dfnmdksla; djsfkla durowefjndmclv djskflejfskdldf jeklwekjre \n jsdklfadjsaldsj";
+		return  sdf.format(new Date()) + " [restartedMain] o.s.s.web.DefaultSecurityFilterChain ";
 	}
 
 	@GetMapping("/tab2")

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Dashboard.html</title>
+    <!-- 컨텐츠 페이지 고유 스타일 추가, title 과 함께 자동으로 layout에 추가됨. -->
+
+    <!-- About log modal -->
+    <style tyle="text/css">
+        .log-tab {
+            margin-top: 10px;
+            height: calc(100vh - 770px);
+            overflow-y: scroll;
+            background: #ffffff;
+            color: #000000;
+            white-space: pre-line;
+        }
+
+        .log-layer {
+            height: 300px;
+            overflow-y: scroll;
+            background: #000000;
+            color: #00ee00;
+            white-space: pre-line;
+        }
+
+        .ui-resizable-helper {
+            z-index: 2000 !important;
+            border: 2px dotted #00F;
+        }
+
+        .modal {
+            overflow: hidden;
+        }
+
+        .modal-open .modal {
+            overflow: hidden;
+        }
+
+        .modal-dialog-log {
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            max-width: 1000px;
+        }
+
+        .modal-content {
+            -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+            -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+            -0 -box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+        }
+
+        .modeless {
+            top: 10%;
+            left: 50%;
+            bottom: auto;
+            right: auto;
+            margin-left: -300px;
+        }
+
+        .modal-header {
+            cursor: move;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Content Wrapper. Contains page content -->
+<div layout:fragment="content" class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Dashboard</h1>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                    </ol>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="small-box bg-primary">
+                        <div class="inner">
+                            <h3>+</h3>
+                            <p>Add OnCue</p>
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-plus-square"></i>
+                        </div>
+                        <a href="/notificationBox" class="small-box-footer">Click to here <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>6</h3>
+                            <p>Connected Oncue</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-desktop"></i></div>
+                        <a href="#" class="small-box-footer"> <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>15</h3>
+                            <p>Notification</p>
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-lightbulb"></i></div>
+                        <a href="/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>15</h3>
+                            <p>Notification</p>
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-lightbulb"></i></div>
+                        <a href="/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-primary card-outline">
+                                <div class="card-header">
+                                    <h3 class="card-title">Registed OnCue</h3>
+                                </div>
+                                <div class="table-responsive p-0" style="height: 200px;">
+                                    <table class="table table-head-fixed text-nowrap table-sm">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 3% " class="text-center">
+                                                No
+                                            </th>
+                                            <th style="width: 20%" class="text-center">
+                                                Server Alias
+                                            </th>
+                                            <th style="width: 20%" class="text-center">
+                                                Oncue IP Address
+                                            </th>
+                                            <th style="width: 10%" class="text-center">
+                                                Status
+                                            </th>
+                                            <th style="width: 10%" class="text-center">
+                                                Processing Speed
+                                            </th>
+                                            <th style="width: 20%" class="text-center">
+                                                Started Date
+                                            </th>
+                                            <th style="width: 17%">
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">
+                                                1
+                                            </td>
+                                            <td class="text-center">
+                                                CJ Line 6
+                                            </td>
+                                            <td class="text-center">
+                                                192.168.1.254
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-success">Running</span>
+                                            </td>
+                                            <td class="text-center">
+                                                203 / min
+                                            </td>
+                                            <td class="text-center">
+                                                2020.08.26
+                                            </td>
+                                            <td class="project-actions text-center">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
+                                                    <i class="fas fa-folder">
+                                                    </i>
+                                                    Detail View
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                2
+                                            </td>
+                                            <td class="text-center">
+                                                CJ Line 7
+                                            </td>
+                                            <td class="text-center">
+                                                192.168.1.254
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-success">Running</span>
+                                            </td>
+                                            <td class="text-center">
+                                                203 / min
+                                            </td>
+                                            <td class="text-center">
+                                                2020.08.26
+                                            </td>
+                                            <td class="project-actions text-center">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
+                                                    <i class="fas fa-folder">
+                                                    </i>
+                                                    Detail View
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                3
+                                            </td>
+                                            <td class="text-center">
+                                                CJ Line 8
+                                            </td>
+                                            <td class="text-center">
+                                                192.168.1.254
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-success">Running</span>
+                                            </td>
+                                            <td class="text-center">
+                                                203 / min
+                                            </td>
+                                            <td class="text-center">
+                                                2020.08.26
+                                            </td>
+                                            <td class="project-actions text-center">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
+                                                    <i class="fas fa-folder">
+                                                    </i>
+                                                    Detail View
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                4
+                                            </td>
+                                            <td class="text-center">
+                                                CJ Line 9
+                                            </td>
+                                            <td class="text-center">
+                                                192.168.1.254
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-success">Running</span>
+                                            </td>
+                                            <td class="text-center">
+                                                203 / min
+                                            </td>
+                                            <td class="text-center">
+                                                2020.08.26
+                                            </td>
+                                            <td class="project-actions text-center">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
+                                                    <i class="fas fa-folder">
+                                                    </i>
+                                                    Detail View
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                5
+                                            </td>
+                                            <td class="text-center">
+                                                CJ Line 10
+                                            </td>
+                                            <td class="text-center">
+                                                192.168.1.254
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-success">Running</span>
+                                            </td>
+                                            <td class="text-center">
+                                                203 / min
+                                            </td>
+                                            <td class="text-center">
+                                                2020.08.26
+                                            </td>
+                                            <td class="project-actions text-center">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
+                                                    <i class="fas fa-folder">
+                                                    </i>
+                                                    Detail View
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                6
+                                            </td>
+                                            <td class="text-center">
+                                                CJ Line 11
+                                            </td>
+                                            <td class="text-center">
+                                                192.168.1.254
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-success">Running</span>
+                                            </td>
+                                            <td class="text-center">
+                                                203 / min
+                                            </td>
+                                            <td class="text-center">
+                                                2020.08.26
+                                            </td>
+                                            <td class="project-actions text-center">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
+                                                    <i class="fas fa-folder">
+                                                    </i>
+                                                    Detail View
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-primary card-outline card-tabs">
+                                <div class="card-header p-0 pt-1">
+                                    <ul class="nav nav-tabs" id="tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
+                                               class="nav-link active" role="tab">Admin Log</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#tab2" onclick="clickedTab(this);" data-url="/sample/tab2"
+                                               class="nav-link"
+                                               role="tab">CJ Line 6</a><!-- data-toggle="pill"  -->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                               class="nav-link"
+                                               role="tab">CJ Line 7</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                               class="nav-link"
+                                               role="tab">CJ Line 8</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                               class="nav-link"
+                                               role="tab">CJ Line 9</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                               class="nav-link"
+                                               role="tab">CJ Line 10</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                               class="nav-link"
+                                               role="tab">CJ Line 11</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content" id="custom-tabs-one-tabContent">
+                                        <div class="tab-pane fade active show" id="tab1" role="tabpanel">
+                                            <button type="button" class="btn btn-default"
+                                                    onclick="openLogLayer('tab1');">
+                                                Layer로
+                                                띄우기
+                                            </button>
+                                            <button type="button" class="btn btn-default" onclick="startLog('tab1');">보기
+                                            </button>
+                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지
+                                            </button>
+                                            <div class="log-tab" id="tab1-log">tab1</div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab2" role="tabpanel">
+                                            <button type="button" class="btn btn-default"
+                                                    onclick="openLogLayer('tab2');">
+                                                Layer로
+                                                띄우기
+                                            </button>
+                                            <button type="button" class="btn btn-default" onclick="startLog('tab2');">보기
+                                            </button>
+                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지
+                                            </button>
+                                            <div class="log-tab" id="tab2-log">tab2</div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab3" role="tabpanel">
+                                            <button type="button" class="btn btn-default"
+                                                    onclick="openLogLayer('tab3');">
+                                                Layer로
+                                                띄우기
+                                            </button>
+                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기
+                                            </button>
+                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지
+                                            </button>
+                                            <div class="log-tab" id="tab3-log">tab3</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="far fa-chart-bar"></i>
+                                Bar Chart
+                            </h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="bar-chart" style="height: 300px; padding: 0px; position: relative;">
+                                <canvas class="flot-base" width="300" height="300"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 594.203px; height: 300px;"></canvas>
+                                <canvas class="flot-overlay" width="300" height="300"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 594.203px; height: 300px;"></canvas>
+                                <div class="flot-svg"
+                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                    <svg style="width: 100%; height: 100%;">
+                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                            <text x="228.7634431818182" y="294" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: center;">March
+                                            </text>
+                                            <text x="329.8145568181818" y="294" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: center;">April
+                                            </text>
+                                            <text x="428.62348295454547" y="294" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: center;">May
+                                            </text>
+                                            <text x="28.536215909090913" y="294" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: center;">January
+                                            </text>
+                                            <text x="522.4870965909091" y="294" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: center;">June
+                                            </text>
+                                            <text x="122.35295454545457" y="294" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: center;">February
+                                            </text>
+                                        </g>
+                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                            <text x="8.953125" y="269" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: right;">0
+                                            </text>
+                                            <text x="8.953125" y="205.5" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: right;">5
+                                            </text>
+                                            <text x="1" y="15" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: right;">20
+                                            </text>
+                                            <text x="1" y="142" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: right;">10
+                                            </text>
+                                            <text x="1" y="78.5" class="flot-tick-label tickLabel"
+                                                  style="position: absolute; text-align: right;">15
+                                            </text>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- modal page -->
+        <div class="modal fade modeless" id="tab1-layer"
+             style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
+            <div class="modal-dialog-log">
+                <div class="modal-content ui-widget-content" id="tab1-resizable" style="width:600px; height:400px;">
+                    <div class="modal-header">
+                        <h4 class="modal-title">tab1 log</h4>
+                        <button type="button" class="btn btn-default" onclick="startLayerLog('tab1');">보기</button>
+                        <button type="button" class="btn btn-default" onclick="stopLayerLog('tab1');">정지</button>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                onclick="closeLayer('tab1');">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="log-layer" id="tab1-layer-log"></div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade modeless" id="tab2-layer"
+             style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
+            <div class="modal-dialog-log">
+                <div class="modal-content ui-widget-content" id="tab2-resizable" style="width:600px; height:400px;">
+                    <div class="modal-header">
+                        <h4 class="modal-title">tab2 log</h4>
+                        <button type="button" class="btn btn-default" onclick="startLayerLog('tab2');">보기</button>
+                        <button type="button" class="btn btn-default" onclick="stopLayerLog('tab2');">정지</button>
+                        <button type="button" class="close" onclick="closeLayer('tab2');">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="log-layer" id="tab2-layer-log"></div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade modeless" id="tab3-layer"
+             style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
+            <div class="modal-dialog-log">
+                <div class="modal-content ui-widget-content" id="tab3-resizable" style="width:600px; height:400px;">
+                    <div class="modal-header">
+                        <h4 class="modal-title">tab3 log</h4>
+                        <button type="button" class="btn btn-default" onclick="startLayerLog('tab3');">보기</button>
+                        <button type="button" class="btn btn-default" onclick="stopLayerLog('tab3');">정지</button>
+                        <button type="button" class="close" onclick="closeLayer('tab3');">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="log-layer" id="tab3-layer-log"></div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+    </section>
+    <!-- /.content section -->
+</div>
+<!-- /.content-wrapper -->
+
+<th:block layout:fragment="pageScript">
+    <!-- 컨텐츠 페이지 고유 스크립트 추가 -->
+    <script th:src="@{/plugins/flot/jquery.flot.js}"></script>
+    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+    <script th:src="@{/plugins/flot-old/jquery.flot.resize.min.js}"></script>
+    <script>
+        $(function () {
+            /*
+             * Flot Interactive Chart
+             * -----------------------
+             */
+            // We use an inline data source in the example, usually data would
+            // be fetched from a server
+            var data = [],
+                totalPoints = 100
+
+            /*
+             * BAR CHART
+             * ---------
+             */
+
+            // var bar_data = {
+            //     data: [[1, 10], [2, 8], [3, 4], [4, 13], [5, 17], [6, 9]],
+            //     bars: {show: true}
+            // }
+            var bar_data = [[1, 10], [2, 8], [3, 4], [4, 13], [5, 17], [6, 9]];
+            $.plot('#bar-chart', [bar_data], {
+                grid: {
+                    borderWidth: 1,
+                    borderColor: '#f3f3f3',
+                    tickColor: '#f3f3f3'
+                },
+                series: {
+                    bars: {
+                        show: true, barWidth: 0.5, align: 'center',
+                    },
+                },
+                colors: ['#3c8dbc'],
+                xaxis: {
+                    ticks: [[1, 'January'], [2, 'February'], [3, 'March'], [4, 'April'], [5, 'May'], [6, 'June']]
+                }
+            })
+            /* END BAR CHART */
+
+
+        })
+
+        /*
+         * Custom Label formatter
+         * ----------------------
+         */
+        function labelFormatter(label, series) {
+            return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+                + label
+                + '<br>'
+                + Math.round(series.percent) + '%</div>'
+        }
+    </script>
+    <script>
+        //alert("hello.html");
+        var timer;
+
+        function clickedTab(tabLink) {
+            var url = tabLink.getAttribute("data-url");
+            var href = tabLink.hash + "-log";
+            $(tabLink).tab("show");
+
+            if (timer) {
+                clearInterval(timer);
+            }
+
+            timer = setInterval(function () {
+                setTabContent(url, href);
+            }, 1000);
+        }
+
+        function setTabContent(url, href) {
+            $.get(url, function (result) {
+                $(href).append(result + "<br/>");
+                $(href).scrollTop($(href).prop('scrollHeight'));
+            });
+        }
+
+        function startLog(tab) {
+            timer = setInterval(function () {
+                setTabContent("/sample/" + tab, "#" + tab + "-log");
+            }, 1000);
+        }
+
+        function stopLog() {
+            clearInterval(timer);
+        }
+
+        var layerTimer = {};
+
+        function openLogLayer(tab) {
+            var layer = $("#" + tab + "-layer");
+            layer.draggable({handle: ".modal-header"});
+            layer.modal({backdrop: false});
+
+            layerTimer[tab] = setInterval(function () {
+                setTabContent("/sample/" + tab, "#" + tab + "-layer-log");
+            }, 1000);
+
+            $("#" + tab + "-resizable").resizable({
+                helper: "ui-resizable-helper",
+                maxHeight: 600,
+                maxWidth: 800,
+                minHeight: 200,
+                minWidth: 400,
+                stop: function (e, ui) {
+                    ui.element[0].children[1].children[0].style.height = (ui.size.height - 105) + "px";
+                }
+            });
+        }
+
+        function closeLayer(tab) {
+            clearInterval(layerTimer[tab]);
+            $("#" + tab + "-layer").modal("hide");
+        }
+
+        function startLayerLog(tab) {
+            layerTimer[tab] = setInterval(function () {
+                setTabContent("/sample/" + tab, "#" + tab + "-layer-log");
+            }, 1000);
+        }
+
+        function stopLayerLog(tab) {
+            clearInterval(layerTimer[tab]);
+        }
+
+        $(document).ready(function () {
+            timer = setInterval(function () {
+                setTabContent("/sample/tab1", "#tab1-log");
+            }, 1000);
+        });
+    </script>
+</th:block>
+</body>
+</html>
