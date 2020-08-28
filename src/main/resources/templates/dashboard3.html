@@ -4,7 +4,7 @@
       layout:decorate="~{layout/defaultLayout}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Dashboard.html</title>
+    <title>Dashboard3.html</title>
     <!-- 컨텐츠 페이지 고유 스타일 추가, title 과 함께 자동으로 layout에 추가됨. -->
 
     <!-- About log modal -->
@@ -452,11 +452,11 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div id="bar-chart" style="height: 300px; padding: 0px; position: relative;">
-                                <canvas class="flot-base" width="300" height="300"
-                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 594.203px; height: 300px;"></canvas>
-                                <canvas class="flot-overlay" width="300" height="300"
-                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 594.203px; height: 300px;"></canvas>
+                            <div id="bar-chart" style="height: 470px; padding: 0px; position: relative;">
+                                <canvas class="flot-base" width="300" height="470"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 594.203px; height: 470px;"></canvas>
+                                <canvas class="flot-overlay" width="300" height="470"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 594.203px; height: 470px;"></canvas>
                                 <div class="flot-svg"
                                      style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
                                     <svg style="width: 100%; height: 100%;">
@@ -583,59 +583,6 @@
     <script th:src="@{/plugins/flot/jquery.flot.js}"></script>
     <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
     <script th:src="@{/plugins/flot-old/jquery.flot.resize.min.js}"></script>
-    <script>
-        $(function () {
-            /*
-             * Flot Interactive Chart
-             * -----------------------
-             */
-            // We use an inline data source in the example, usually data would
-            // be fetched from a server
-            var data = [],
-                totalPoints = 100
-
-            /*
-             * BAR CHART
-             * ---------
-             */
-
-            // var bar_data = {
-            //     data: [[1, 10], [2, 8], [3, 4], [4, 13], [5, 17], [6, 9]],
-            //     bars: {show: true}
-            // }
-            var bar_data = [[1, 10], [2, 8], [3, 4], [4, 13], [5, 17], [6, 9]];
-            $.plot('#bar-chart', [bar_data], {
-                grid: {
-                    borderWidth: 1,
-                    borderColor: '#f3f3f3',
-                    tickColor: '#f3f3f3'
-                },
-                series: {
-                    bars: {
-                        show: true, barWidth: 0.5, align: 'center',
-                    },
-                },
-                colors: ['#3c8dbc'],
-                xaxis: {
-                    ticks: [[1, 'January'], [2, 'February'], [3, 'March'], [4, 'April'], [5, 'May'], [6, 'June']]
-                }
-            })
-            /* END BAR CHART */
-
-
-        })
-
-        /*
-         * Custom Label formatter
-         * ----------------------
-         */
-        function labelFormatter(label, series) {
-            return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
-                + label
-                + '<br>'
-                + Math.round(series.percent) + '%</div>'
-        }
-    </script>
     <script>
         //alert("hello.html");
         var timer;

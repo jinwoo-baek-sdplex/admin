@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * 메인 컨트롤러(로그인, 로그아웃, 페이지 등)
  */
 @Controller
-@RequestMapping("/")
 public class MainController {
 
     @Autowired
@@ -24,8 +23,13 @@ public class MainController {
         return "login";
     }
 
-    @GetMapping({"/", "/sample"})
-    public String mainUser() {
+    @GetMapping("/dashboard2")
+    public String dashboard2() {
+        return "dashboard2";
+    }
+
+    @GetMapping("/dashboard3")
+    public String dashboard3() {
         return "dashboard3";
     }
 
@@ -36,7 +40,7 @@ public class MainController {
     }
 
     // OnCue Detail1 페이지 호출
-    @GetMapping("/detail")
+    @GetMapping("/detail1")
     public String onCueDetail1() {
         return "detail1";
     }
