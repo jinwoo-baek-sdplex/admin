@@ -1,0 +1,57 @@
+
+.log-tab {
+    margin-top: 10px;
+    height: calc(100vh - 770px);
+    overflow-y: scroll;
+    background: #ffffff;
+    color: #000000;
+    white-space: pre-line;
+}
+
+.log-layer {
+    height: 300px;
+    overflow-y: scroll;
+    background: #000000;
+    color: #00ee00;
+    white-space: pre-line;
+}
+
+.ui-resizable-helper {
+    z-index: 2000 !important;
+    border: 2px dotted #00F;
+}
+
+.modal {
+    overflow: hidden;
+}
+
+.modal-open .modal {
+    overflow: hidden;
+}
+
+.modal-dialog-log {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    max-width: 1000px;
+}
+
+.modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+    -box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+}
+
+.modeless {
+    top: 10%;
+    left: 50%;
+    bottom: auto;
+    right: auto;
+    margin-left: -300px;
+}
+
+.modal-header {
+    cursor: move;
+}
