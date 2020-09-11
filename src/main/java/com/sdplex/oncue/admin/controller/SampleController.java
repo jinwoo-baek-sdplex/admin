@@ -24,12 +24,14 @@ public class SampleController {
 
 	@GetMapping("/tab2")
 	public String tab2() {
-		return sdf.format(new Date()) + " jfdksla;dfnmdksla; djsfkla durowefjndmclv djskflejfskdldf jeklwekjre";
+		return  sdf.format(new Date()) + " [restartedMain] o.s.s.web.DefaultSecurityFilterChain ";
 	}
+
 
 	@GetMapping("/tab3")
 	public String tab3() {
-		return sdf.format(new Date()) + " jfdksla;dfnmdksla; djsfkla durowefjndmclv djskflejfskdldf jeklwekjre";
+		return  sdf.format(new Date()) + " [restartedMain] o.s.s.web.DefaultSecurityFilterChain ";
 	}
+
 
 }

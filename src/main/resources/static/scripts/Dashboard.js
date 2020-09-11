@@ -68,86 +68,86 @@ $(function () {
             }
         }
     )
-    var interactive2_plot = $.plot('#interactive2', [
-            {
-                data: getRandomData(),
-            }
-        ],
-        {
-            grid: {
-                borderColor: '#f3f3f3',
-                borderWidth: 1,
-                tickColor: '#f3f3f3'
-            },
-            series: {
-                color: '#3c8dbc',
-                lines: {
-                    lineWidth: 2,
-                    show: true,
-                    fill: true,
-                },
-            },
-            yaxis: {
-                min: 0,
-                max: 100,
-                show: true
-            },
-            xaxis: {
-                show: true
-            }
-        }
-    )
-    var interactive3_plot = $.plot('#interactive3', [
-            {
-                data: getRandomData(),
-            }
-        ],
-        {
-            grid: {
-                borderColor: '#f3f3f3',
-                borderWidth: 1,
-                tickColor: '#f3f3f3'
-            },
-            series: {
-                color: '#3c8dbc',
-                lines: {
-                    lineWidth: 2,
-                    show: true,
-                    fill: true,
-                },
-            },
-            yaxis: {
-                min: 0,
-                max: 100,
-                show: true
-            },
-            xaxis: {
-                show: true
-            }
-        }
-    )
+    // var interactive2_plot = $.plot('#interactive2', [
+    //         {
+    //             data: getRandomData(),
+    //         }
+    //     ],
+    //     {
+    //         grid: {
+    //             borderColor: '#f3f3f3',
+    //             borderWidth: 1,
+    //             tickColor: '#f3f3f3'
+    //         },
+    //         series: {
+    //             color: '#3c8dbc',
+    //             lines: {
+    //                 lineWidth: 2,
+    //                 show: true,
+    //                 fill: true,
+    //             },
+    //         },
+    //         yaxis: {
+    //             min: 0,
+    //             max: 100,
+    //             show: true
+    //         },
+    //         xaxis: {
+    //             show: true
+    //         }
+    //     }
+    // )
+    // var interactive3_plot = $.plot('#interactive3', [
+    //         {
+    //             data: getRandomData(),
+    //         }
+    //     ],
+    //     {
+    //         grid: {
+    //             borderColor: '#f3f3f3',
+    //             borderWidth: 1,
+    //             tickColor: '#f3f3f3'
+    //         },
+    //         series: {
+    //             color: '#3c8dbc',
+    //             lines: {
+    //                 lineWidth: 2,
+    //                 show: true,
+    //                 fill: true,
+    //             },
+    //         },
+    //         yaxis: {
+    //             min: 0,
+    //             max: 100,
+    //             show: true
+    //         },
+    //         xaxis: {
+    //             show: true
+    //         }
+    //     }
+    // )
 
-    var updateInterval = 3000 //Fetch data ever x milliseconds
+    var updateInterval = 1000 //Fetch data ever x milliseconds
     var realtime = 'on' //If == to on then fetch data every x seconds. else stop fetching
     function update() {
 
         interactive1_plot.setData([getRandomData()])
-        interactive2_plot.setData([getRandomData()])
-        interactive3_plot.setData([getRandomData()])
+        // interactive2_plot.setData([getRandomData()])
+        // interactive3_plot.setData([getRandomData()])
 
         // Since the axes don't change, we don't need to call plot.setupGrid()
         interactive1_plot.draw()
         if (realtime === 'on') {
             setTimeout(update, updateInterval)
         }
-        interactive2_plot.draw()
-        if (realtime === 'on') {
-            setTimeout(update, updateInterval)
-        }
-        interactive3_plot.draw()
-        if (realtime === 'on') {
-            setTimeout(update, updateInterval)
-        }
+        // interactive2_plot.draw()
+        // if (realtime === 'on') {
+        //     setTimeout(update, updateInterval)
+        // }
+        // interactive3_plot.draw()
+        // if (realtime === 'on') {
+        //     setTimeout(update, updateInterval)
+        // }
     }
 
     //INITIALIZE REALTIME DATA FETCHING

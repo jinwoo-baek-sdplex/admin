@@ -1,7 +1,7 @@
 
 .log-tab {
-    margin-top: 10px;
-    height: calc(100vh - 770px);
+    margin-top: 0px;
+    height: 175px;
     overflow-y: scroll;
     background: #ffffff;
     color: #000000;
@@ -54,4 +54,8 @@
 
 .modal-header {
     cursor: move;
+}
+
+.table-dashboard {
+    max-height: 185px;
 }

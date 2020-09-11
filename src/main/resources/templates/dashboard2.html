@@ -81,8 +81,14 @@
                             <div class="card card-primary card-outline">
                                 <div class="card-header">
                                     <h3 class="card-title">Registed OnCue</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                                class="fas fa-minus"></i></button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                                class="fas fa-times"></i></button>
+                                    </div>
                                 </div>
-                                <div class="table-responsive p-0" style="height: 150px;">
+                                <div class="card-body table-responsive table-dashboard p-0">
                                     <table class="table table-head-fixed text-nowrap table-sm">
                                         <thead>
                                         <tr>
@@ -288,32 +294,32 @@
                                                class="nav-link active" role="tab">Admin Log</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab2" onclick="clickedTab(this);" data-url="/sample/tab2"
+                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
                                                class="nav-link"
                                                role="tab">CJ Line 6</a><!-- data-toggle="pill"  -->
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
                                                class="nav-link"
                                                role="tab">CJ Line 7</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
                                                class="nav-link"
                                                role="tab">CJ Line 8</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
                                                class="nav-link"
                                                role="tab">CJ Line 9</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
                                                class="nav-link"
                                                role="tab">CJ Line 10</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
                                                class="nav-link"
                                                role="tab">CJ Line 11</a>
                                         </li>
@@ -323,42 +329,20 @@
                                 <div class="card-body">
                                     <div class="tab-content" id="custom-tabs-one-tabContent">
                                         <div class="tab-pane fade active show" id="tab1" role="tabpanel">
-                                            <button type="button" class="btn btn-default"
-                                                    onclick="openLogLayer('tab1');">
-                                                Layer로
-                                                띄우기
-                                            </button>
-                                            <button type="button" class="btn btn-default" onclick="startLog('tab1');">보기
-                                            </button>
-                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지
-                                            </button>
                                             <div class="log-tab" id="tab1-log">tab1</div>
                                         </div>
-                                        <div class="tab-pane fade" id="tab2" role="tabpanel">
-                                            <button type="button" class="btn btn-default"
-                                                    onclick="openLogLayer('tab2');">
-                                                Layer로
-                                                띄우기
-                                            </button>
-                                            <button type="button" class="btn btn-default" onclick="startLog('tab2');">보기
-                                            </button>
-                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지
-                                            </button>
-                                            <div class="log-tab" id="tab2-log">tab2</div>
-                                        </div>
-                                        <div class="tab-pane fade" id="tab3" role="tabpanel">
-                                            <button type="button" class="btn btn-default"
-                                                    onclick="openLogLayer('tab3');">
-                                                Layer로
-                                                띄우기
-                                            </button>
-                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기
-                                            </button>
-                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지
-                                            </button>
-                                            <div class="log-tab" id="tab3-log">tab3</div>
-                                        </div>
                                     </div>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <button type="button" class="btn btn-info btn-sm" onclick="openLogLayer('tab1');"
+                                            style="width: 8%;">PopUp
+                                    </button>
+                                    <button type="button" class="btn btn-primary btn-sm"
+                                            onclick="startLayerLog('tab1');" style="width: 8%;">보기
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="stopLayerLog('tab1');"
+                                            style="width: 8%;">정지
+                                    </button>
                                 </div>
                                 <!-- /.card -->
                             </div>
@@ -383,251 +367,195 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <!--                            <div class="row">-->
-                            <div class="col-md-12">
-                                <div id="interactive1" style="height: 210px; padding: 0px; position: relative;">
-                                    <canvas class="flot-base" width="246" height="280"
-                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                    <canvas class="flot-overlay" width="246" height="280"
-                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="interactive1" style="height: 210px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="246" height="280"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                        <canvas class="flot-overlay" width="246" height="280"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
 
-                                    <div class="flot-svg"
-                                         style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                        <svg style="width: 100%; height: 100%;">
-                                            <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                               style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">0
-                                                </text>
-                                                <text x="66.27962121212121" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">20
-                                                </text>
-                                                <text x="107.37174242424243" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">40
-                                                </text>
-                                                <text x="148.46386363636364" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">60
-                                                </text>
-                                                <text x="189.55598484848485" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">80
-                                                </text>
-                                            </g>
-                                            <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                               style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                <text x="9.625" y="248.24999999999997"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">0
-                                                </text>
-                                                <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">20
-                                                </text>
-                                                <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">40
-                                                </text>
-                                                <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">60
-                                                </text>
-                                                <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">80
-                                                </text>
-                                                <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">100
-                                                </text>
-                                            </g>
-                                        </svg>
+                                        <div class="flot-svg"
+                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                            <svg style="width: 100%; height: 100%;">
+                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">0
+                                                    </text>
+                                                    <text x="66.27962121212121" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">20
+                                                    </text>
+                                                    <text x="107.37174242424243" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">40
+                                                    </text>
+                                                    <text x="148.46386363636364" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">60
+                                                    </text>
+                                                    <text x="189.55598484848485" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">80
+                                                    </text>
+                                                </g>
+                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="9.625" y="248.24999999999997"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">0
+                                                    </text>
+                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">20
+                                                    </text>
+                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">40
+                                                    </text>
+                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">60
+                                                    </text>
+                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">80
+                                                    </text>
+                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">100
+                                                    </text>
+                                                </g>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div id="interactive2" style="height: 210px; padding: 0px; position: relative;">
-                                    <canvas class="flot-base" width="246" height="280"
-                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                    <canvas class="flot-overlay" width="246" height="280"
-                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+<!--                            <div class="row">-->
+<!--                                <div class="col-md-12">-->
+<!--                                    <div id="interactive2" style="height: 210px; padding: 0px; position: relative;">-->
+<!--                                        <canvas class="flot-base" width="246" height="280"-->
+<!--                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>-->
+<!--                                        <canvas class="flot-overlay" width="246" height="280"-->
+<!--                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>-->
 
-                                    <div class="flot-svg"
-                                         style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                        <svg style="width: 100%; height: 100%;">
-                                            <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                               style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">0
-                                                </text>
-                                                <text x="66.27962121212121" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">20
-                                                </text>
-                                                <text x="107.37174242424243" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">40
-                                                </text>
-                                                <text x="148.46386363636364" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">60
-                                                </text>
-                                                <text x="189.55598484848485" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">80
-                                                </text>
-                                            </g>
-                                            <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                               style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                <text x="9.625" y="248.24999999999997"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">0
-                                                </text>
-                                                <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">20
-                                                </text>
-                                                <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">40
-                                                </text>
-                                                <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">60
-                                                </text>
-                                                <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">80
-                                                </text>
-                                                <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">100
-                                                </text>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div id="interactive3" style="height: 210px; padding: 0px; position: relative;">
-                                    <canvas class="flot-base" width="246" height="280"
-                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                    <canvas class="flot-overlay" width="246" height="280"
-                                            style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+<!--                                        <div class="flot-svg"-->
+<!--                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">-->
+<!--                                            <svg style="width: 100%; height: 100%;">-->
+<!--                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"-->
+<!--                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">-->
+<!--                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: center;">0-->
+<!--                                                    </text>-->
+<!--                                                    <text x="66.27962121212121" y="273.75"-->
+<!--                                                          class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: center;">20-->
+<!--                                                    </text>-->
+<!--                                                    <text x="107.37174242424243" y="273.75"-->
+<!--                                                          class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: center;">40-->
+<!--                                                    </text>-->
+<!--                                                    <text x="148.46386363636364" y="273.75"-->
+<!--                                                          class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: center;">60-->
+<!--                                                    </text>-->
+<!--                                                    <text x="189.55598484848485" y="273.75"-->
+<!--                                                          class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: center;">80-->
+<!--                                                    </text>-->
+<!--                                                </g>-->
+<!--                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"-->
+<!--                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">-->
+<!--                                                    <text x="9.625" y="248.24999999999997"-->
+<!--                                                          class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">0-->
+<!--                                                    </text>-->
+<!--                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">20-->
+<!--                                                    </text>-->
+<!--                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">40-->
+<!--                                                    </text>-->
+<!--                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">60-->
+<!--                                                    </text>-->
+<!--                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">80-->
+<!--                                                    </text>-->
+<!--                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">100-->
+<!--                                                    </text>-->
+<!--                                                </g>-->
+<!--                                            </svg>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-md-12">-->
+<!--                                    <div id="interactive3" style="height: 210px; padding: 0px; position: relative;">-->
+<!--                                        <canvas class="flot-base" width="246" height="280"-->
+<!--                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>-->
+<!--                                        <canvas class="flot-overlay" width="246" height="280"-->
+<!--                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>-->
 
-                                    <div class="flot-svg"
-                                         style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                        <svg style="width: 100%; height: 100%;">
-                                            <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                               style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">0
-                                                </text>
-                                                <text x="66.27962121212121" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">20
-                                                </text>
-                                                <text x="107.37174242424243" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">40
-                                                </text>
-                                                <text x="148.46386363636364" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">60
-                                                </text>
-                                                <text x="189.55598484848485" y="273.75"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: center;">80
-                                                </text>
-                                            </g>
-                                            <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                               style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                <text x="9.625" y="248.24999999999997"
-                                                      class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">0
-                                                </text>
-                                                <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">20
-                                                </text>
-                                                <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">40
-                                                </text>
-                                                <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">60
-                                                </text>
-                                                <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">80
-                                                </text>
-                                                <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                      style="position: absolute; text-align: right;">100
-                                                </text>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
+<!--                                        <div class="flot-svg"-->
+<!--                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">-->
+<!--                                            <svg style="width: 100%; height: 100%;">-->
+<!--                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"-->
+<!--                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">-->
+<!--                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: center;">0-->
+<!--                                                    </text>-->
+<!--                                                    <text x="66.27962121212121" y="273.75"-->
+<!--                                                          class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: center;">20-->
+<!--                                                    </text>-->
+<!--                                                    <text x="107.37174242424243" y="273.75"-->
+<!--                                                          class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: center;">40-->
+<!--                                                    </text>-->
+<!--                                                    <text x="148.46386363636364" y="273.75"-->
+<!--                                                          class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: center;">60-->
+<!--                                                    </text>-->
+<!--                                                    <text x="189.55598484848485" y="273.75"-->
+<!--                                                          class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: center;">80-->
+<!--                                                    </text>-->
+<!--                                                </g>-->
+<!--                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"-->
+<!--                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">-->
+<!--                                                    <text x="9.625" y="248.24999999999997"-->
+<!--                                                          class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">0-->
+<!--                                                    </text>-->
+<!--                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">20-->
+<!--                                                    </text>-->
+<!--                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">40-->
+<!--                                                    </text>-->
+<!--                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">60-->
+<!--                                                    </text>-->
+<!--                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">80-->
+<!--                                                    </text>-->
+<!--                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"-->
+<!--                                                          style="position: absolute; text-align: right;">100-->
+<!--                                                    </text>-->
+<!--                                                </g>-->
+<!--                                            </svg>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
                         </div>
                         <!-- /.card-body-->
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- modal page -->
-        <div class="modal fade modeless" id="tab1-layer"
-             style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
-            <div class="modal-dialog-log">
-                <div class="modal-content ui-widget-content" id="tab1-resizable" style="width:600px; height:400px;">
-                    <div class="modal-header">
-                        <h4 class="modal-title">tab1 log</h4>
-                        <button type="button" class="btn btn-default" onclick="startLayerLog('tab1');">보기</button>
-                        <button type="button" class="btn btn-default" onclick="stopLayerLog('tab1');">정지</button>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                                onclick="closeLayer('tab1');">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="log-layer" id="tab1-layer-log"></div>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-
-        <div class="modal fade modeless" id="tab2-layer"
-             style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
-            <div class="modal-dialog-log">
-                <div class="modal-content ui-widget-content" id="tab2-resizable" style="width:600px; height:400px;">
-                    <div class="modal-header">
-                        <h4 class="modal-title">tab2 log</h4>
-                        <button type="button" class="btn btn-default" onclick="startLayerLog('tab2');">보기</button>
-                        <button type="button" class="btn btn-default" onclick="stopLayerLog('tab2');">정지</button>
-                        <button type="button" class="close" onclick="closeLayer('tab2');">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="log-layer" id="tab2-layer-log"></div>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-
-        <div class="modal fade modeless" id="tab3-layer"
-             style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
-            <div class="modal-dialog-log">
-                <div class="modal-content ui-widget-content" id="tab3-resizable" style="width:600px; height:400px;">
-                    <div class="modal-header">
-                        <h4 class="modal-title">tab3 log</h4>
-                        <button type="button" class="btn btn-default" onclick="startLayerLog('tab3');">보기</button>
-                        <button type="button" class="btn btn-default" onclick="stopLayerLog('tab3');">정지</button>
-                        <button type="button" class="close" onclick="closeLayer('tab3');">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="log-layer" id="tab3-layer-log"></div>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
+        <div th:insert="fragments/modals/viewLog :: viewLog"></div>
     </section>
     <!-- /.content section -->
 </div>
