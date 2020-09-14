@@ -144,4 +144,5 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 
 ## DB
-*.db
+dev_db.lock.db
+dev_db.mv.db
