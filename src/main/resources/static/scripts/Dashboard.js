@@ -68,64 +68,6 @@ $(function () {
             }
         }
     )
-    // var interactive2_plot = $.plot('#interactive2', [
-    //         {
-    //             data: getRandomData(),
-    //         }
-    //     ],
-    //     {
-    //         grid: {
-    //             borderColor: '#f3f3f3',
-    //             borderWidth: 1,
-    //             tickColor: '#f3f3f3'
-    //         },
-    //         series: {
-    //             color: '#3c8dbc',
-    //             lines: {
-    //                 lineWidth: 2,
-    //                 show: true,
-    //                 fill: true,
-    //             },
-    //         },
-    //         yaxis: {
-    //             min: 0,
-    //             max: 100,
-    //             show: true
-    //         },
-    //         xaxis: {
-    //             show: true
-    //         }
-    //     }
-    // )
-    // var interactive3_plot = $.plot('#interactive3', [
-    //         {
-    //             data: getRandomData(),
-    //         }
-    //     ],
-    //     {
-    //         grid: {
-    //             borderColor: '#f3f3f3',
-    //             borderWidth: 1,
-    //             tickColor: '#f3f3f3'
-    //         },
-    //         series: {
-    //             color: '#3c8dbc',
-    //             lines: {
-    //                 lineWidth: 2,
-    //                 show: true,
-    //                 fill: true,
-    //             },
-    //         },
-    //         yaxis: {
-    //             min: 0,
-    //             max: 100,
-    //             show: true
-    //         },
-    //         xaxis: {
-    //             show: true
-    //         }
-    //     }
-    // )
 
     var updateInterval = 1000 //Fetch data ever x milliseconds
     var realtime = 'on' //If == to on then fetch data every x seconds. else stop fetching
@@ -172,6 +114,11 @@ $(function () {
 
 // About Log
 var timer;
+
+function clickedAdminLogTab(tabLink) {
+    $(tabLink).tab("show");
+    alert(tabLink.getAttribute("class"));
+}
 
 function clickedTab(tabLink) {
     var url = tabLink.getAttribute("data-url");
@@ -242,8 +189,8 @@ function stopLayerLog(tab) {
     clearInterval(layerTimer[tab]);
 }
 
-$(document).ready(function () {
-    timer = setInterval(function () {
-        setTabContent("/sample/tab1", "#tab1-log");
-    }, 1000);
-});
+// $(document).ready(function () {
+//     timer = setInterval(function () {
+//         setTabContent("/sample/onCueLog", "#onCueLog-log");
+//     }, 1000);
+// });

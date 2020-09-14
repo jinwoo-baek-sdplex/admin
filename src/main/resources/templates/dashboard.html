@@ -4,7 +4,7 @@
       layout:decorate="~{layout/defaultLayout}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Dashboard2.html</title>
+    <title>Dashboard.html</title>
     <!-- 컨텐츠 페이지 고유 스타일 추가, title 과 함께 자동으로 layout에 추가됨. -->
     <!-- About Dashboard -->
     <link rel="stylesheet" th:href="@{/css/Dashboard.css}">
@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Dashboard2</h1>
+                    <h1 class="m-0 text-dark">Dashboard</h1>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-6">
@@ -135,7 +135,7 @@
                                                 2020.08.26
                                             </td>
                                             <td class="project-actions text-center">
-                                                <a class="btn btn-primary btn-sm" href="/detail3">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
                                                     <i class="fas fa-folder">
                                                     </i>
                                                     Detail View
@@ -162,7 +162,7 @@
                                                 2020.08.26
                                             </td>
                                             <td class="project-actions text-center">
-                                                <a class="btn btn-primary btn-sm" href="/detail3">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
                                                     <i class="fas fa-folder">
                                                     </i>
                                                     Detail View
@@ -189,7 +189,7 @@
                                                 2020.08.26
                                             </td>
                                             <td class="project-actions text-center">
-                                                <a class="btn btn-primary btn-sm" href="/detail3">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
                                                     <i class="fas fa-folder">
                                                     </i>
                                                     Detail View
@@ -216,7 +216,7 @@
                                                 2020.08.26
                                             </td>
                                             <td class="project-actions text-center">
-                                                <a class="btn btn-primary btn-sm" href="/detail3">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
                                                     <i class="fas fa-folder">
                                                     </i>
                                                     Detail View
@@ -243,7 +243,7 @@
                                                 2020.08.26
                                             </td>
                                             <td class="project-actions text-center">
-                                                <a class="btn btn-primary btn-sm" href="/detail3">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
                                                     <i class="fas fa-folder">
                                                     </i>
                                                     Detail View
@@ -270,7 +270,7 @@
                                                 2020.08.26
                                             </td>
                                             <td class="project-actions text-center">
-                                                <a class="btn btn-primary btn-sm" href="/detail3">
+                                                <a class="btn btn-primary btn-sm" href="/detail">
                                                     <i class="fas fa-folder">
                                                     </i>
                                                     Detail View
@@ -290,58 +290,251 @@
                                 <div class="card-header p-0 pt-1">
                                     <ul class="nav nav-tabs" id="tabs" role="tablist">
                                         <li class="nav-item">
-                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
-                                               class="nav-link active" role="tab">Admin Log</a>
+                                            <a href="#adminLogTab" onclick="clickedAdminLogTab(this);" data-url="tab"
+                                               class="nav-link active"
+                                               role="tab">Admin Log</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
+                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
                                                class="nav-link"
-                                               role="tab">CJ Line 6</a><!-- data-toggle="pill"  -->
+                                               role="tab">CJ Line 6</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
+                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
                                                class="nav-link"
                                                role="tab">CJ Line 7</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
+                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
                                                class="nav-link"
                                                role="tab">CJ Line 8</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
+                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
                                                class="nav-link"
                                                role="tab">CJ Line 9</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
+                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
                                                class="nav-link"
                                                role="tab">CJ Line 10</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
+                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
                                                class="nav-link"
                                                role="tab">CJ Line 11</a>
                                         </li>
 
                                     </ul>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body table-responsive table-dashboard p-0">
                                     <div class="tab-content" id="custom-tabs-one-tabContent">
-                                        <div class="tab-pane fade active show" id="tab1" role="tabpanel">
-                                            <div class="log-tab" id="tab1-log">tab1</div>
+                                        <div class="tab-pane fade active show" id="adminLogTab" role="tabpanel">
+                                                <table class="table table-head-fixed text-nowrap table-sm">
+                                                    <thead>
+                                                    <tr>
+                                                        <th style="width: 3% " class="text-center">
+                                                            No
+                                                        </th>
+                                                        <th style="width: 20%" class="text-center">
+                                                            OnCue Alias
+                                                        </th>
+                                                        <th style="width: 20%" class="text-center">
+                                                            Oncue IP Address
+                                                        </th>
+                                                        <th style="width: 10%" class="text-center">
+                                                            Status
+                                                        </th>
+                                                        <th style="width: 10%" class="text-center">
+                                                            Processing Speed
+                                                        </th>
+                                                        <th style="width: 20%" class="text-center">
+                                                            Started Date
+                                                        </th>
+                                                        <th style="width: 17%">
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            1
+                                                        </td>
+                                                        <td class="text-center">
+                                                            CJ Line 6
+                                                        </td>
+                                                        <td class="text-center">
+                                                            192.168.1.254
+                                                        </td>
+                                                        <td class="project-state text-center">
+                                                            <span class="badge badge-success">Running</span>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            203 / min
+                                                        </td>
+                                                        <td class="text-center">
+                                                            2020.08.26
+                                                        </td>
+                                                        <td class="project-actions text-center">
+                                                            <a class="btn btn-primary btn-sm" href="/detail">
+                                                                <i class="fas fa-folder">
+                                                                </i>
+                                                                Detail View
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            2
+                                                        </td>
+                                                        <td class="text-center">
+                                                            CJ Line 7
+                                                        </td>
+                                                        <td class="text-center">
+                                                            192.168.1.254
+                                                        </td>
+                                                        <td class="project-state text-center">
+                                                            <span class="badge badge-danger">Stopped</span>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            203 / min
+                                                        </td>
+                                                        <td class="text-center">
+                                                            2020.08.26
+                                                        </td>
+                                                        <td class="project-actions text-center">
+                                                            <a class="btn btn-primary btn-sm" href="/detail">
+                                                                <i class="fas fa-folder">
+                                                                </i>
+                                                                Detail View
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            3
+                                                        </td>
+                                                        <td class="text-center">
+                                                            CJ Line 8
+                                                        </td>
+                                                        <td class="text-center">
+                                                            192.168.1.254
+                                                        </td>
+                                                        <td class="project-state text-center">
+                                                            <span class="badge badge-success">Running</span>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            203 / min
+                                                        </td>
+                                                        <td class="text-center">
+                                                            2020.08.26
+                                                        </td>
+                                                        <td class="project-actions text-center">
+                                                            <a class="btn btn-primary btn-sm" href="/detail">
+                                                                <i class="fas fa-folder">
+                                                                </i>
+                                                                Detail View
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            4
+                                                        </td>
+                                                        <td class="text-center">
+                                                            CJ Line 9
+                                                        </td>
+                                                        <td class="text-center">
+                                                            192.168.1.254
+                                                        </td>
+                                                        <td class="project-state text-center">
+                                                            <span class="badge badge-success">Running</span>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            203 / min
+                                                        </td>
+                                                        <td class="text-center">
+                                                            2020.08.26
+                                                        </td>
+                                                        <td class="project-actions text-center">
+                                                            <a class="btn btn-primary btn-sm" href="/detail">
+                                                                <i class="fas fa-folder">
+                                                                </i>
+                                                                Detail View
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            5
+                                                        </td>
+                                                        <td class="text-center">
+                                                            CJ Line 10
+                                                        </td>
+                                                        <td class="text-center">
+                                                            192.168.1.254
+                                                        </td>
+                                                        <td class="project-state text-center">
+                                                            <span class="badge badge-success">Running</span>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            203 / min
+                                                        </td>
+                                                        <td class="text-center">
+                                                            2020.08.26
+                                                        </td>
+                                                        <td class="project-actions text-center">
+                                                            <a class="btn btn-primary btn-sm" href="/detail">
+                                                                <i class="fas fa-folder">
+                                                                </i>
+                                                                Detail View
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            6
+                                                        </td>
+                                                        <td class="text-center">
+                                                            CJ Line 11
+                                                        </td>
+                                                        <td class="text-center">
+                                                            192.168.1.254
+                                                        </td>
+                                                        <td class="project-state text-center">
+                                                            <span class="badge badge-success">Running</span>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            203 / min
+                                                        </td>
+                                                        <td class="text-center">
+                                                            2020.08.26
+                                                        </td>
+                                                        <td class="project-actions text-center">
+                                                            <a class="btn btn-primary btn-sm" href="/detail">
+                                                                <i class="fas fa-folder">
+                                                                </i>
+                                                                Detail View
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="onCueLogTab" role="tabpanel">
+                                            <div class="log-tab" id="onCueLogTab-log"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-footer text-right">
-                                    <button type="button" class="btn btn-info btn-sm" onclick="openLogLayer('tab1');"
+                                    <button type="button" class="btn btn-info btn-sm" onclick="openLogLayer('onCueLog');"
                                             style="width: 8%;">PopUp
                                     </button>
                                     <button type="button" class="btn btn-primary btn-sm"
-                                            onclick="startLayerLog('tab1');" style="width: 8%;">보기
+                                            onclick="startLayerLog('onCueLog');" style="width: 8%;">Start
                                     </button>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="stopLayerLog('tab1');"
-                                            style="width: 8%;">정지
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="stopLayerLog('onCueLog');"
+                                            style="width: 8%;">Stop
                                     </button>
                                 </div>
                                 <!-- /.card -->

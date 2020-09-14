@@ -3,21 +3,21 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <body>
 <!-- viewLog modal -->
-    <div class="modal fade modeless" id="tab1-layer" style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true" th:fragment="viewLog">
+    <div class="modal fade modeless" id="onCueLog-layer" style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true" th:fragment="viewLog">
         <div class="modal-dialog">
-            <div class="modal-content ui-widget-content" id="tab1-resizable">
+            <div class="modal-content ui-widget-content" id="onCueLog-resizable">
                 <div class="modal-header">
-                    <h2 class="modal-title">tab1 log</h2>
-                    <button type="button" class="close" onclick="closeLayer('tab1');">
+                    <h2 class="modal-title">CJ Line 6</h2>
+                    <button type="button" class="close" onclick="closeLayer('onCueLog');">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="log-layer" id="tab1-layer-log"></div>
+                    <div class="log-layer" id="onCueLog-layer-log"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-sm" onclick="startLayerLog('tab1');" style="width: 15%;">보기</button>
-                    <button type="button" class="btn btn-danger btn-sm" onclick="stopLayerLog('tab1');" style="width: 15%;">정지</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="startLayerLog('onCueLog');" style="width: 15%;">보기</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="stopLayerLog('onCueLog');" style="width: 15%;">정지</button>
                 </div>
             </div>
             <!-- /.modal-content -->

@@ -17,21 +17,8 @@ public class SampleController {
 
 	private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-	@GetMapping("/tab1")
-	public String tab1() {
+	@GetMapping("/onCueLog")
+	public String getOnCueLog() {
 		return  sdf.format(new Date()) + " [restartedMain] o.s.s.web.DefaultSecurityFilterChain ";
 	}
-
-	@GetMapping("/tab2")
-	public String tab2() {
-		return  sdf.format(new Date()) + " [restartedMain] o.s.s.web.DefaultSecurityFilterChain ";
-	}
-
-
-	@GetMapping("/tab3")
-	public String tab3() {
-		return  sdf.format(new Date()) + " [restartedMain] o.s.s.web.DefaultSecurityFilterChain ";
-	}
-
-
 }

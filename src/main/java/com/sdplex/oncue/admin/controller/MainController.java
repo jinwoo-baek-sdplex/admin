@@ -18,44 +18,25 @@ public class MainController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/login")
+    @GetMapping({"/", "/login"})
     public String logIn() {
         return "login";
     }
 
-    @GetMapping("/dashboard2")
-    public String dashboard2() {
-        return "dashboard2";
+    @GetMapping("/passwordChange")
+    public String passwordChange() {
+        return "passwordChange";
     }
 
-    @GetMapping("/dashboard3")
-    public String dashboard3() {
-        return "dashboard3";
+    @GetMapping("/dashboard")
+    public String dashboard() {
+        return "dashboard";
     }
 
-    // 삭제 예정
-    @GetMapping("/management")
-    public String onCueManagement() {
-        return "management";
-    }
-
-    // OnCue Detail1 페이지 호출
-    @GetMapping("/detail1")
-    public String onCueDetail1() {
-        return "detail1";
-    }
-
-    // OnCue Detail2 페이지 호출
-    @GetMapping("/detail2")
-    public String onCueDetail2() {
-        return "detail2";
-    }
-
-
-    // OnCue Detail3 페이지 호출
-    @GetMapping("/detail3")
-    public String onCueDetail3() {
-        return "detail3";
+    // OnCue Detail 페이지 호출
+    @GetMapping("/detail")
+    public String onCueDetail() {
+        return "detail";
     }
 
     // NotificationBox 페이지 호출
