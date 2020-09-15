@@ -41,250 +41,325 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="far fa-chart-bar"></i>
-                                OnCue Resource Usage
+                                OnCue Chart
                             </h3>
 
                             <div class="card-tools">
-                                Real time
-                                <div class="btn-group" id="realtime" data-toggle="btn-toggle">
-                                    <button type="button" class="btn btn-default active" data-toggle="on">On
-                                    </button>
-                                    <button type="button" class="btn btn-default" data-toggle="off">Off</button>
-                                </div>
+                                <ul class="nav nav-pills ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#performance-area" onclick="clickedPerformanceTab(this);"
+                                           data-toggle="tab">Performance</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#resource-area" data-toggle="tab">Resource</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4 text-center">
-                                    <div id="interactive1" style="height: 260px; padding: 0px; position: relative;">
-                                        <canvas class="flot-base" width="617" height="260"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
-                                        <canvas class="flot-overlay" width="617" height="260"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
-                                        <div class="flot-svg"
-                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                            <svg style="width: 100%; height: 100%;">
-                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="28" y="294" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">0
-                                                    </text>
-                                                    <text x="69.86182133838383" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">10
-                                                    </text>
-                                                    <text x="115.70020517676768" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">20
-                                                    </text>
-                                                    <text x="161.53858901515153" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">30
-                                                    </text>
-                                                    <text x="207.37697285353536" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">40
-                                                    </text>
-                                                    <text x="253.21535669191923" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">50
-                                                    </text>
-                                                    <text x="299.05374053030306" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">60
-                                                    </text>
-                                                    <text x="344.8921243686869" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">70
-                                                    </text>
-                                                    <text x="390.7305082070707" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">80
-                                                    </text>
-                                                    <text x="436.56889204545456" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">90
-                                                    </text>
-                                                </g>
-                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="8.953125" y="269" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">0
-                                                    </text>
-                                                    <text x="1" y="218.2" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">20
-                                                    </text>
-                                                    <text x="1" y="167.4" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">40
-                                                    </text>
-                                                    <text x="1" y="116.6" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">60
-                                                    </text>
-                                                    <text x="1" y="65.8" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">80
-                                                    </text>
-                                                    <text x="-6.953125" y="15" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">100
-                                                    </text>
-                                                </g>
-                                            </svg>
+                            <div class="tab-content p-0">
+                                <div class="chart tab-pane active" id="performance-area">
+                                    <div class="row">
+                                        <div class="col-md-6 text-center">
+                                            <div id="processingSpeed-chart"
+                                                 style="height: 210px; padding: 0px; position: relative;">
+                                                <canvas class="flot-base" width="246" height="280"
+                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                                <canvas class="flot-overlay" width="246" height="280"
+                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+
+                                                <div class="flot-svg"
+                                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                                    <svg style="width: 100%; height: 100%;">
+                                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                            <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">0
+                                                            </text>
+                                                            <text x="66.27962121212121" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">20
+                                                            </text>
+                                                            <text x="107.37174242424243" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">40
+                                                            </text>
+                                                            <text x="148.46386363636364" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">60
+                                                            </text>
+                                                            <text x="189.55598484848485" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">80
+                                                            </text>
+                                                        </g>
+                                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                            <text x="9.625" y="248.24999999999997"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">0
+                                                            </text>
+                                                            <text x="1" y="201.85" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">20
+                                                            </text>
+                                                            <text x="1" y="155.45" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">40
+                                                            </text>
+                                                            <text x="1" y="109.05" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">60
+                                                            </text>
+                                                            <text x="1" y="62.65" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">80
+                                                            </text>
+                                                            <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">100
+                                                            </text>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 text-center">
+                                            <div id="processingData-chart"
+                                                 style="height: 210px; padding: 0px; position: relative;">
+                                                <canvas class="flot-base" width="246" height="280"
+                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                                <canvas class="flot-overlay" width="246" height="280"
+                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+
+                                                <div class="flot-svg"
+                                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                                    <svg style="width: 100%; height: 100%;">
+                                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                            <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">0
+                                                            </text>
+                                                            <text x="66.27962121212121" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">20
+                                                            </text>
+                                                            <text x="107.37174242424243" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">40
+                                                            </text>
+                                                            <text x="148.46386363636364" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">60
+                                                            </text>
+                                                            <text x="189.55598484848485" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">80
+                                                            </text>
+                                                        </g>
+                                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                            <text x="9.625" y="248.24999999999997"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">0
+                                                            </text>
+                                                            <text x="1" y="201.85" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">20
+                                                            </text>
+                                                            <text x="1" y="155.45" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">40
+                                                            </text>
+                                                            <text x="1" y="109.05" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">60
+                                                            </text>
+                                                            <text x="1" y="62.65" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">80
+                                                            </text>
+                                                            <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">100
+                                                            </text>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <label>CPU</label>
                                 </div>
-                                <div class="col-md-4 text-center">
-                                    <div id="interactive2" style="height: 260px; padding: 0px; position: relative;">
-                                        <canvas class="flot-base" width="617" height="260"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
-                                        <canvas class="flot-overlay" width="617" height="260"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
-                                        <div class="flot-svg"
-                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                            <svg style="width: 100%; height: 100%;">
-                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="28" y="294" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">0
-                                                    </text>
-                                                    <text x="69.86182133838383" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">10
-                                                    </text>
-                                                    <text x="115.70020517676768" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">20
-                                                    </text>
-                                                    <text x="161.53858901515153" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">30
-                                                    </text>
-                                                    <text x="207.37697285353536" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">40
-                                                    </text>
-                                                    <text x="253.21535669191923" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">50
-                                                    </text>
-                                                    <text x="299.05374053030306" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">60
-                                                    </text>
-                                                    <text x="344.8921243686869" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">70
-                                                    </text>
-                                                    <text x="390.7305082070707" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">80
-                                                    </text>
-                                                    <text x="436.56889204545456" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">90
-                                                    </text>
-                                                </g>
-                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="8.953125" y="269" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">0
-                                                    </text>
-                                                    <text x="1" y="218.2" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">20
-                                                    </text>
-                                                    <text x="1" y="167.4" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">40
-                                                    </text>
-                                                    <text x="1" y="116.6" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">60
-                                                    </text>
-                                                    <text x="1" y="65.8" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">80
-                                                    </text>
-                                                    <text x="-6.953125" y="15" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">100
-                                                    </text>
-                                                </g>
-                                            </svg>
+                                <div class="chart tab-pane" id="resource-area">
+                                    <div class="row">
+                                        <div class="col-md-4 text-center">
+                                            <div id="cpu-chart"
+                                                 style="height: 210px; padding: 0px; position: relative;">
+                                                <canvas class="flot-base" width="246" height="280"
+                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                                <canvas class="flot-overlay" width="246" height="280"
+                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+
+                                                <div class="flot-svg"
+                                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                                    <svg style="width: 100%; height: 100%;">
+                                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                            <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">0
+                                                            </text>
+                                                            <text x="66.27962121212121" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">20
+                                                            </text>
+                                                            <text x="107.37174242424243" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">40
+                                                            </text>
+                                                            <text x="148.46386363636364" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">60
+                                                            </text>
+                                                            <text x="189.55598484848485" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">80
+                                                            </text>
+                                                        </g>
+                                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                            <text x="9.625" y="248.24999999999997"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">0
+                                                            </text>
+                                                            <text x="1" y="201.85" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">20
+                                                            </text>
+                                                            <text x="1" y="155.45" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">40
+                                                            </text>
+                                                            <text x="1" y="109.05" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">60
+                                                            </text>
+                                                            <text x="1" y="62.65" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">80
+                                                            </text>
+                                                            <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">100
+                                                            </text>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <div id="memory-chart"
+                                                 style="height: 210px; padding: 0px; position: relative;">
+                                                <canvas class="flot-base" width="246" height="280"
+                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                                <canvas class="flot-overlay" width="246" height="280"
+                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+
+                                                <div class="flot-svg"
+                                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                                    <svg style="width: 100%; height: 100%;">
+                                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                            <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">0
+                                                            </text>
+                                                            <text x="66.27962121212121" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">20
+                                                            </text>
+                                                            <text x="107.37174242424243" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">40
+                                                            </text>
+                                                            <text x="148.46386363636364" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">60
+                                                            </text>
+                                                            <text x="189.55598484848485" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">80
+                                                            </text>
+                                                        </g>
+                                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                            <text x="9.625" y="248.24999999999997"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">0
+                                                            </text>
+                                                            <text x="1" y="201.85" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">20
+                                                            </text>
+                                                            <text x="1" y="155.45" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">40
+                                                            </text>
+                                                            <text x="1" y="109.05" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">60
+                                                            </text>
+                                                            <text x="1" y="62.65" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">80
+                                                            </text>
+                                                            <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">100
+                                                            </text>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <div id="disk-chart"
+                                                 style="height: 210px; padding: 0px; position: relative;">
+                                                <canvas class="flot-base" width="246" height="280"
+                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                                <canvas class="flot-overlay" width="246" height="280"
+                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+
+                                                <div class="flot-svg"
+                                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                                    <svg style="width: 100%; height: 100%;">
+                                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                            <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">0
+                                                            </text>
+                                                            <text x="66.27962121212121" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">20
+                                                            </text>
+                                                            <text x="107.37174242424243" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">40
+                                                            </text>
+                                                            <text x="148.46386363636364" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">60
+                                                            </text>
+                                                            <text x="189.55598484848485" y="273.75"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: center;">80
+                                                            </text>
+                                                        </g>
+                                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                            <text x="9.625" y="248.24999999999997"
+                                                                  class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">0
+                                                            </text>
+                                                            <text x="1" y="201.85" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">20
+                                                            </text>
+                                                            <text x="1" y="155.45" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">40
+                                                            </text>
+                                                            <text x="1" y="109.05" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">60
+                                                            </text>
+                                                            <text x="1" y="62.65" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">80
+                                                            </text>
+                                                            <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
+                                                                  style="position: absolute; text-align: right;">100
+                                                            </text>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <label>Memory</label>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <div id="interactive3" style="height: 260px; padding: 0px; position: relative;">
-                                        <canvas class="flot-base" width="617" height="260"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
-                                        <canvas class="flot-overlay" width="617" height="260"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 493.8px; height: 300px;"></canvas>
-                                        <div class="flot-svg"
-                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                            <svg style="width: 100%; height: 100%;">
-                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="28" y="294" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">0
-                                                    </text>
-                                                    <text x="69.86182133838383" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">10
-                                                    </text>
-                                                    <text x="115.70020517676768" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">20
-                                                    </text>
-                                                    <text x="161.53858901515153" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">30
-                                                    </text>
-                                                    <text x="207.37697285353536" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">40
-                                                    </text>
-                                                    <text x="253.21535669191923" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">50
-                                                    </text>
-                                                    <text x="299.05374053030306" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">60
-                                                    </text>
-                                                    <text x="344.8921243686869" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">70
-                                                    </text>
-                                                    <text x="390.7305082070707" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">80
-                                                    </text>
-                                                    <text x="436.56889204545456" y="294"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">90
-                                                    </text>
-                                                </g>
-                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="8.953125" y="269" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">0
-                                                    </text>
-                                                    <text x="1" y="218.2" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">20
-                                                    </text>
-                                                    <text x="1" y="167.4" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">40
-                                                    </text>
-                                                    <text x="1" y="116.6" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">60
-                                                    </text>
-                                                    <text x="1" y="65.8" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">80
-                                                    </text>
-                                                    <text x="-6.953125" y="15" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">100
-                                                    </text>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <label>Disk Space</label>
                                 </div>
                             </div>
                         </div>
@@ -432,21 +507,13 @@
                             <h3 class="profile-username text-center">CJ Line 6</h3>
 
                             <p class="text-muted text-center">Running</p>
-
-                            <ul class="list-group list-group-unbordered mb-3">
-                                <li class="list-group-item">
-                                    <b>Processing Speed</b> <a class="float-right">102 / min</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <b>Processing Data Count</b> <a class="float-right">13,287</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <b>OnCue Version</b> <a class="float-right">0.9.1</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <b>Started Date</b> <a class="float-right">2020-08-19</a>
-                                </li>
-                            </ul>
+                            <div class="form-group">
+                                <label for="startStopControl">OnCue Start Stop</label>
+                                <div class="btn-group btn-toggle float-right" id="startStopControl">
+                                    <button class="btn btn-sm btn-primary active">Start</button>
+                                    <button class="btn btn-sm btn-default">Stop</button>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">OnCue Host Name</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1"
@@ -458,21 +525,27 @@
                                        placeholder="192.168.1.251">
                             </div>
                             <div class="form-group">
-                                <label>Log File Save Period (Days)</label>
-                                <input type="text" class="form-control" placeholder="192.168.1.251">
+                                <label>Started Date</label>
+                                <input type="text" class="form-control" placeholder="2020-09-15" disabled>
                             </div>
                             <div class="form-group">
-                                <!--                                <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">-->
-                                <!--                                    <input type="checkbox" class="custom-control-input" id="customSwitch3">-->
-                                <!--                                    <label class="custom-control-label" for="customSwitch3">OnCue Switch </label>-->
-                                <!--                                </div>-->
-                                <label for="startStopControl">OnCue Start / Stop</label>
-                                <br>
-                                <div class="btn-group btn-toggle" id="startStopControl">
-                                    <button class="btn btn-sm btn-primary active">Start</button>
-                                    <button class="btn btn-sm btn-default">Stop</button>
-                                </div>
+                                <label>OnCue Version</label>
+                                <input type="text" class="form-control" placeholder="0.9.1" disabled>
                             </div>
+                            <!--                            <ul class="list-group list-group-unbordered mb-3">-->
+                            <!--                                <li class="list-group-item">-->
+                            <!--                                    <b>Processing Speed</b> <a class="float-right">102 / min</a>-->
+                            <!--                                </li>-->
+                            <!--                                <li class="list-group-item">-->
+                            <!--                                    <b>Processing Data Count</b> <a class="float-right">13,287</a>-->
+                            <!--                                </li>-->
+                            <!--                                <li class="list-group-item">-->
+                            <!--                                    <b>OnCue Version</b> <a class="float-right">0.9.1</a>-->
+                            <!--                                </li>-->
+                            <!--                                <li class="list-group-item">-->
+                            <!--                                    <b>Started Date</b> <a class="float-right">2020-08-19</a>-->
+                            <!--                                </li>-->
+                            <!--                            </ul>-->
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer text-right">
@@ -494,176 +567,8 @@
     <script th:src="@{/plugins/flot/jquery.flot.js}"></script>
     <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
     <script th:src="@{/plugins/flot-old/jquery.flot.resize.min.js}"></script>
-    <script>
-        $(function () {
-            /*
-             * Flot Interactive Chart
-             * -----------------------
-             */
-            // We use an inline data source in the example, usually data would
-            // be fetched from a server
-            var data = [],
-                totalPoints = 100
-
-            function getRandomData() {
-
-                if (data.length > 0) {
-                    data = data.slice(1)
-                }
-
-                // Do a random walk
-                while (data.length < totalPoints) {
-
-                    var prev = data.length > 0 ? data[data.length - 1] : 50,
-                        y = prev + Math.random() * 10 - 5
-
-                    if (y < 0) {
-                        y = 0
-                    } else if (y > 100) {
-                        y = 100
-                    }
-
-                    data.push(y)
-                }
-
-                // Zip the generated y values with the x values
-                var res = []
-                for (var i = 0; i < data.length; ++i) {
-                    res.push([i, data[i]])
-                }
-
-                return res
-            }
-
-            var interactive1_plot = $.plot('#interactive1', [
-                    {
-                        data: getRandomData(),
-                    }
-                ],
-                {
-                    grid: {
-                        borderColor: '#f3f3f3',
-                        borderWidth: 1,
-                        tickColor: '#f3f3f3'
-                    },
-                    series: {
-                        color: '#3c8dbc',
-                        lines: {
-                            lineWidth: 2,
-                            show: true,
-                            fill: true,
-                        },
-                    },
-                    yaxis: {
-                        min: 0,
-                        max: 100,
-                        show: true
-                    },
-                    xaxis: {
-                        show: true
-                    }
-                }
-            )
-            var interactive2_plot = $.plot('#interactive2', [
-                    {
-                        data: getRandomData(),
-                    }
-                ],
-                {
-                    grid: {
-                        borderColor: '#f3f3f3',
-                        borderWidth: 1,
-                        tickColor: '#f3f3f3'
-                    },
-                    series: {
-                        color: '#3c8dbc',
-                        lines: {
-                            lineWidth: 2,
-                            show: true,
-                            fill: true,
-                        },
-                    },
-                    yaxis: {
-                        min: 0,
-                        max: 100,
-                        show: true
-                    },
-                    xaxis: {
-                        show: true
-                    }
-                }
-            )
-            var interactive3_plot = $.plot('#interactive3', [
-                    {
-                        data: getRandomData(),
-                    }
-                ],
-                {
-                    grid: {
-                        borderColor: '#f3f3f3',
-                        borderWidth: 1,
-                        tickColor: '#f3f3f3'
-                    },
-                    series: {
-                        color: '#3c8dbc',
-                        lines: {
-                            lineWidth: 2,
-                            show: true,
-                            fill: true,
-                        },
-                    },
-                    yaxis: {
-                        min: 0,
-                        max: 100,
-                        show: true
-                    },
-                    xaxis: {
-                        show: true
-                    }
-                }
-            )
-
-            var updateInterval = 3000 //Fetch data ever x milliseconds
-            var realtime = 'on' //If == to on then fetch data every x seconds. else stop fetching
-            function update() {
-
-                interactive1_plot.setData([getRandomData()])
-                interactive2_plot.setData([getRandomData()])
-                interactive3_plot.setData([getRandomData()])
-
-                // Since the axes don't change, we don't need to call plot.setupGrid()
-                interactive1_plot.draw()
-                if (realtime === 'on') {
-                    setTimeout(update, updateInterval)
-                }
-                interactive2_plot.draw()
-                if (realtime === 'on') {
-                    setTimeout(update, updateInterval)
-                }
-                interactive3_plot.draw()
-                if (realtime === 'on') {
-                    setTimeout(update, updateInterval)
-                }
-            }
-
-            //INITIALIZE REALTIME DATA FETCHING
-            if (realtime === 'on') {
-                update()
-            }
-            //REALTIME TOGGLE
-            $('#realtime .btn').click(function () {
-                if ($(this).data('toggle') === 'on') {
-                    realtime = 'on'
-                } else {
-                    realtime = 'off'
-                }
-                update()
-            })
-            /*
-             * END INTERACTIVE CHART
-             */
-        })
-    </script>
+    <!-- About Dashboard -->
+    <script th:src="@{/scripts/detail.js}"></script>
 </th:block>
 </body>
 </html>

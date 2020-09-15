@@ -111,86 +111,88 @@ $(function () {
 })
 
 
-
 // About Log
-var timer;
+$(function () {
+    var timer;
 
-function clickedAdminLogTab(tabLink) {
-    $(tabLink).tab("show");
-    alert(tabLink.getAttribute("class"));
-}
+    function clickedAdminLogTab(tabLink) {
+        $(tabLink).tab("show");
+    }
 
-function clickedTab(tabLink) {
-    var url = tabLink.getAttribute("data-url");
-    var href = tabLink.hash + "-log";
-    $(tabLink).tab("show");
+    function clickedTab(tabLink) {
+        var url = tabLink.getAttribute("data-url");
+        var href = tabLink.hash + "-log";
+        $(tabLink).tab("show");
 
-    if (timer) {
+        if (timer) {
+            clearInterval(timer);
+        }
+
+        timer = setInterval(function () {
+            setTabContent(url, href);
+        }, 1000);
+    }
+
+    function setTabContent(url, href) {
+        $.get(url, function (result) {
+            $(href).append(result + "<br/>");
+            $(href).scrollTop($(href).prop('scrollHeight'));
+        });
+    }
+
+    function startLog(tab) {
+        timer = setInterval(function () {
+            setTabContent("/sample/" + tab, "#" + tab + "-log");
+        }, 1000);
+    }
+
+    function stopLog() {
         clearInterval(timer);
     }
 
-    timer = setInterval(function () {
-        setTabContent(url, href);
-    }, 1000);
-}
+    var layerTimer = {};
 
-function setTabContent(url, href) {
-    $.get(url, function (result) {
-        $(href).append(result + "<br/>");
-        $(href).scrollTop($(href).prop('scrollHeight'));
-    });
-}
+    function openLogLayer(tab) {
+        var layer = $("#" + tab + "-layer");
+        layer.draggable({handle: ".modal-header"});
+        layer.modal({backdrop: false});
 
-function startLog(tab) {
-    timer = setInterval(function () {
-        setTabContent("/sample/" + tab, "#" + tab + "-log");
-    }, 1000);
-}
+        layerTimer[tab] = setInterval(function () {
+            setTabContent("/sample/" + tab, "#" + tab + "-layer-log");
+        }, 1000);
 
-function stopLog() {
-    clearInterval(timer);
-}
+        $("#" + tab + "-resizable").resizable({
+            helper: "ui-resizable-helper",
+            maxHeight: 600,
+            maxWidth: 800,
+            minHeight: 200,
+            minWidth: 400,
+            stop: function (e, ui) {
+                ui.element[0].children[1].children[0].style.height = (ui.size.height - 105) + "px";
+            }
+        });
+    }
 
-var layerTimer = {};
+    function closeLayer(tab) {
+        clearInterval(layerTimer[tab]);
+        $("#" + tab + "-layer").modal("hide");
+    }
 
-function openLogLayer(tab) {
-    var layer = $("#" + tab + "-layer");
-    layer.draggable({handle: ".modal-header"});
-    layer.modal({backdrop: false});
+    function startLayerLog(tab) {
+        layerTimer[tab] = setInterval(function () {
+            setTabContent("/sample/" + tab, "#" + tab + "-layer-log");
+        }, 1000);
+    }
 
-    layerTimer[tab] = setInterval(function () {
-        setTabContent("/sample/" + tab, "#" + tab + "-layer-log");
-    }, 1000);
-
-    $("#" + tab + "-resizable").resizable({
-        helper: "ui-resizable-helper",
-        maxHeight: 600,
-        maxWidth: 800,
-        minHeight: 200,
-        minWidth: 400,
-        stop: function (e, ui) {
-            ui.element[0].children[1].children[0].style.height = (ui.size.height - 105) + "px";
-        }
-    });
-}
-
-function closeLayer(tab) {
-    clearInterval(layerTimer[tab]);
-    $("#" + tab + "-layer").modal("hide");
-}
-
-function startLayerLog(tab) {
-    layerTimer[tab] = setInterval(function () {
-        setTabContent("/sample/" + tab, "#" + tab + "-layer-log");
-    }, 1000);
-}
-
-function stopLayerLog(tab) {
-    clearInterval(layerTimer[tab]);
-}
+    function stopLayerLog(tab) {
+        clearInterval(layerTimer[tab]);
+    }
 
 // $(document).ready(function () {
 //     timer = setInterval(function () {
 //         setTabContent("/sample/onCueLog", "#onCueLog-log");
 //     }, 1000);
 // });
+
+
+})
