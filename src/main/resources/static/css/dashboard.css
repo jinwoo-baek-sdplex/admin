@@ -1,7 +1,7 @@
 
 .log-tab {
     margin-top: 0px;
-    height: 175px;
+    height: 219px;
     overflow-y: scroll;
     background: #ffffff;
     color: #000000;
@@ -57,5 +57,5 @@
 }
 
 .table-dashboard {
-    max-height: 185px;
+    max-height: 219px;
 }

@@ -37,483 +37,426 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-9">
+                    <!-- chart -->
+                    <div class="row">
+                        <div class="col-md-4" id="chart1">
+                            <div class="card card-primary card-outline">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="far fa-chart-bar"></i>
+                                        OnCue Chart
+                                    </h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                                class="fas fa-minus"></i></button>
+                                        <button type="button" class="btn btn-tool dropdown-toggle"
+                                                data-toggle="dropdown"><i
+                                                class="fas fa-ellipsis-v"></i>
+                                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    CPU Resource
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Memory Resource
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Disk Resource
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Processing Speed
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Processed Data Count
+                                                </a>
+                                                <!--                                                <div class="dropdown-divider"></div>-->
+                                                <!--                                                <a href="#" class="dropdown-item dropdown-footer">See All-->
+                                                <!--                                                    Notifications</a>-->
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div id="cpu-chart"
+                                         style="height: 210px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="246" height="280"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                        <canvas class="flot-overlay" width="246" height="280"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+
+                                        <div class="flot-svg"
+                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                            <svg style="width: 100%; height: 100%;">
+                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">0
+                                                    </text>
+                                                    <text x="66.27962121212121" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">20
+                                                    </text>
+                                                    <text x="107.37174242424243" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">40
+                                                    </text>
+                                                    <text x="148.46386363636364" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">60
+                                                    </text>
+                                                    <text x="189.55598484848485" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">80
+                                                    </text>
+                                                </g>
+                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="9.625" y="248.24999999999997"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">0
+                                                    </text>
+                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">20
+                                                    </text>
+                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">40
+                                                    </text>
+                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">60
+                                                    </text>
+                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">80
+                                                    </text>
+                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">100
+                                                    </text>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <label>Processing Speed</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" id="chart2">
+                            <div class="card card-primary card-outline">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="far fa-chart-bar"></i>
+                                        OnCue Chart
+                                    </h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                                class="fas fa-minus"></i></button>
+                                        <button type="button" class="btn btn-tool dropdown-toggle"
+                                                data-toggle="dropdown"><i
+                                                class="fas fa-ellipsis-v"></i>
+                                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    CPU Resource
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Memory Resource
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Disk Resource
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Processing Speed
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Processed Data Count
+                                                </a>
+                                                <!--                                                <div class="dropdown-divider"></div>-->
+                                                <!--                                                <a href="#" class="dropdown-item dropdown-footer">See All-->
+                                                <!--                                                    Notifications</a>-->
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div id="memory-chart"
+                                         style="height: 210px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="246" height="280"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                        <canvas class="flot-overlay" width="246" height="280"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+
+                                        <div class="flot-svg"
+                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                            <svg style="width: 100%; height: 100%;">
+                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">0
+                                                    </text>
+                                                    <text x="66.27962121212121" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">20
+                                                    </text>
+                                                    <text x="107.37174242424243" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">40
+                                                    </text>
+                                                    <text x="148.46386363636364" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">60
+                                                    </text>
+                                                    <text x="189.55598484848485" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">80
+                                                    </text>
+                                                </g>
+                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="9.625" y="248.24999999999997"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">0
+                                                    </text>
+                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">20
+                                                    </text>
+                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">40
+                                                    </text>
+                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">60
+                                                    </text>
+                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">80
+                                                    </text>
+                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">100
+                                                    </text>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <label>Processed Data Count</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" id="chart3">
+                            <div class="card card-primary card-outline">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="far fa-chart-bar"></i>
+                                        OnCue Chart
+                                    </h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                                class="fas fa-minus"></i></button>
+                                        <button type="button" class="btn btn-tool dropdown-toggle"
+                                                data-toggle="dropdown"><i
+                                                class="fas fa-ellipsis-v"></i>
+                                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    CPU Resource
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Memory Resource
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Disk Resource
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Processing Speed
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                    Processed Data Count
+                                                </a>
+                                                <!--                                                <div class="dropdown-divider"></div>-->
+                                                <!--                                                <a href="#" class="dropdown-item dropdown-footer">See All-->
+                                                <!--                                                    Notifications</a>-->
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div id="donut-chart" style="height: 210px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="324" height="300"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 324px; height: 300px;"></canvas>
+                                        <canvas class="flot-overlay" width="324" height="300"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 324px; height: 300px;"></canvas>
+                                        <span class="pieLabel" id="pieLabel0"
+                                              style="position: absolute; top: 70px; left: 219.953px;"><div
+                                                style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Usage<br>30%</div></span><span
+                                            class="pieLabel" id="pieLabel2"
+                                            style="position: absolute; top: 129px; left: 38.9531px;"><div
+                                            style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Empty<br>70%</div></span>
+                                    </div>
+                                    <label>Disk</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- connected device -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-primary card-outline">
+                                <div class="card-header">
+                                    <h3 class="card-title">Connected Devices</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                                class="fas fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-head-fixed text-nowrap table-sm">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 1%">No</th>
+                                            <th style="width: 19%" class="text-center">Path Id</th>
+                                            <th style="width: 10%" class="text-center">Protocol</th>
+                                            <th style="width: 15%" class="text-center">Url</th>
+                                            <th style="width: 15%" class="text-center">Module Status</th>
+                                            <th style="width: 10%" class="text-center">Version</th>
+                                            <th style="width: 10%" class="text-center">Connected</th>
+                                            <th style="width: 10%" class="text-center">Disconnected</th>
+                                            <th style="width: 10%" class="text-center">In use</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="text-center">connectionName1</td>
+                                            <td class="text-center">Modbus</td>
+                                            <td class="text-center">
+                                                192.168.1.12
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
+                                            </td>
+                                            <td class="text-center">7.25</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td class="text-center">connectionName2</td>
+                                            <td class="text-center">Modbus</td>
+                                            <td class="text-center">
+                                                192.168.1.12
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
+                                            </td>
+                                            <td class="text-center">7.25</td>
+                                            <td class="text-center">3</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td class="text-center">connectionName3</td>
+                                            <td class="text-center">Modbus</td>
+                                            <td class="text-center">
+                                                192.168.1.12
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-warning" style="width: 60%" ;>Unlicensed</span>
+                                            </td>
+                                            <td class="text-center">7.25</td>
+                                            <td class="text-center">4</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td class="text-center">connectionName4</td>
+                                            <td class="text-center">OPCDA</td>
+                                            <td class="text-center">
+                                                192.168.1.155
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-danger" style="width: 60%" ;>UnLoaded</span>
+                                            </td>
+                                            <td class="text-center">2.05a</td>
+                                            <td class="text-center">3</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td class="text-center">connectionName1</td>
+                                            <td class="text-center">Modbus</td>
+                                            <td class="text-center">
+                                                192.168.1.12
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
+                                            </td>
+                                            <td class="text-center">7.25</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td class="text-center">connectionName2</td>
+                                            <td class="text-center">Modbus</td>
+                                            <td class="text-center">
+                                                192.168.1.12
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
+                                            </td>
+                                            <td class="text-center">7.25</td>
+                                            <td class="text-center">3</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td class="text-center">connectionName3</td>
+                                            <td class="text-center">Modbus</td>
+                                            <td class="text-center">
+                                                192.168.1.12
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="badge badge-warning" style="width: 60%" ;>Unlicensed</span>
+                                            </td>
+                                            <td class="text-center">7.25</td>
+                                            <td class="text-center">4</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">4</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 오른쪽 정보 -->
+                <div class="col-md-3">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="far fa-chart-bar"></i>
-                                OnCue Chart
-                            </h3>
-
+                            <h3 class="card-title">OnCue Management</h3>
                             <div class="card-tools">
-                                <ul class="nav nav-pills ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#performance-area" onclick="clickedPerformanceTab(this);"
-                                           data-toggle="tab">Performance</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#resource-area" data-toggle="tab">Resource</a>
-                                    </li>
-                                </ul>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i></button>
+                                <!--                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="tab-content p-0">
-                                <div class="chart tab-pane active" id="performance-area">
-                                    <div class="row">
-                                        <div class="col-md-6 text-center">
-                                            <div id="processingSpeed-chart"
-                                                 style="height: 210px; padding: 0px; position: relative;">
-                                                <canvas class="flot-base" width="246" height="280"
-                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                                <canvas class="flot-overlay" width="246" height="280"
-                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-
-                                                <div class="flot-svg"
-                                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                                    <svg style="width: 100%; height: 100%;">
-                                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                            <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">0
-                                                            </text>
-                                                            <text x="66.27962121212121" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">20
-                                                            </text>
-                                                            <text x="107.37174242424243" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">40
-                                                            </text>
-                                                            <text x="148.46386363636364" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">60
-                                                            </text>
-                                                            <text x="189.55598484848485" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">80
-                                                            </text>
-                                                        </g>
-                                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                            <text x="9.625" y="248.24999999999997"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">0
-                                                            </text>
-                                                            <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">20
-                                                            </text>
-                                                            <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">40
-                                                            </text>
-                                                            <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">60
-                                                            </text>
-                                                            <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">80
-                                                            </text>
-                                                            <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">100
-                                                            </text>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 text-center">
-                                            <div id="processingData-chart"
-                                                 style="height: 210px; padding: 0px; position: relative;">
-                                                <canvas class="flot-base" width="246" height="280"
-                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                                <canvas class="flot-overlay" width="246" height="280"
-                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-
-                                                <div class="flot-svg"
-                                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                                    <svg style="width: 100%; height: 100%;">
-                                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                            <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">0
-                                                            </text>
-                                                            <text x="66.27962121212121" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">20
-                                                            </text>
-                                                            <text x="107.37174242424243" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">40
-                                                            </text>
-                                                            <text x="148.46386363636364" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">60
-                                                            </text>
-                                                            <text x="189.55598484848485" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">80
-                                                            </text>
-                                                        </g>
-                                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                            <text x="9.625" y="248.24999999999997"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">0
-                                                            </text>
-                                                            <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">20
-                                                            </text>
-                                                            <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">40
-                                                            </text>
-                                                            <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">60
-                                                            </text>
-                                                            <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">80
-                                                            </text>
-                                                            <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">100
-                                                            </text>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="chart tab-pane" id="resource-area">
-                                    <div class="row">
-                                        <div class="col-md-4 text-center">
-                                            <div id="cpu-chart"
-                                                 style="height: 210px; padding: 0px; position: relative;">
-                                                <canvas class="flot-base" width="246" height="280"
-                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                                <canvas class="flot-overlay" width="246" height="280"
-                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-
-                                                <div class="flot-svg"
-                                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                                    <svg style="width: 100%; height: 100%;">
-                                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                            <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">0
-                                                            </text>
-                                                            <text x="66.27962121212121" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">20
-                                                            </text>
-                                                            <text x="107.37174242424243" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">40
-                                                            </text>
-                                                            <text x="148.46386363636364" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">60
-                                                            </text>
-                                                            <text x="189.55598484848485" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">80
-                                                            </text>
-                                                        </g>
-                                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                            <text x="9.625" y="248.24999999999997"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">0
-                                                            </text>
-                                                            <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">20
-                                                            </text>
-                                                            <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">40
-                                                            </text>
-                                                            <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">60
-                                                            </text>
-                                                            <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">80
-                                                            </text>
-                                                            <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">100
-                                                            </text>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <div id="memory-chart"
-                                                 style="height: 210px; padding: 0px; position: relative;">
-                                                <canvas class="flot-base" width="246" height="280"
-                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                                <canvas class="flot-overlay" width="246" height="280"
-                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-
-                                                <div class="flot-svg"
-                                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                                    <svg style="width: 100%; height: 100%;">
-                                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                            <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">0
-                                                            </text>
-                                                            <text x="66.27962121212121" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">20
-                                                            </text>
-                                                            <text x="107.37174242424243" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">40
-                                                            </text>
-                                                            <text x="148.46386363636364" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">60
-                                                            </text>
-                                                            <text x="189.55598484848485" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">80
-                                                            </text>
-                                                        </g>
-                                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                            <text x="9.625" y="248.24999999999997"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">0
-                                                            </text>
-                                                            <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">20
-                                                            </text>
-                                                            <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">40
-                                                            </text>
-                                                            <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">60
-                                                            </text>
-                                                            <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">80
-                                                            </text>
-                                                            <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">100
-                                                            </text>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <div id="disk-chart"
-                                                 style="height: 210px; padding: 0px; position: relative;">
-                                                <canvas class="flot-base" width="246" height="280"
-                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                                <canvas class="flot-overlay" width="246" height="280"
-                                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-
-                                                <div class="flot-svg"
-                                                     style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                                    <svg style="width: 100%; height: 100%;">
-                                                        <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                            <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">0
-                                                            </text>
-                                                            <text x="66.27962121212121" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">20
-                                                            </text>
-                                                            <text x="107.37174242424243" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">40
-                                                            </text>
-                                                            <text x="148.46386363636364" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">60
-                                                            </text>
-                                                            <text x="189.55598484848485" y="273.75"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: center;">80
-                                                            </text>
-                                                        </g>
-                                                        <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                           style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                            <text x="9.625" y="248.24999999999997"
-                                                                  class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">0
-                                                            </text>
-                                                            <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">20
-                                                            </text>
-                                                            <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">40
-                                                            </text>
-                                                            <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">60
-                                                            </text>
-                                                            <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">80
-                                                            </text>
-                                                            <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                                  style="position: absolute; text-align: right;">100
-                                                            </text>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body-->
-                    </div>
-                    <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h3 class="card-title">Connected Devices</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body table-responsive p-0">
-                            <table class="table table-head-fixed text-nowrap table-sm">
-                                <thead>
-                                <tr>
-                                    <th style="width: 1%">No</th>
-                                    <th style="width: 19%" class="text-center">Path Id</th>
-                                    <th style="width: 10%" class="text-center">Protocol</th>
-                                    <th style="width: 15%" class="text-center">Url</th>
-                                    <th style="width: 15%" class="text-center">Module Status</th>
-                                    <th style="width: 10%" class="text-center">Version</th>
-                                    <th style="width: 10%" class="text-center">Connected</th>
-                                    <th style="width: 10%" class="text-center">Disconnected</th>
-                                    <th style="width: 10%" class="text-center">In use</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="text-center">connectionName1</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">2</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td class="text-center">connectionName2</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">3</td>
-                                    <td class="text-center">0</td>
-                                    <td class="text-center">3</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td class="text-center">connectionName3</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-warning" style="width: 60%" ;>Unlicensed</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">4</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">4</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td class="text-center">connectionName4</td>
-                                    <td class="text-center">OPCDA</td>
-                                    <td class="text-center">
-                                        192.168.1.155
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-danger" style="width: 60%" ;>UnLoaded</span>
-                                    </td>
-                                    <td class="text-center">2.05a</td>
-                                    <td class="text-center">3</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">3</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td class="text-center">connectionName1</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">2</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td class="text-center">connectionName2</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">3</td>
-                                    <td class="text-center">0</td>
-                                    <td class="text-center">3</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td class="text-center">connectionName3</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-warning" style="width: 60%" ;>Unlicensed</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">4</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">4</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-primary card-outline">
-                        <div class="card-body box-profile">
-                            <div class="text-center">
-                                <i class="fas fa-power-off nav-icon" style="color: #00c054"></i>
-                            </div>
-
-                            <h3 class="profile-username text-center">CJ Line 6</h3>
-
-                            <p class="text-muted text-center">Running</p>
-                            <div class="form-group">
-                                <label for="startStopControl">OnCue Start Stop</label>
-                                <div class="btn-group btn-toggle float-right" id="startStopControl">
-                                    <button class="btn btn-sm btn-primary active">Start</button>
-                                    <button class="btn btn-sm btn-default">Stop</button>
-                                </div>
-                            </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">OnCue Host Name</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1"
@@ -524,28 +467,6 @@
                                 <input type="password" class="form-control" id="exampleInputPassword1"
                                        placeholder="192.168.1.251">
                             </div>
-                            <div class="form-group">
-                                <label>Started Date</label>
-                                <input type="text" class="form-control" placeholder="2020-09-15" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>OnCue Version</label>
-                                <input type="text" class="form-control" placeholder="0.9.1" disabled>
-                            </div>
-                            <!--                            <ul class="list-group list-group-unbordered mb-3">-->
-                            <!--                                <li class="list-group-item">-->
-                            <!--                                    <b>Processing Speed</b> <a class="float-right">102 / min</a>-->
-                            <!--                                </li>-->
-                            <!--                                <li class="list-group-item">-->
-                            <!--                                    <b>Processing Data Count</b> <a class="float-right">13,287</a>-->
-                            <!--                                </li>-->
-                            <!--                                <li class="list-group-item">-->
-                            <!--                                    <b>OnCue Version</b> <a class="float-right">0.9.1</a>-->
-                            <!--                                </li>-->
-                            <!--                                <li class="list-group-item">-->
-                            <!--                                    <b>Started Date</b> <a class="float-right">2020-08-19</a>-->
-                            <!--                                </li>-->
-                            <!--                            </ul>-->
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer text-right">
@@ -553,6 +474,44 @@
                             <button type="submit" class="btn btn-danger btn-sm" style="width: 19%;">Delete</button>
                         </div>
                     </div>
+                    <div class="card card-primary card-outline">
+                        <div class="card-body box-profile">
+                            <div class="text-center">
+                                <i class="fas fa-power-off nav-icon" style="color: #00c054"></i>
+                            </div>
+
+                            <h3 class="profile-username text-center">CJ Line 6</h3>
+
+                            <p class="text-muted text-center">Running</p>
+                            <ul class="list-group list-group-unbordered mb-3">
+                                <li class="list-group-item">
+                                    <b>OnCue Start Stop</b>
+                                    <div class="btn-group btn-toggle float-right" id="startStopControl2">
+                                        <button class="btn btn-sm btn-primary active">Start</button>
+                                        <button class="btn btn-sm btn-default">Stop</button>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>IP Address</b> <a class="float-right">192.182.123.1</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Processing Speed</b> <a class="float-right">1021 / min</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Processed Data</b> <a class="float-right">12021</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Started Date</b> <a class="float-right">2020-09-15</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>OnCue Version</b> <a class="float-right">0.9.1</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+
                 </div>
 
             </div>
@@ -567,6 +526,8 @@
     <script th:src="@{/plugins/flot/jquery.flot.js}"></script>
     <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
     <script th:src="@{/plugins/flot-old/jquery.flot.resize.min.js}"></script>
+    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+    <script th:src="@{/plugins/flot-old/jquery.flot.pie.min.js}"></script>
     <!-- About Dashboard -->
     <script th:src="@{/scripts/detail.js}"></script>
 </th:block>

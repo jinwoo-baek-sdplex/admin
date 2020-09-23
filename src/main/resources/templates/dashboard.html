@@ -14,30 +14,13 @@
 <div layout:fragment="content" class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Dashboard</h1>
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
-                    </ol>
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
 
+    </div>
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="small-box bg-primary">
@@ -48,8 +31,9 @@
                                 <div class="icon">
                                     <i class="far fa-plus-square"></i>
                                 </div>
-                                <a href="/notificationBox" class="small-box-footer">Click to here <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer" data-toggle="modal" data-target="#addOnCueModal">Click
+                                    to here <i
+                                            class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -67,12 +51,13 @@
                         <div class="col-md-4">
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>15</h3>
+                                    <h3>8</h3>
                                     <p>Notification</p>
                                 </div>
                                 <div class="icon">
                                     <i class="far fa-lightbulb"></i></div>
-                                <a href="/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="/notificationBox" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -84,8 +69,6 @@
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
                                                 class="fas fa-minus"></i></button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                                class="fas fa-times"></i></button>
                                     </div>
                                 </div>
                                 <div class="card-body table-responsive table-dashboard p-0">
@@ -104,10 +87,10 @@
                                             <th style="width: 10%" class="text-center">
                                                 Status
                                             </th>
-                                            <th style="width: 10%" class="text-center">
+                                            <th style="width: 15%" class="text-center">
                                                 Processing Speed
                                             </th>
-                                            <th style="width: 20%" class="text-center">
+                                            <th style="width: 15%" class="text-center">
                                                 Started Date
                                             </th>
                                             <th style="width: 17%">
@@ -290,250 +273,240 @@
                                 <div class="card-header p-0 pt-1">
                                     <ul class="nav nav-tabs" id="tabs" role="tablist">
                                         <li class="nav-item">
-                                            <a href="#adminLogTab" onclick="clickedAdminLogTab(this);" data-url="tab"
-                                               class="nav-link active"
-                                               role="tab">Admin Log</a>
+                                            <a href="#notificationTab" onclick="clickedNotiTab(this);" data-url="tab" class="nav-link active" role="tab">Admin Log</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
-                                               class="nav-link"
-                                               role="tab">CJ Line 6</a>
+                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1" class="nav-link" role="tab">CJ Line 6</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
-                                               class="nav-link"
-                                               role="tab">CJ Line 7</a>
+                                            <a href="#tab2" onclick="clickedTab(this);" data-url="/sample/tab2" class="nav-link" role="tab">CJ Line 7</a><!-- data-toggle="pill"  -->
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
-                                               class="nav-link"
-                                               role="tab">CJ Line 8</a>
+                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3" class="nav-link" role="tab">CJ Line 8</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
-                                               class="nav-link"
-                                               role="tab">CJ Line 9</a>
+                                            <a href="#tab4" onclick="clickedTab(this);" data-url="/sample/tab4" class="nav-link" role="tab">CJ Line 9</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
-                                               class="nav-link"
-                                               role="tab">CJ Line 10</a>
+                                            <a href="#tab5" onclick="clickedTab(this);" data-url="/sample/tab5" class="nav-link" role="tab">CJ Line 10</a><!-- data-toggle="pill"  -->
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#onCueLogTab" onclick="clickedTab(this);" data-url="/sample/onCueLog"
-                                               class="nav-link"
-                                               role="tab">CJ Line 11</a>
+                                            <a href="#tab6" onclick="clickedTab(this);" data-url="/sample/tab6" class="nav-link" role="tab">CJ Line 11</a>
                                         </li>
-
                                     </ul>
                                 </div>
                                 <div class="card-body table-responsive table-dashboard p-0">
                                     <div class="tab-content" id="custom-tabs-one-tabContent">
-                                        <div class="tab-pane fade active show" id="adminLogTab" role="tabpanel">
-                                                <table class="table table-head-fixed text-nowrap table-sm">
-                                                    <thead>
-                                                    <tr>
-                                                        <th style="width: 3% " class="text-center">
-                                                            No
-                                                        </th>
-                                                        <th style="width: 20%" class="text-center">
-                                                            OnCue Alias
-                                                        </th>
-                                                        <th style="width: 20%" class="text-center">
-                                                            Oncue IP Address
-                                                        </th>
-                                                        <th style="width: 10%" class="text-center">
-                                                            Status
-                                                        </th>
-                                                        <th style="width: 10%" class="text-center">
-                                                            Processing Speed
-                                                        </th>
-                                                        <th style="width: 20%" class="text-center">
-                                                            Started Date
-                                                        </th>
-                                                        <th style="width: 17%">
-                                                        </th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            1
-                                                        </td>
-                                                        <td class="text-center">
-                                                            CJ Line 6
-                                                        </td>
-                                                        <td class="text-center">
-                                                            192.168.1.254
-                                                        </td>
-                                                        <td class="project-state text-center">
-                                                            <span class="badge badge-success">Running</span>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            203 / min
-                                                        </td>
-                                                        <td class="text-center">
-                                                            2020.08.26
-                                                        </td>
-                                                        <td class="project-actions text-center">
-                                                            <a class="btn btn-primary btn-sm" href="/detail">
-                                                                <i class="fas fa-folder">
-                                                                </i>
-                                                                Detail View
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            2
-                                                        </td>
-                                                        <td class="text-center">
-                                                            CJ Line 7
-                                                        </td>
-                                                        <td class="text-center">
-                                                            192.168.1.254
-                                                        </td>
-                                                        <td class="project-state text-center">
-                                                            <span class="badge badge-danger">Stopped</span>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            203 / min
-                                                        </td>
-                                                        <td class="text-center">
-                                                            2020.08.26
-                                                        </td>
-                                                        <td class="project-actions text-center">
-                                                            <a class="btn btn-primary btn-sm" href="/detail">
-                                                                <i class="fas fa-folder">
-                                                                </i>
-                                                                Detail View
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            3
-                                                        </td>
-                                                        <td class="text-center">
-                                                            CJ Line 8
-                                                        </td>
-                                                        <td class="text-center">
-                                                            192.168.1.254
-                                                        </td>
-                                                        <td class="project-state text-center">
-                                                            <span class="badge badge-success">Running</span>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            203 / min
-                                                        </td>
-                                                        <td class="text-center">
-                                                            2020.08.26
-                                                        </td>
-                                                        <td class="project-actions text-center">
-                                                            <a class="btn btn-primary btn-sm" href="/detail">
-                                                                <i class="fas fa-folder">
-                                                                </i>
-                                                                Detail View
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            4
-                                                        </td>
-                                                        <td class="text-center">
-                                                            CJ Line 9
-                                                        </td>
-                                                        <td class="text-center">
-                                                            192.168.1.254
-                                                        </td>
-                                                        <td class="project-state text-center">
-                                                            <span class="badge badge-success">Running</span>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            203 / min
-                                                        </td>
-                                                        <td class="text-center">
-                                                            2020.08.26
-                                                        </td>
-                                                        <td class="project-actions text-center">
-                                                            <a class="btn btn-primary btn-sm" href="/detail">
-                                                                <i class="fas fa-folder">
-                                                                </i>
-                                                                Detail View
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            5
-                                                        </td>
-                                                        <td class="text-center">
-                                                            CJ Line 10
-                                                        </td>
-                                                        <td class="text-center">
-                                                            192.168.1.254
-                                                        </td>
-                                                        <td class="project-state text-center">
-                                                            <span class="badge badge-success">Running</span>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            203 / min
-                                                        </td>
-                                                        <td class="text-center">
-                                                            2020.08.26
-                                                        </td>
-                                                        <td class="project-actions text-center">
-                                                            <a class="btn btn-primary btn-sm" href="/detail">
-                                                                <i class="fas fa-folder">
-                                                                </i>
-                                                                Detail View
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            6
-                                                        </td>
-                                                        <td class="text-center">
-                                                            CJ Line 11
-                                                        </td>
-                                                        <td class="text-center">
-                                                            192.168.1.254
-                                                        </td>
-                                                        <td class="project-state text-center">
-                                                            <span class="badge badge-success">Running</span>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            203 / min
-                                                        </td>
-                                                        <td class="text-center">
-                                                            2020.08.26
-                                                        </td>
-                                                        <td class="project-actions text-center">
-                                                            <a class="btn btn-primary btn-sm" href="/detail">
-                                                                <i class="fas fa-folder">
-                                                                </i>
-                                                                Detail View
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
+                                        <div class="tab-pane fade active show" id="notificationTab" role="tabpanel">
+                                            <table class="table table-head-fixed text-nowrap table-sm">
+                                                <thead>
+                                                <tr>
+                                                    <th style="width: 3% " class="text-center">
+                                                        No
+                                                    </th>
+                                                    <th style="width: 20%" class="text-center">
+                                                        Type
+                                                    </th>
+                                                    <th style="width: 20%" class="text-center">
+                                                        OnCue Alias
+                                                    </th>
+                                                    <th style="width: 37%" class="text-center">
+                                                        Message
+                                                    </th>
+                                                    <th style="width: 20%" class="text-center">
+                                                        Time
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        1
+                                                    </td>
+                                                    <td class="text-center">
+                                                        System Resource
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CJ Line 6
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CPU Resource Over 70 %
+                                                    </td>
+                                                    <td class="text-center">
+                                                        2020.09.09 15:12:25
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        2
+                                                    </td>
+                                                    <td class="text-center">
+                                                        System Resource
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CJ Line 6
+                                                    </td>
+                                                    <td class="text-center">
+                                                        Memory Resource Over 70 %
+                                                    </td>
+                                                    <td class="text-center">
+                                                        2020.09.09 15:12:25
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        3
+                                                    </td>
+                                                    <td class="text-center">
+                                                        System Resource
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CJ Line 6
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CPU Resource Over 70 %
+                                                    </td>
+                                                    <td class="text-center">
+                                                        2020.09.09 15:12:25
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        4
+                                                    </td>
+                                                    <td class="text-center">
+                                                        System Resource
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CJ Line 6
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CPU Resource Over 70 %
+                                                    </td>
+                                                    <td class="text-center">
+                                                        2020.09.09 15:12:25
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        5
+                                                    </td>
+                                                    <td class="text-center">
+                                                        System Resource
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CJ Line 6
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CPU Resource Over 70 %
+                                                    </td>
+                                                    <td class="text-center">
+                                                        2020.09.09 15:12:25
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        6
+                                                    </td>
+                                                    <td class="text-center">
+                                                        System Resource
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CJ Line 6
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CPU Resource Over 70 %
+                                                    </td>
+                                                    <td class="text-center">
+                                                        2020.09.09 15:12:25
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        7
+                                                    </td>
+                                                    <td class="text-center">
+                                                        System Resource
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CJ Line 12
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CPU Resource Over 70 %
+                                                    </td>
+                                                    <td class="text-center">
+                                                        2020.09.09 15:12:25
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        8
+                                                    </td>
+                                                    <td class="text-center">
+                                                        System Resource
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CJ Line 6
+                                                    </td>
+                                                    <td class="text-center">
+                                                        CPU Resource Over 70 %
+                                                    </td>
+                                                    <td class="text-center">
+                                                        2020.09.09 15:12:25
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <div class="tab-pane fade" id="onCueLogTab" role="tabpanel">
-                                            <div class="log-tab" id="onCueLogTab-log"></div>
+                                        <div class="tab-pane fade active show" id="tab1" role="tabpanel">
+<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab1');">Layer로 띄우기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab1');">보기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <div class="log-tab" id="tab1-log"></div>
                                         </div>
+                                        <div class="tab-pane fade" id="tab2" role="tabpanel">
+<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab2');">Layer로 띄우기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab2');">보기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <div class="log-tab" id="tab2-log"></div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab3" role="tabpanel">
+<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <div class="log-tab" id="tab3-log"></div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab4" role="tabpanel">
+<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <div class="log-tab" id="tab4-log"></div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab5" role="tabpanel">
+<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <div class="log-tab" id="tab5-log"></div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab6" role="tabpanel">
+<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
+<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <div class="log-tab" id="tab6-log"></div>
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="card-footer text-right">
-                                    <button type="button" class="btn btn-info btn-sm" onclick="openLogLayer('onCueLog');"
+                                    <button type="button" class="btn btn-info btn-sm"
+                                            onclick="openLogLayer('onCueLog');"
                                             style="width: 8%;">PopUp
                                     </button>
                                     <button type="button" class="btn btn-primary btn-sm"
                                             onclick="startLayerLog('onCueLog');" style="width: 8%;">Start
                                     </button>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="stopLayerLog('onCueLog');"
+                                    <button type="button" class="btn btn-danger btn-sm"
+                                            onclick="stopLayerLog('onCueLog');"
                                             style="width: 8%;">Stop
                                     </button>
                                 </div>
@@ -542,27 +515,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="far fa-chart-bar"></i>
-                                OnCue Resource Usage
+                                Admin Resource Usage
                             </h3>
-
                             <div class="card-tools">
-                                Real time
-                                <div class="btn-group" id="realtime" data-toggle="btn-toggle">
-                                    <button type="button" class="btn btn-default btn-sm active" data-toggle="on">On
-                                    </button>
-                                    <button type="button" class="btn btn-default btn-sm" data-toggle="off">Off</button>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                            class="fas fa-minus"></i></button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div id="interactive1" style="height: 210px; padding: 0px; position: relative;">
+                                <div class="col-md-12 text-center">
+                                    <div id="cpu-chart"
+                                         style="height: 193px; padding: 0px; position: relative;">
                                         <canvas class="flot-base" width="246" height="280"
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
                                         <canvas class="flot-overlay" width="246" height="280"
@@ -618,6 +589,131 @@
                                             </svg>
                                         </div>
                                     </div>
+                                    <label>CPU</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <div id="memory-chart"
+                                         style="height: 193px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="246" height="280"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                        <canvas class="flot-overlay" width="246" height="280"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+
+                                        <div class="flot-svg"
+                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                            <svg style="width: 100%; height: 100%;">
+                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">0
+                                                    </text>
+                                                    <text x="66.27962121212121" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">20
+                                                    </text>
+                                                    <text x="107.37174242424243" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">40
+                                                    </text>
+                                                    <text x="148.46386363636364" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">60
+                                                    </text>
+                                                    <text x="189.55598484848485" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">80
+                                                    </text>
+                                                </g>
+                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="9.625" y="248.24999999999997"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">0
+                                                    </text>
+                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">20
+                                                    </text>
+                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">40
+                                                    </text>
+                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">60
+                                                    </text>
+                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">80
+                                                    </text>
+                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">100
+                                                    </text>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <label>Memory</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <div id="disk-chart"
+                                         style="height: 193px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="246" height="280"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                        <canvas class="flot-overlay" width="246" height="280"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+
+                                        <div class="flot-svg"
+                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
+                                            <svg style="width: 100%; height: 100%;">
+                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">0
+                                                    </text>
+                                                    <text x="66.27962121212121" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">20
+                                                    </text>
+                                                    <text x="107.37174242424243" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">40
+                                                    </text>
+                                                    <text x="148.46386363636364" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">60
+                                                    </text>
+                                                    <text x="189.55598484848485" y="273.75"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: center;">80
+                                                    </text>
+                                                </g>
+                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+                                                    <text x="9.625" y="248.24999999999997"
+                                                          class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">0
+                                                    </text>
+                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">20
+                                                    </text>
+                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">40
+                                                    </text>
+                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">60
+                                                    </text>
+                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">80
+                                                    </text>
+                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
+                                                          style="position: absolute; text-align: right;">100
+                                                    </text>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <label>Disk</label>
                                 </div>
                             </div>
                         </div>
@@ -639,8 +735,10 @@
     <script th:src="@{/plugins/flot/jquery.flot.js}"></script>
     <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
     <script th:src="@{/plugins/flot-old/jquery.flot.resize.min.js}"></script>
-    <!-- About Dashboard -->
-    <script th:src="@{/scripts/dashboard.js}"></script>
+    <!-- About Dashboard chart -->
+    <script th:src="@{/scripts/dashboard-chart.js}"></script>
+    <!-- About Dashboard tab -->
+    <script th:src="@{/scripts/dashboard-tab.js}"></script>
 </th:block>
 </body>
 </html>

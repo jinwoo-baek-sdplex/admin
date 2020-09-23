@@ -39,6 +39,66 @@ $(function () {
         return res
     }
 
+    // var processingSpeed_chart = $.plot('#processingSpeed-chart', [
+    //         {
+    //             data: getRandomData(),
+    //         }
+    //     ],
+    //     {
+    //         grid: {
+    //             borderColor: '#f3f3f3',
+    //             borderWidth: 1,
+    //             tickColor: '#f3f3f3'
+    //         },
+    //         series: {
+    //             color: '#3c8dbc',
+    //             lines: {
+    //                 lineWidth: 2,
+    //                 show: true,
+    //                 fill: true,
+    //             },
+    //         },
+    //         yaxis: {
+    //             min: 0,
+    //             max: 100,
+    //             show: true
+    //         },
+    //         xaxis: {
+    //             show: true
+    //         }
+    //     }
+    // )
+    //
+    // var processingData_chart = $.plot('#processingData-chart', [
+    //         {
+    //             data: getRandomData(),
+    //         }
+    //     ],
+    //     {
+    //         grid: {
+    //             borderColor: '#f3f3f3',
+    //             borderWidth: 1,
+    //             tickColor: '#f3f3f3'
+    //         },
+    //         series: {
+    //             color: '#3c8dbc',
+    //             lines: {
+    //                 lineWidth: 2,
+    //                 show: true,
+    //                 fill: true,
+    //             },
+    //         },
+    //         yaxis: {
+    //             min: 0,
+    //             max: 100,
+    //             show: true
+    //         },
+    //         xaxis: {
+    //             show: true
+    //         }
+    //     }
+    // )
+
     var cpu_chart = $.plot('#cpu-chart', [
             {
                 data: getRandomData(),
@@ -99,7 +159,49 @@ $(function () {
         }
     )
 
+    var disk_chart = $.plot('#disk-chart', [
+            {
+                data: getRandomData(),
+            }
+        ],
+        {
+            grid: {
+                borderColor: '#f3f3f3',
+                borderWidth: 1,
+                tickColor: '#f3f3f3'
+            },
+            series: {
+                color: '#98FB98',
+                lines: {
+                    lineWidth: 2,
+                    show: true,
+                    fill: true,
+                },
+            },
+            yaxis: {
+                min: 0,
+                max: 100,
+                show: true
+            },
+            xaxis: {
+                show: true
+            }
+        }
+    )
+
     var updateInterval = 1000 //Fetch data ever x milliseconds
+
+    // function processingSpeedUpdate() {
+    //     processingSpeed_chart.setData([getRandomData()])
+    //     processingSpeed_chart.draw()
+    //     setTimeout(processingSpeedUpdate, updateInterval)
+    // }
+    //
+    // function processingDataUpdate() {
+    //     processingData_chart.setData([getRandomData()])
+    //     processingData_chart.draw()
+    //     setTimeout(processingDataUpdate, updateInterval)
+    // }
 
     function cpuResourceUpdate() {
         cpu_chart.setData([getRandomData()])
@@ -113,6 +215,11 @@ $(function () {
         setTimeout(memoryResourceUpdate, updateInterval)
     }
 
+    function diskResourceUpdate() {
+        disk_chart.setData([getRandomData()])
+        disk_chart.draw()
+        setTimeout(diskResourceUpdate, updateInterval)
+    }
 
     // //INITIALIZE REALTIME DATA FETCHING
     // // about performance
@@ -122,61 +229,5 @@ $(function () {
     // about resource usage
     cpuResourceUpdate()
     memoryResourceUpdate()
-
-
-    /*
-     * DONUT CHART
-     * -----------
-     */
-
-    var donutData = [
-        {
-            label: 'Usage',
-            data : 30,
-            color: '#3c8dbc'
-        },
-        {
-            label: 'Empty',
-            data : 70,
-            color: '#00c0ef'
-        }
-    ]
-    $.plot('#donut-chart', donutData, {
-        series: {
-            pie: {
-                show       : true,
-                radius     : 1,
-                innerRadius: 0.5,
-                label      : {
-                    show     : true,
-                    radius   : 2 / 3,
-                    formatter: labelFormatter,
-                    threshold: 0.1
-                }
-
-            }
-        },
-        legend: {
-            show: false
-        }
-    })
-    /*
-     * END DONUT CHART
-     */
+    diskResourceUpdate()
 })
-
-
-/*
- * Custom Label formatter
- * ----------------------
- */
-function labelFormatter(label, series) {
-    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
-        + label
-        + '<br>'
-        + Math.round(series.percent) + '%</div>'
-}
-
-function clickedToggle(toggle) {
-    $("#chart2").load(window.location.href+"#chart3");
-}

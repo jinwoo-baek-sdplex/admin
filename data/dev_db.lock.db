@@ -1,6 +1,6 @@
 #FileLock
-#Tue Sep 15 17:04:27 KST 2020
+#Wed Sep 23 20:50:40 KST 2020
 hostName=DESKTOP-IGQ8S6D
-id=17490cb1f7ab3edc52ada05b1eece710891c161c474
+id=174bacd1a6ae87c07dddcf2f6a6a48755dab33ad75d
 method=file
-server=192.168.1.123\:64700
+server=192.168.1.123\:60286
