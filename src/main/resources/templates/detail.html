@@ -39,7 +39,7 @@
                 <div class="col-md-9">
                     <!-- chart -->
                     <div class="row">
-                        <div class="col-md-4" id="chart1">
+                        <div class="col-md-4">
                             <div class="card card-primary card-outline">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -47,30 +47,26 @@
                                         OnCue Chart
                                     </h3>
                                     <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                                class="fas fa-minus"></i></button>
                                         <button type="button" class="btn btn-tool dropdown-toggle"
                                                 data-toggle="dropdown"><i
-                                                class="fas fa-ellipsis-v"></i>
-                                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                class="fas fa-bars"></i>
+                                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-left">
+                                                <li class="dropdown-header">OnCue Resource</li>
+                                                <a href="#chart1-processingSpeed" class="dropdown-item" onClick="clickedMenu(this);">
                                                     CPU Resource
                                                 </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                <a href="#processingData-chart" class="dropdown-item" onClick="clickedMenu(this);">
                                                     Memory Resource
                                                 </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                <a href="#disk-chart" class="dropdown-item" onClick="clickedMenu(this);">
                                                     Disk Resource
                                                 </a>
                                                 <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                <li class="dropdown-header">OnCue Performance</li>
+                                                <a href="#processingSpeed-chart" class="dropdown-item" onClick="clickedMenu(this);">
                                                     Processing Speed
                                                 </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
+                                                <a href="#processingData-chart" class="dropdown-item" onClick="clickedMenu(this);">
                                                     Processed Data Count
                                                 </a>
                                                 <!--                                                <div class="dropdown-divider"></div>-->
@@ -78,71 +74,23 @@
                                                 <!--                                                    Notifications</a>-->
                                             </div>
                                         </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                                class="fas fa-minus"></i></button>
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
-                                    <div id="cpu-chart"
+                                    <div id="chart1" class="drop"
                                          style="height: 210px; padding: 0px; position: relative;">
                                         <canvas class="flot-base" width="246" height="280"
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
                                         <canvas class="flot-overlay" width="246" height="280"
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-
-                                        <div class="flot-svg"
-                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                            <svg style="width: 100%; height: 100%;">
-                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">0
-                                                    </text>
-                                                    <text x="66.27962121212121" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">20
-                                                    </text>
-                                                    <text x="107.37174242424243" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">40
-                                                    </text>
-                                                    <text x="148.46386363636364" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">60
-                                                    </text>
-                                                    <text x="189.55598484848485" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">80
-                                                    </text>
-                                                </g>
-                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="9.625" y="248.24999999999997"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">0
-                                                    </text>
-                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">20
-                                                    </text>
-                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">40
-                                                    </text>
-                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">60
-                                                    </text>
-                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">80
-                                                    </text>
-                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">100
-                                                    </text>
-                                                </g>
-                                            </svg>
-                                        </div>
                                     </div>
                                     <label>Processing Speed</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4" id="chart2">
+                        <div class="col-md-4">
                             <div class="card card-primary card-outline">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -150,11 +98,9 @@
                                         OnCue Chart
                                     </h3>
                                     <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                                class="fas fa-minus"></i></button>
                                         <button type="button" class="btn btn-tool dropdown-toggle"
                                                 data-toggle="dropdown"><i
-                                                class="fas fa-ellipsis-v"></i>
+                                                class="fas fa-bars"></i>
                                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                                                 <div class="dropdown-divider"></div>
                                                 <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
@@ -181,71 +127,23 @@
                                                 <!--                                                    Notifications</a>-->
                                             </div>
                                         </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                                class="fas fa-minus"></i></button>
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
-                                    <div id="memory-chart"
+                                    <div id="chart2"
                                          style="height: 210px; padding: 0px; position: relative;">
                                         <canvas class="flot-base" width="246" height="280"
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
                                         <canvas class="flot-overlay" width="246" height="280"
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-
-                                        <div class="flot-svg"
-                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                            <svg style="width: 100%; height: 100%;">
-                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">0
-                                                    </text>
-                                                    <text x="66.27962121212121" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">20
-                                                    </text>
-                                                    <text x="107.37174242424243" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">40
-                                                    </text>
-                                                    <text x="148.46386363636364" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">60
-                                                    </text>
-                                                    <text x="189.55598484848485" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">80
-                                                    </text>
-                                                </g>
-                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="9.625" y="248.24999999999997"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">0
-                                                    </text>
-                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">20
-                                                    </text>
-                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">40
-                                                    </text>
-                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">60
-                                                    </text>
-                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">80
-                                                    </text>
-                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">100
-                                                    </text>
-                                                </g>
-                                            </svg>
-                                        </div>
                                     </div>
                                     <label>Processed Data Count</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4" id="chart3">
+                        <div class="col-md-4">
                             <div class="card card-primary card-outline">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -253,11 +151,9 @@
                                         OnCue Chart
                                     </h3>
                                     <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                                class="fas fa-minus"></i></button>
                                         <button type="button" class="btn btn-tool dropdown-toggle"
                                                 data-toggle="dropdown"><i
-                                                class="fas fa-ellipsis-v"></i>
+                                                class="fas fa-bars"></i>
                                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                                                 <div class="dropdown-divider"></div>
                                                 <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
@@ -284,22 +180,18 @@
                                                 <!--                                                    Notifications</a>-->
                                             </div>
                                         </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                                class="fas fa-minus"></i></button>
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
-                                    <div id="donut-chart" style="height: 210px; padding: 0px; position: relative;">
-                                        <canvas class="flot-base" width="324" height="300"
+                                    <div id="chart3" style="height: 210px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="210" height="210"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 210px; height: 210px;"></canvas>
+                                        <canvas class="flot-overlay" width="210" height="210"
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 324px; height: 300px;"></canvas>
-                                        <canvas class="flot-overlay" width="324" height="300"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 324px; height: 300px;"></canvas>
-                                        <span class="pieLabel" id="pieLabel0"
-                                              style="position: absolute; top: 70px; left: 219.953px;"><div
-                                                style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Usage<br>30%</div></span><span
-                                            class="pieLabel" id="pieLabel2"
-                                            style="position: absolute; top: 129px; left: 38.9531px;"><div
-                                            style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Empty<br>70%</div></span>
                                     </div>
-                                    <label>Disk</label>
+                                    <label>Memory</label>
                                 </div>
                             </div>
                         </div>
