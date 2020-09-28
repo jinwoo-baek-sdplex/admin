@@ -33,7 +33,7 @@ function getRandomData() {
     return res
 }
 
-var processingSpeed_chart = $.plot('#processingSpeed-chart', [
+var processingSpeed_chart = $.plot('#chart1', [
         {
             data: getRandomData(),
         }
@@ -63,37 +63,7 @@ var processingSpeed_chart = $.plot('#processingSpeed-chart', [
     }
 )
 
-var processingData_chart = $.plot('#processingData-chart', [
-        {
-            data: getRandomData(),
-        }
-    ],
-    {
-        grid: {
-            borderColor: '#f3f3f3',
-            borderWidth: 1,
-            tickColor: '#f3f3f3'
-        },
-        series: {
-            color: '#3c8dbc',
-            lines: {
-                lineWidth: 2,
-                show: true,
-                fill: true,
-            },
-        },
-        yaxis: {
-            min: 0,
-            max: 100,
-            show: true
-        },
-        xaxis: {
-            show: true
-        }
-    }
-)
-
-var memory_chart = $.plot('#memory-chart', [
+var processingData_chart = $.plot('#chart2', [
         {
             data: getRandomData(),
         }
@@ -123,37 +93,36 @@ var memory_chart = $.plot('#memory-chart', [
     }
 )
 
-// var donutData = [
-//     {
-//         label: 'Usage',
-//         data: 30,
-//         color: '#3c8dbc'
-//     },
-//     {
-//         label: 'Empty',
-//         data: 70,
-//         color: '#00c0ef'
-//     }
-// ]
-// var disk_chart = $.plot('#disk-chart', donutData, {
-//     series: {
-//         pie: {
-//             show: true,
-//             radius: 1,
-//             innerRadius: 0.5,
-//             label: {
-//                 show: true,
-//                 radius: 2 / 3,
-//                 formatter: labelFormatter,
-//                 threshold: 0.1
-//             }
-//
-//         }
-//     },
-//     legend: {
-//         show: false
-//     }
-// })
+// var baseOnChart2 =
+var memory_chart = $.plot('#chart3', [
+        {
+            data: getRandomData(),
+        }
+    ],
+    {
+        grid: {
+            borderColor: '#f3f3f3',
+            borderWidth: 1,
+            tickColor: '#f3f3f3'
+        },
+        series: {
+            color: '#7CFC00',
+            lines: {
+                lineWidth: 2,
+                show: true,
+                fill: true,
+            },
+        },
+        yaxis: {
+            min: 0,
+            max: 100,
+            show: true
+        },
+        xaxis: {
+            show: true
+        }
+    }
+)
 
 var updateInterval = 1000 //Fetch data ever x milliseconds
 
@@ -188,48 +157,109 @@ function labelFormatter(label, series) {
         + Math.round(series.percent) + '%</div>'
 }
 
-// function clickedMenu(menu) {
-//     var chart = menu.hash;
-//     var newChart = $(chart).parents("chart1").find(".drop").attr('id', chart).getAttribute("id");
-//
-//     alert(newChart);
-//     $(newChart).empty();
-//
-//     // if (chart == "#disk-chart") {
-//     //     $(chart).empty();
-//     // }
-//     // else {
-//     //     $("#processingData-chart").empty();
-//     //     var processingData_chart = $.plot('#processingData-chart', [
-//     //             {
-//     //                 data: getRandomData(),
-//     //             }
-//     //         ],
-//     //         {
-//     //             grid: {
-//     //                 borderColor: '#f3f3f3',
-//     //                 borderWidth: 1,
-//     //                 tickColor: '#f3f3f3'
-//     //             },
-//     //             series: {
-//     //                 color: '#3c8dbc',
-//     //                 lines: {
-//     //                     lineWidth: 2,
-//     //                     show: true,
-//     //                     fill: true,
-//     //                 },
-//     //             },
-//     //             yaxis: {
-//     //                 min: 0,
-//     //                 max: 100,
-//     //                 show: true
-//     //             },
-//     //             xaxis: {
-//     //                 show: true
-//     //             }
-//     //         }
-//     //     )
-//     //     processingDataUpdate()
-//     // }
-// }
+function changeChart(linkToggle) {
+    var href = linkToggle.hash;
+    var strArray = href.split('-');
+    var drawArea =  strArray[0];
+    var chart = strArray[1];
+
+    // for disk chart
+    var donutData = [
+        {
+            label: 'Usage',
+            data: 30,
+            color: '#3c8dbc'
+        },
+        {
+            label: 'Empty',
+            data: 70,
+            color: '#00c0ef'
+        }
+    ]
+    var seriesSet = {
+        series: {
+            pie: {
+                show: true,
+                radius: 1,
+                innerRadius: 0.5,
+                label: {
+                    show: true,
+                    radius: 2 / 3,
+                    formatter: labelFormatter,
+                    threshold: 0.1
+                }
+
+            }
+        },
+        legend: {
+            show: false
+        }
+    }
+
+
+    // alert(chart);
+    alert(drawArea);
+
+    if (drawArea == "#chart1") {
+
+        switch (chart) {
+            case "disk":
+                $(drawArea).empty();
+                $.plot(drawArea, donutData, seriesSet);
+                break;
+            case "processingSpeed":
+                $(drawArea).empty();
+                processingSpeedUpdate();
+
+        }
+
+    }
+
+
+
+
+
+
+    // var newChart = $(chart).parents("chart1").find(".drop").attr('id', chart).getAttribute("id");
+    //
+    // alert(newChart);
+    // $(newChart).empty();
+
+    // if (chart == "#disk-chart") {
+    //     $(chart).empty();
+    // }
+    // else {
+    //     $("#processingData-chart").empty();
+    //     var processingData_chart = $.plot('#processingData-chart', [
+    //             {
+    //                 data: getRandomData(),
+    //             }
+    //         ],
+    //         {
+    //             grid: {
+    //                 borderColor: '#f3f3f3',
+    //                 borderWidth: 1,
+    //                 tickColor: '#f3f3f3'
+    //             },
+    //             series: {
+    //                 color: '#3c8dbc',
+    //                 lines: {
+    //                     lineWidth: 2,
+    //                     show: true,
+    //                     fill: true,
+    //                 },
+    //             },
+    //             yaxis: {
+    //                 min: 0,
+    //                 max: 100,
+    //                 show: true
+    //             },
+    //             xaxis: {
+    //                 show: true
+    //             }
+    //         }
+    //     )
+    //     processingDataUpdate()
+    // }
+}
 

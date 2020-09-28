@@ -171,7 +171,7 @@ $(function () {
                 tickColor: '#f3f3f3'
             },
             series: {
-                color: '#98FB98',
+                color: '#7CFC00',
                 lines: {
                     lineWidth: 2,
                     show: true,

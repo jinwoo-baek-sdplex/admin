@@ -3,24 +3,28 @@
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
       layout:decorate="~{layout/defaultLayout}">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Dashboard.html</title>
-    <!-- 컨텐츠 페이지 고유 스타일 추가, title 과 함께 자동으로 layout에 추가됨. -->
-    <!-- About Dashboard -->
-    <link rel="stylesheet" th:href="@{/css/Dashboard.css}">
+    <!-- 페이지 Title -->
+    <title>Dashboard</title>
+
+    <!-- 페이지 개별 Script  -->
+    <th:block layout:fragment="pageCss">
+        <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    </th:block>
 </head>
-<body class="hold-transition sidebar-mini">
-<!-- Content Wrapper. Contains page content -->
+<!-- Content Fragment -->
 <div layout:fragment="content" class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
 
     </div>
-    <!-- Main content -->
+
+    <!-- Content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row display-flex">
+                <!-- 좌측 항목 -->
                 <div class="col-md-9">
+                    <!-- 상단 (Add OnCue, Connected OnCue, Notification) -->
                     <div class="row">
                         <div class="col-md-4">
                             <div class="small-box bg-primary">
@@ -61,6 +65,9 @@
                             </div>
                         </div>
                     </div>
+                    <!-- /.상단 (Add OnCue, Connected OnCue, Notification) -->
+
+                    <!-- 중단 Registed OnCue -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card card-primary card-outline">
@@ -81,19 +88,19 @@
                                             <th style="width: 20%" class="text-center">
                                                 OnCue Alias
                                             </th>
-                                            <th style="width: 20%" class="text-center">
+                                            <th style="width: 25%" class="text-center">
                                                 Oncue IP Address
                                             </th>
                                             <th style="width: 10%" class="text-center">
                                                 Status
                                             </th>
-                                            <th style="width: 15%" class="text-center">
-                                                Processing Speed
-                                            </th>
-                                            <th style="width: 15%" class="text-center">
+                                            <!--                                            <th style="width: 15%" class="text-center">-->
+                                            <!--                                                Processing Speed-->
+                                            <!--                                            </th>-->
+                                            <th style="width: 20%" class="text-center">
                                                 Started Date
                                             </th>
-                                            <th style="width: 17%">
+                                            <th style="width: 22%">
                                             </th>
                                         </tr>
                                         </thead>
@@ -111,9 +118,9 @@
                                             <td class="project-state text-center">
                                                 <span class="badge badge-success">Running</span>
                                             </td>
-                                            <td class="text-center">
-                                                203 / min
-                                            </td>
+                                            <!--                                            <td class="text-center">-->
+                                            <!--                                                203 / min-->
+                                            <!--                                            </td>-->
                                             <td class="text-center">
                                                 2020.08.26
                                             </td>
@@ -138,9 +145,9 @@
                                             <td class="project-state text-center">
                                                 <span class="badge badge-danger">Stopped</span>
                                             </td>
-                                            <td class="text-center">
-                                                203 / min
-                                            </td>
+                                            <!--                                            <td class="text-center">-->
+                                            <!--                                                203 / min-->
+                                            <!--                                            </td>-->
                                             <td class="text-center">
                                                 2020.08.26
                                             </td>
@@ -165,9 +172,9 @@
                                             <td class="project-state text-center">
                                                 <span class="badge badge-success">Running</span>
                                             </td>
-                                            <td class="text-center">
-                                                203 / min
-                                            </td>
+                                            <!--                                            <td class="text-center">-->
+                                            <!--                                                203 / min-->
+                                            <!--                                            </td>-->
                                             <td class="text-center">
                                                 2020.08.26
                                             </td>
@@ -192,9 +199,9 @@
                                             <td class="project-state text-center">
                                                 <span class="badge badge-success">Running</span>
                                             </td>
-                                            <td class="text-center">
-                                                203 / min
-                                            </td>
+                                            <!--                                            <td class="text-center">-->
+                                            <!--                                                203 / min-->
+                                            <!--                                            </td>-->
                                             <td class="text-center">
                                                 2020.08.26
                                             </td>
@@ -219,9 +226,9 @@
                                             <td class="project-state text-center">
                                                 <span class="badge badge-success">Running</span>
                                             </td>
-                                            <td class="text-center">
-                                                203 / min
-                                            </td>
+                                            <!--                                            <td class="text-center">-->
+                                            <!--                                                203 / min-->
+                                            <!--                                            </td>-->
                                             <td class="text-center">
                                                 2020.08.26
                                             </td>
@@ -246,9 +253,9 @@
                                             <td class="project-state text-center">
                                                 <span class="badge badge-success">Running</span>
                                             </td>
-                                            <td class="text-center">
-                                                203 / min
-                                            </td>
+                                            <!--                                            <td class="text-center">-->
+                                            <!--                                                203 / min-->
+                                            <!--                                            </td>-->
                                             <td class="text-center">
                                                 2020.08.26
                                             </td>
@@ -267,31 +274,41 @@
                             </div>
                         </div>
                     </div>
+                    <!-- /.중단 Registed OnCue -->
+
+                    <!-- 하단 Notification, OnCue Log -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card card-primary card-outline card-tabs">
                                 <div class="card-header p-0 pt-1">
                                     <ul class="nav nav-tabs" id="tabs" role="tablist">
                                         <li class="nav-item">
-                                            <a href="#notificationTab" onclick="clickedNotiTab(this);" data-url="tab" class="nav-link active" role="tab">Admin Log</a>
+                                            <a href="#notificationTab" onclick="clickedNotiTab(this);" data-url="tab"
+                                               class="nav-link active" role="tab">Admin Log</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1" class="nav-link" role="tab">CJ Line 6</a>
+                                            <a href="#tab1" onclick="clickedTab(this);" data-url="/sample/tab1"
+                                               class="nav-link" role="tab">CJ Line 6</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab2" onclick="clickedTab(this);" data-url="/sample/tab2" class="nav-link" role="tab">CJ Line 7</a><!-- data-toggle="pill"  -->
+                                            <a href="#tab2" onclick="clickedTab(this);" data-url="/sample/tab2"
+                                               class="nav-link" role="tab">CJ Line 7</a><!-- data-toggle="pill"  -->
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3" class="nav-link" role="tab">CJ Line 8</a>
+                                            <a href="#tab3" onclick="clickedTab(this);" data-url="/sample/tab3"
+                                               class="nav-link" role="tab">CJ Line 8</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab4" onclick="clickedTab(this);" data-url="/sample/tab4" class="nav-link" role="tab">CJ Line 9</a>
+                                            <a href="#tab4" onclick="clickedTab(this);" data-url="/sample/tab4"
+                                               class="nav-link" role="tab">CJ Line 9</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab5" onclick="clickedTab(this);" data-url="/sample/tab5" class="nav-link" role="tab">CJ Line 10</a><!-- data-toggle="pill"  -->
+                                            <a href="#tab5" onclick="clickedTab(this);" data-url="/sample/tab5"
+                                               class="nav-link" role="tab">CJ Line 10</a><!-- data-toggle="pill"  -->
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#tab6" onclick="clickedTab(this);" data-url="/sample/tab6" class="nav-link" role="tab">CJ Line 11</a>
+                                            <a href="#tab6" onclick="clickedTab(this);" data-url="/sample/tab6"
+                                               class="nav-link" role="tab">CJ Line 11</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -458,40 +475,40 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="tab-pane fade active show" id="tab1" role="tabpanel">
-<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab1');">Layer로 띄우기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab1');">보기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                        <div class="tab-pane fade" id="tab1" role="tabpanel">
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab1');">Layer로 띄우기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab1');">보기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
                                             <div class="log-tab" id="tab1-log"></div>
                                         </div>
                                         <div class="tab-pane fade" id="tab2" role="tabpanel">
-<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab2');">Layer로 띄우기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab2');">보기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab2');">Layer로 띄우기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab2');">보기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
                                             <div class="log-tab" id="tab2-log"></div>
                                         </div>
                                         <div class="tab-pane fade" id="tab3" role="tabpanel">
-<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
                                             <div class="log-tab" id="tab3-log"></div>
                                         </div>
                                         <div class="tab-pane fade" id="tab4" role="tabpanel">
-<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
                                             <div class="log-tab" id="tab4-log"></div>
                                         </div>
                                         <div class="tab-pane fade" id="tab5" role="tabpanel">
-<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
                                             <div class="log-tab" id="tab5-log"></div>
                                         </div>
                                         <div class="tab-pane fade" id="tab6" role="tabpanel">
-<!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
-<!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="openLogLayer('tab3');">Layer로 띄우기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="startLog('tab3');">보기</button>-->
+                                            <!--                                            <button type="button" class="btn btn-default" onclick="stopLog();">정지</button>-->
                                             <div class="log-tab" id="tab6-log"></div>
                                         </div>
 
@@ -514,7 +531,11 @@
                             </div>
                         </div>
                     </div>
+                    <!-- /.하단 Notification, OnCue Log -->
                 </div>
+                <!-- /.좌측 항목 -->
+
+                <!-- 우측 항목 -->
                 <div class="col-md-3">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
@@ -538,56 +559,6 @@
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
                                         <canvas class="flot-overlay" width="246" height="280"
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-
-                                        <div class="flot-svg"
-                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                            <svg style="width: 100%; height: 100%;">
-                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">0
-                                                    </text>
-                                                    <text x="66.27962121212121" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">20
-                                                    </text>
-                                                    <text x="107.37174242424243" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">40
-                                                    </text>
-                                                    <text x="148.46386363636364" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">60
-                                                    </text>
-                                                    <text x="189.55598484848485" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">80
-                                                    </text>
-                                                </g>
-                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="9.625" y="248.24999999999997"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">0
-                                                    </text>
-                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">20
-                                                    </text>
-                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">40
-                                                    </text>
-                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">60
-                                                    </text>
-                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">80
-                                                    </text>
-                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">100
-                                                    </text>
-                                                </g>
-                                            </svg>
-                                        </div>
                                     </div>
                                     <label>CPU</label>
                                 </div>
@@ -600,56 +571,6 @@
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
                                         <canvas class="flot-overlay" width="246" height="280"
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-
-                                        <div class="flot-svg"
-                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                            <svg style="width: 100%; height: 100%;">
-                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">0
-                                                    </text>
-                                                    <text x="66.27962121212121" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">20
-                                                    </text>
-                                                    <text x="107.37174242424243" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">40
-                                                    </text>
-                                                    <text x="148.46386363636364" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">60
-                                                    </text>
-                                                    <text x="189.55598484848485" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">80
-                                                    </text>
-                                                </g>
-                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="9.625" y="248.24999999999997"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">0
-                                                    </text>
-                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">20
-                                                    </text>
-                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">40
-                                                    </text>
-                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">60
-                                                    </text>
-                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">80
-                                                    </text>
-                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">100
-                                                    </text>
-                                                </g>
-                                            </svg>
-                                        </div>
                                     </div>
                                     <label>Memory</label>
                                 </div>
@@ -662,56 +583,6 @@
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
                                         <canvas class="flot-overlay" width="246" height="280"
                                                 style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-
-                                        <div class="flot-svg"
-                                             style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; pointer-events: none;">
-                                            <svg style="width: 100%; height: 100%;">
-                                                <g class="flot-x-axis flot-x1-axis xAxis x1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="29.5" y="273.75" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">0
-                                                    </text>
-                                                    <text x="66.27962121212121" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">20
-                                                    </text>
-                                                    <text x="107.37174242424243" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">40
-                                                    </text>
-                                                    <text x="148.46386363636364" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">60
-                                                    </text>
-                                                    <text x="189.55598484848485" y="273.75"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: center;">80
-                                                    </text>
-                                                </g>
-                                                <g class="flot-y-axis flot-y1-axis yAxis y1Axis"
-                                                   style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-                                                    <text x="9.625" y="248.24999999999997"
-                                                          class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">0
-                                                    </text>
-                                                    <text x="1" y="201.85" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">20
-                                                    </text>
-                                                    <text x="1" y="155.45" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">40
-                                                    </text>
-                                                    <text x="1" y="109.05" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">60
-                                                    </text>
-                                                    <text x="1" y="62.65" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">80
-                                                    </text>
-                                                    <text x="-7.625" y="16.25" class="flot-tick-label tickLabel"
-                                                          style="position: absolute; text-align: right;">100
-                                                    </text>
-                                                </g>
-                                            </svg>
-                                        </div>
                                     </div>
                                     <label>Disk</label>
                                 </div>
@@ -720,18 +591,18 @@
                         <!-- /.card-body-->
                     </div>
                 </div>
+                <!-- /.우측 항목 -->
             </div>
         </div>
-
-        <!-- modal page -->
-        <div th:insert="fragments/modals/viewLog :: viewLog"></div>
     </section>
-    <!-- /.content section -->
+    <!-- /.Content -->
 </div>
-<!-- /.content-wrapper -->
 
+<!-- Log Layer Modal Fragment -->
+<div th:insert="fragments/modals/viewLog :: viewLog"></div>
+
+<!-- 페이지 개별 Script -->
 <th:block layout:fragment="pageScript">
-    <!-- 컨텐츠 페이지 고유 스크립트 추가 -->
     <script th:src="@{/plugins/flot/jquery.flot.js}"></script>
     <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
     <script th:src="@{/plugins/flot-old/jquery.flot.resize.min.js}"></script>
@@ -740,5 +611,4 @@
     <!-- About Dashboard tab -->
     <script th:src="@{/scripts/dashboard-tab.js}"></script>
 </th:block>
-</body>
 </html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org">
+
+<!-- 공통 Script Fragment -->
+<th:block th:fragment="commonScriptFragment">
+    <!-- jQuery -->
+    <script th:src="@{/plugins/jquery/jquery.min.js}"></script>
+    <!-- jQuery-ui -->
+    <script th:src="@{plugins/jquery-ui/jquery-ui.min.js}"></script>
+    <!-- Bootstrap 4 -->
+    <script th:src="@{/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <!-- AdminLTE App -->
+    <script th:src="@{/dist/js/adminlte.min.js}"></script>
+</th:block>
+</html>

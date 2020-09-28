@@ -3,17 +3,19 @@
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
       layout:decorate="~{layout/defaultLayout}">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Notification Setting.html</title>
-    <!-- 컨텐츠 페이지 고유 스타일 추가 title 과 함께 자동으로 layout에 추가됨. -->
+    <!-- 페이지 Title -->
+    <title>Notification Box</title>
 
-    <!-- Ion Slider --->
-    <link rel="stylesheet" th:href="@{/plugins/ion-rangeslider/css/ion.rangeSlider.min.css}">
-    <!-- Bootstrap Slider --->
-    <link rel="stylesheet" th:href="@{/plugins/bootstrap-slider/css/bootstrap-slider.min.css}">
+    <!-- 페이지 개별 Script  -->
+    <th:block layout:fragment="pageCss">
+        <!-- Ion Slider --->
+        <link rel="stylesheet" th:href="@{/plugins/ion-rangeslider/css/ion.rangeSlider.min.css}">
+        <!-- Bootstrap Slider --->
+        <link rel="stylesheet" th:href="@{/plugins/bootstrap-slider/css/bootstrap-slider.min.css}">
+    </th:block>
 </head>
-<body class="hold-transition sidebar-mini">
-<!-- Content Wrapper. Contains page content -->
+
+<!-- Content Fragment -->
 <div layout:fragment="content" class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -36,68 +38,72 @@
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
+    <!-- Content -->
     <section class="content">
-        <!-- Default box -->
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">Setting</h3>
+        <div class="container-fluid">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Setting</h3>
 
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
-                            title="Collapse">
-                        <i class="fas fa-minus"></i></button>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
                 </div>
-            </div>
-            <div class="card-body">
-                <form role="form">
-                    <!-- Select OnCue -->
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label>OnCue Host Alias</label>
-                                <select class="form-control">
-                                    <option>All OnCue</option>
-                                    <option>CJ Line 6</option>
-                                    <option>CJ Line 7</option>
-                                    <option>CJ Line 8</option>
-                                    <option>CJ Line 9</option>
-                                    <option>CJ Line 10</option>
-                                    <option>CJ Line 11</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Setting -->
-                    <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-3 text-left">
-                            <div class="form-group">
-                                <label>User Action</label>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="customCheckbox1"
-                                           value="option1">
-                                    <label for="customCheckbox1" class="custom-control-label">User Login</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked="">
-                                    <label for="customCheckbox2" class="custom-control-label">OnCue Start/Stop</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="customCheckbox3" checked="">
-                                    <label for="customCheckbox3" class="custom-control-label">Any Type of Apply</label>
+                <div class="card-body">
+                    <form role="form">
+                        <!-- Select OnCue -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>OnCue Host Alias</label>
+                                    <select class="form-control">
+                                        <option>All OnCue</option>
+                                        <option>CJ Line 6</option>
+                                        <option>CJ Line 7</option>
+                                        <option>CJ Line 8</option>
+                                        <option>CJ Line 9</option>
+                                        <option>CJ Line 10</option>
+                                        <option>CJ Line 11</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <!-- System resource threshol on total -->
-                            <div class="form-group">
-                                <label>System Threshol</label>
-                                <div class="row">
-                                    <div class="col-sm-4 text-center">
-                                        <label>CPU</label>
+                        <!-- Setting -->
+                        <div class="row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3 text-left">
+                                <div class="form-group">
+                                    <label>User Action</label>
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="customCheckbox1"
+                                               value="option1">
+                                        <label for="customCheckbox1" class="custom-control-label">User Login</label>
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="customCheckbox2"
+                                               checked="">
+                                        <label for="customCheckbox2" class="custom-control-label">OnCue
+                                            Start/Stop</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="customCheckbox3"
+                                               checked="">
+                                        <label for="customCheckbox3" class="custom-control-label">Any Type of
+                                            Apply</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- System resource threshol on total -->
+                                <div class="form-group">
+                                    <label>System Threshol</label>
+                                    <div class="row">
+                                        <div class="col-sm-4 text-center">
+                                            <label>CPU</label>
+                                        </div>
+                                        <div class="col-sm-8">
                                                 <span class="irs irs--flat js-irs-2">
                                                 <span class="irs">
                                                     <span class="irs-line" tabindex="0"></span>
@@ -114,13 +120,13 @@
                                                 <span class="irs-handle single"
                                                       style="left: 70%;"><i></i><i></i><i></i></span>
                                             </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-4 text-center">
-                                        <label>Memory</label>
-                                    </div>
-                                    <div class="col-sm-8">
+                                    <div class="row">
+                                        <div class="col-sm-4 text-center">
+                                            <label>Memory</label>
+                                        </div>
+                                        <div class="col-sm-8">
                                                 <span class="irs irs--flat js-irs-2">
                                                 <span class="irs">
                                                     <span class="irs-line" tabindex="0"></span>
@@ -137,14 +143,14 @@
                                                 <span class="irs-handle single"
                                                       style="left: 50%;"><i></i><i></i><i></i></span>
                                             </span>
-                                    </div>
+                                        </div>
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-4 text-center">
-                                        <label>Disk Space</label>
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="row">
+                                        <div class="col-sm-4 text-center">
+                                            <label>Disk Space</label>
+                                        </div>
+                                        <div class="col-sm-8">
                                                 <span class="irs irs--flat js-irs-2">
                                                 <span class="irs">
                                                     <span class="irs-line" tabindex="0"></span>
@@ -161,18 +167,18 @@
                                                 <span class="irs-handle single"
                                                       style="left: 80%;"><i></i><i></i><i></i></span>
                                             </span>
-                                    </div>
+                                        </div>
 
-                                </div>
-                            </div>
-                            <!-- OnCue usage resource threshol on system -->
-                            <div class="form-group">
-                                <label>OnCue Threshol</label>
-                                <div class="row">
-                                    <div class="col-sm-4 text-center">
-                                        <label>CPU</label>
                                     </div>
-                                    <div class="col-sm-8">
+                                </div>
+                                <!-- OnCue usage resource threshol on system -->
+                                <div class="form-group">
+                                    <label>OnCue Threshol</label>
+                                    <div class="row">
+                                        <div class="col-sm-4 text-center">
+                                            <label>CPU</label>
+                                        </div>
+                                        <div class="col-sm-8">
                                                 <span class="irs irs--flat js-irs-2">
                                                 <span class="irs">
                                                     <span class="irs-line" tabindex="0"></span>
@@ -189,13 +195,13 @@
                                                 <span class="irs-handle single"
                                                       style="left: 70%;"><i></i><i></i><i></i></span>
                                             </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-4 text-center">
-                                        <label>Memory</label>
-                                    </div>
-                                    <div class="col-sm-8">
+                                    <div class="row">
+                                        <div class="col-sm-4 text-center">
+                                            <label>Memory</label>
+                                        </div>
+                                        <div class="col-sm-8">
                                                 <span class="irs irs--flat js-irs-2">
                                                 <span class="irs">
                                                     <span class="irs-line" tabindex="0"></span>
@@ -212,14 +218,14 @@
                                                 <span class="irs-handle single"
                                                       style="left: 50%;"><i></i><i></i><i></i></span>
                                             </span>
-                                    </div>
+                                        </div>
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-4 text-center">
-                                        <label>Disk Space</label>
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="row">
+                                        <div class="col-sm-4 text-center">
+                                            <label>Disk Space</label>
+                                        </div>
+                                        <div class="col-sm-8">
                                                 <span class="irs irs--flat js-irs-2">
                                                 <span class="irs">
                                                     <span class="irs-line" tabindex="0"></span>
@@ -236,35 +242,33 @@
                                                 <span class="irs-handle single"
                                                       style="left: 80%;"><i></i><i></i><i></i></span>
                                             </span>
-                                        <!--                                                <input id="range_5" type="text" name="range_5" value="" class="irs-hidden-input" tabindex="-1" readonly="">-->
-                                    </div>
+                                            <!--                                                <input id="range_5" type="text" name="range_5" value="" class="irs-hidden-input" tabindex="-1" readonly="">-->
+                                        </div>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                </form>
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer">
-                <div class="margin float-right">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <div class="margin float-right">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- /.card -->
-
     </section>
-    <!-- /.content -->
+    <!-- /.ontent -->
 </div>
-<!-- /.content-wrapper -->
 
+<!-- 페이지 개별 Script -->
 <th:block layout:fragment="pageScript">
     <!-- ion.rangeSlider -->
     <script th:src="@{/plugins/ion-rangeslider/js/ion.rangeSlider.min.js}"></script>
     <!-- bootstrap-slider -->
     <script th:src="@{/plugins/bootstrap-slider/bootstrap-slider.min.js}"></script>
 </th:block>
-</body>
 </html>

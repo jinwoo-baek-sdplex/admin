@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org">
+
+<!-- 메인 공통 Head -->
+<th:block th:fragment="headFragment">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- favicon -->
+        <link rel="icon" type="image/png" th:href="@{/images/favicon.png}">
+        <!-- 공통 CSS 삽입 -->
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" th:href="@{/plugins/fontawesome-free/css/all.min.css}">
+        <!-- Theme style -->
+        <link rel="stylesheet" th:href="@{/dist/css/adminlte.min.css}">
+        <!-- jQuery-ui style -->
+        <link rel="stylesheet" th:href="@{/plugins/jquery-ui/jquery-ui.min.css}">
+        <!-- Ionicons 현재 CDN 형식이라 바꿔야함 -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- 공통 css -->
+        <link rel="stylesheet" th:href="@{/css/common.css}">
+
+</th:block>
+</html>
+
+
+<!--<meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>-->
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+
+<!--&lt;!&ndash; Tell the browser to be responsive to screen width &ndash;&gt;-->
+<!--<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">-->
+

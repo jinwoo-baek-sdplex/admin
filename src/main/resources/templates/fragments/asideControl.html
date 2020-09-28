@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-</head>
-<body>
-	<!-- Control Sidebar -->
-	<aside th:fragment="rsideFragment" class="control-sidebar control-sidebar-dark">
-		<!-- Control sidebar content goes here -->
-		<div class="p-3">
-			<h5>Title</h5>
-			<p>Sidebar content</p>
-		</div>
-	</aside>
-	<!-- /.control-sidebar -->
-</body>
+
+<!-- 메인 우측 Sidebar Fragment -->
+<th:block th:fragment="rsideFragment">
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+        <div class="p-3">
+            <h5>Title</h5>
+            <p>Sidebar content</p>
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
+</th:block>
 </html>

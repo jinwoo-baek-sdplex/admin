@@ -1,6 +1,6 @@
 #FileLock
-#Thu Sep 24 02:40:44 KST 2020
-hostName=DESKTOP-BGESETS
-id=174bc0d9ccf710459c8282ed62290b60820d3243add
+#Mon Sep 28 16:08:49 KST 2020
+hostName=DESKTOP-IGQ8S6D
+id=174d38adc7e3a130fb9afee5ed8df5d31c304595148
 method=file
-server=192.168.0.3\:50821
+server=192.168.1.123\:62506

@@ -3,17 +3,18 @@
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
       layout:decorate="~{layout/defaultLayout}">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>oncueInformation.html</title>
-    <!-- 컨텐츠 페이지 고유 스타일 추가 title 과 함께 자동으로 layout에 추가됨. -->
+    <!-- 페이지 Title -->
+    <title>Notification Box</title>
 
-    <!-- Ion Slider --->
-    <link rel="stylesheet" th:href="@{/plugins/ion-rangeslider/css/ion.rangeSlider.min.css}">
-    <!-- Bootstrap Slider --->
-    <link rel="stylesheet" th:href="@{/plugins/bootstrap-slider/css/bootstrap-slider.min.css}">
+    <!-- 페이지 개별 Script  -->
+    <th:block layout:fragment="pageCss">
+        <link rel="stylesheet" th:href="@{/plugins/ion-rangeslider/css/ion.rangeSlider.min.css}">
+        <!-- Bootstrap Slider --->
+        <link rel="stylesheet" th:href="@{/plugins/bootstrap-slider/css/bootstrap-slider.min.css}">
+    </th:block>
 </head>
-<body class="hold-transition sidebar-mini">
-<!-- Content Wrapper. Contains page content -->
+
+<!-- Content Fragment -->
 <div layout:fragment="content" class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -37,85 +38,87 @@
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
+    <!-- Content -->
     <section class="content">
-        <!-- Default box -->
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">Box</h3>
+        <div class="container-fluid">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Box</h3>
 
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
-                            title="Collapse">
-                        <i class="fas fa-minus"></i></button>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
                 </div>
-            </div>
-            <div class="card-body">
-                <form role="form">
-                    <!-- Notification Box Search Contition -->
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label>OnCue Host Name(Alias)</label>
-                                <input type="text" class="form-control" placeholder="CJ Line 6">
-                            </div>
-                            <div class="form-group">
-                                <label>OnCue IP Address</label>
-                                <input type="text" class="form-control" placeholder="192.168.1.251">
-                            </div>
-                            <div class="form-group">
-                                <label>Processing Speed</label>
-                                <input type="text" class="form-control" placeholder="102 / min" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label>Processing Data Count</label>
-                                <input type="text" class="form-control" placeholder="15148" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label>OnCue Version</label>
-                                <input type="text" class="form-control" placeholder="0.9.1" readonly>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>OnCue Status</label>
-                                        <button type="button" class="btn btn-block bg-gradient-success">Running</button>
-                                    </div>
+                <div class="card-body">
+                    <form role="form">
+                        <!-- Notification Box Search Contition -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>OnCue Host Name(Alias)</label>
+                                    <input type="text" class="form-control" placeholder="CJ Line 6">
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>OnCue ON / OFF</label>
-                                        <button type="button" class="btn btn-block bg-gradient-success">ON / OFF</button>
-                                    </div>
+                                <div class="form-group">
+                                    <label>OnCue IP Address</label>
+                                    <input type="text" class="form-control" placeholder="192.168.1.251">
+                                </div>
+                                <div class="form-group">
+                                    <label>Processing Speed</label>
+                                    <input type="text" class="form-control" placeholder="102 / min" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Processing Data Count</label>
+                                    <input type="text" class="form-control" placeholder="15148" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>OnCue Version</label>
+                                    <input type="text" class="form-control" placeholder="0.9.1" readonly>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>OnCue Started Date</label>
-                                        <input type="text" class="form-control" placeholder="2020-08-19" readonly>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>OnCue Status</label>
+                                            <button type="button" class="btn btn-block bg-gradient-success">Running
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>OnCue ON / OFF</label>
+                                            <button type="button" class="btn btn-block bg-gradient-success">ON / OFF
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>Log File Save Period (Days)</label>
-                                        <input type="text" class="form-control" placeholder="30">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>OnCue Started Date</label>
+                                            <input type="text" class="form-control" placeholder="2020-08-19" readonly>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>OnCue Resource Usage</label>
-                                        <div class="row">
-                                            <div class="col-sm-4 text-center">
-                                                <label>CPU</label>
-                                            </div>
-                                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Log File Save Period (Days)</label>
+                                            <input type="text" class="form-control" placeholder="30">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>OnCue Resource Usage</label>
+                                            <div class="row">
+                                                <div class="col-sm-4 text-center">
+                                                    <label>CPU</label>
+                                                </div>
+                                                <div class="col-sm-8">
                                                 <span class="irs irs--flat js-irs-2">
                                                 <span class="irs">
                                                     <span class="irs-line" tabindex="0"></span>
@@ -132,14 +135,14 @@
                                                 <span class="irs-handle single"
                                                       style="left: 70%;"><i></i><i></i><i></i></span>
                                             </span>
-                                            </div>
+                                                </div>
 
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-4 text-center">
-                                                <label>Memory</label>
                                             </div>
-                                            <div class="col-sm-8">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-center">
+                                                    <label>Memory</label>
+                                                </div>
+                                                <div class="col-sm-8">
                                                 <span class="irs irs--flat js-irs-2">
                                                 <span class="irs">
                                                     <span class="irs-line" tabindex="0"></span>
@@ -156,14 +159,14 @@
                                                 <span class="irs-handle single"
                                                       style="left: 50%;"><i></i><i></i><i></i></span>
                                             </span>
-                                            </div>
+                                                </div>
 
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-4 text-center">
-                                                <label>Disk Space</label>
                                             </div>
-                                            <div class="col-sm-8">
+                                            <div class="row">
+                                                <div class="col-sm-4 text-center">
+                                                    <label>Disk Space</label>
+                                                </div>
+                                                <div class="col-sm-8">
                                                 <span class="irs irs--flat js-irs-2">
                                                 <span class="irs">
                                                     <span class="irs-line" tabindex="0"></span>
@@ -180,34 +183,32 @@
                                                 <span class="irs-handle single"
                                                       style="left: 80%;"><i></i><i></i><i></i></span>
                                             </span>
-                                                <!--                                                <input id="range_5" type="text" name="range_5" value="" class="irs-hidden-input" tabindex="-1" readonly="">-->
-                                            </div>
+                                                    <!--                                                <input id="range_5" type="text" name="range_5" value="" class="irs-hidden-input" tabindex="-1" readonly="">-->
+                                                </div>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
+                        <!-- Connected Devices Info-->
+                    </form>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <div class="margin float-right">
+                        <button type="submit" class="btn btn-primary">Search</button>
                     </div>
-                    <!-- Connected Devices Info-->
-                </form>
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer">
-                <div class="margin float-right">
-                    <button type="submit" class="btn btn-primary">Search</button>
                 </div>
             </div>
         </div>
-        <!-- /.card -->
     </section>
-    <!-- /.content -->
+    <!-- /.Content -->
 </div>
-<!-- /.content-wrapper -->
 
+<!-- 페이지 개별 Script -->
 <th:block layout:fragment="pageScript">
-
 </th:block>
-</body>
 </html>

@@ -3,12 +3,15 @@
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
       layout:decorate="~{layout/defaultLayout}">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Detail.html</title>
-    <!-- 컨텐츠 페이지 고유 스타일 추가 title 과 함께 자동으로 layout에 추가됨. -->
+    <!-- 페이지 Title -->
+    <title>Detail</title>
+
+    <!-- 페이지 개별 Script  -->
+    <th:block layout:fragment="pageCss">
+    </th:block>
 </head>
-<body class="hold-transition sidebar-mini">
-<!-- Content Wrapper. Contains page content -->
+
+<!-- Content Fragment -->
 <div layout:fragment="content" class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -25,321 +28,182 @@
                 </div>
                 <!-- /.col -->
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container-fluid -->
     </div>
-    <!-- /.content-header -->
+    <!-- /.Content-Header -->
 
-    <!-- Main content -->
+    <!-- Content -->
     <section class="content">
-        <!-- Default box -->
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-9">
-                    <!-- chart -->
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card card-primary card-outline">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="far fa-chart-bar"></i>
-                                        OnCue Chart
-                                    </h3>
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool dropdown-toggle"
-                                                data-toggle="dropdown"><i
-                                                class="fas fa-bars"></i>
-                                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-left">
-                                                <li class="dropdown-header">OnCue Resource</li>
-                                                <a href="#chart1-processingSpeed" class="dropdown-item" onClick="clickedMenu(this);">
-                                                    CPU Resource
-                                                </a>
-                                                <a href="#processingData-chart" class="dropdown-item" onClick="clickedMenu(this);">
-                                                    Memory Resource
-                                                </a>
-                                                <a href="#disk-chart" class="dropdown-item" onClick="clickedMenu(this);">
-                                                    Disk Resource
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <li class="dropdown-header">OnCue Performance</li>
-                                                <a href="#processingSpeed-chart" class="dropdown-item" onClick="clickedMenu(this);">
-                                                    Processing Speed
-                                                </a>
-                                                <a href="#processingData-chart" class="dropdown-item" onClick="clickedMenu(this);">
-                                                    Processed Data Count
-                                                </a>
-                                                <!--                                                <div class="dropdown-divider"></div>-->
-                                                <!--                                                <a href="#" class="dropdown-item dropdown-footer">See All-->
-                                                <!--                                                    Notifications</a>-->
-                                            </div>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                                class="fas fa-minus"></i></button>
+            <div class="row display-flex">
+                <!-- Chart1 Area -->
+                <div class="col-md-3">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="far fa-chart-bar"></i>
+                                OnCue Chart
+                            </h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool dropdown-toggle"
+                                        data-toggle="dropdown"><i
+                                        class="fas fa-bars"></i>
+                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-left">
+                                        <li class="dropdown-header">OnCue Resource</li>
+                                        <a href="#" class="dropdown-item" onClick="changeChart(this);">
+                                            CPU Resource
+                                        </a>
+                                        <a href="#" class="dropdown-item" onClick="changeChart(this);">
+                                            Memory Resource
+                                        </a>
+                                        <a href="#chart1-disk" class="dropdown-item" onClick="changeChart(this);">
+                                            Disk Resource
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <li class="dropdown-header">OnCue Performance</li>
+                                        <a href="#chart1-processingSpeed" class="dropdown-item"
+                                           onClick="changeChart(this);">
+                                            Processing Speed
+                                        </a>
+                                        <a href="#chart1-processingData" class="dropdown-item"
+                                           onClick="changeChart(this);">
+                                            Processed Data Count
+                                        </a>
+                                        <!--                                                <div class="dropdown-divider"></div>-->
+                                        <!--                                                <a href="#" class="dropdown-item dropdown-footer">See All-->
+                                        <!--                                                    Notifications</a>-->
                                     </div>
-                                </div>
-                                <div class="card-body text-center">
-                                    <div id="chart1" class="drop"
-                                         style="height: 210px; padding: 0px; position: relative;">
-                                        <canvas class="flot-base" width="246" height="280"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                        <canvas class="flot-overlay" width="246" height="280"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                    </div>
-                                    <label>Processing Speed</label>
-                                </div>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i></button>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card card-primary card-outline">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="far fa-chart-bar"></i>
-                                        OnCue Chart
-                                    </h3>
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool dropdown-toggle"
-                                                data-toggle="dropdown"><i
-                                                class="fas fa-bars"></i>
-                                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
-                                                    CPU Resource
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
-                                                    Memory Resource
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
-                                                    Disk Resource
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
-                                                    Processing Speed
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
-                                                    Processed Data Count
-                                                </a>
-                                                <!--                                                <div class="dropdown-divider"></div>-->
-                                                <!--                                                <a href="#" class="dropdown-item dropdown-footer">See All-->
-                                                <!--                                                    Notifications</a>-->
-                                            </div>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                                class="fas fa-minus"></i></button>
-                                    </div>
-                                </div>
-                                <div class="card-body text-center">
-                                    <div id="chart2"
-                                         style="height: 210px; padding: 0px; position: relative;">
-                                        <canvas class="flot-base" width="246" height="280"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                        <canvas class="flot-overlay" width="246" height="280"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
-                                    </div>
-                                    <label>Processed Data Count</label>
-                                </div>
+                        <div class="card-body text-center">
+                            <div id="chart1" class="drop"
+                                 style="height: 210px; padding: 0px; position: relative;">
+                                <canvas class="flot-base" width="246" height="280"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                <canvas class="flot-overlay" width="246" height="280"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-primary card-outline">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="far fa-chart-bar"></i>
-                                        OnCue Chart
-                                    </h3>
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool dropdown-toggle"
-                                                data-toggle="dropdown"><i
-                                                class="fas fa-bars"></i>
-                                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
-                                                    CPU Resource
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
-                                                    Memory Resource
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
-                                                    Disk Resource
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
-                                                    Processing Speed
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="#" class="dropdown-item" onclick="clickedToggle(this);">
-                                                    Processed Data Count
-                                                </a>
-                                                <!--                                                <div class="dropdown-divider"></div>-->
-                                                <!--                                                <a href="#" class="dropdown-item dropdown-footer">See All-->
-                                                <!--                                                    Notifications</a>-->
-                                            </div>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                                class="fas fa-minus"></i></button>
-                                    </div>
-                                </div>
-                                <div class="card-body text-center">
-                                    <div id="chart3" style="height: 210px; padding: 0px; position: relative;">
-                                        <canvas class="flot-base" width="210" height="210"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 210px; height: 210px;"></canvas>
-                                        <canvas class="flot-overlay" width="210" height="210"
-                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 324px; height: 300px;"></canvas>
-                                    </div>
-                                    <label>Memory</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- connected device -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card card-primary card-outline">
-                                <div class="card-header">
-                                    <h3 class="card-title">Connected Devices</h3>
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                                class="fas fa-minus"></i></button>
-                                    </div>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body table-responsive p-0">
-                                    <table class="table table-head-fixed text-nowrap table-sm">
-                                        <thead>
-                                        <tr>
-                                            <th style="width: 1%">No</th>
-                                            <th style="width: 19%" class="text-center">Path Id</th>
-                                            <th style="width: 10%" class="text-center">Protocol</th>
-                                            <th style="width: 15%" class="text-center">Url</th>
-                                            <th style="width: 15%" class="text-center">Module Status</th>
-                                            <th style="width: 10%" class="text-center">Version</th>
-                                            <th style="width: 10%" class="text-center">Connected</th>
-                                            <th style="width: 10%" class="text-center">Disconnected</th>
-                                            <th style="width: 10%" class="text-center">In use</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td class="text-center">connectionName1</td>
-                                            <td class="text-center">Modbus</td>
-                                            <td class="text-center">
-                                                192.168.1.12
-                                            </td>
-                                            <td class="project-state text-center">
-                                                <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                            </td>
-                                            <td class="text-center">7.25</td>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td class="text-center">connectionName2</td>
-                                            <td class="text-center">Modbus</td>
-                                            <td class="text-center">
-                                                192.168.1.12
-                                            </td>
-                                            <td class="project-state text-center">
-                                                <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                            </td>
-                                            <td class="text-center">7.25</td>
-                                            <td class="text-center">3</td>
-                                            <td class="text-center">0</td>
-                                            <td class="text-center">3</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td class="text-center">connectionName3</td>
-                                            <td class="text-center">Modbus</td>
-                                            <td class="text-center">
-                                                192.168.1.12
-                                            </td>
-                                            <td class="project-state text-center">
-                                                <span class="badge badge-warning" style="width: 60%" ;>Unlicensed</span>
-                                            </td>
-                                            <td class="text-center">7.25</td>
-                                            <td class="text-center">4</td>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">4</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td class="text-center">connectionName4</td>
-                                            <td class="text-center">OPCDA</td>
-                                            <td class="text-center">
-                                                192.168.1.155
-                                            </td>
-                                            <td class="project-state text-center">
-                                                <span class="badge badge-danger" style="width: 60%" ;>UnLoaded</span>
-                                            </td>
-                                            <td class="text-center">2.05a</td>
-                                            <td class="text-center">3</td>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">3</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td class="text-center">connectionName1</td>
-                                            <td class="text-center">Modbus</td>
-                                            <td class="text-center">
-                                                192.168.1.12
-                                            </td>
-                                            <td class="project-state text-center">
-                                                <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                            </td>
-                                            <td class="text-center">7.25</td>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td class="text-center">connectionName2</td>
-                                            <td class="text-center">Modbus</td>
-                                            <td class="text-center">
-                                                192.168.1.12
-                                            </td>
-                                            <td class="project-state text-center">
-                                                <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                            </td>
-                                            <td class="text-center">7.25</td>
-                                            <td class="text-center">3</td>
-                                            <td class="text-center">0</td>
-                                            <td class="text-center">3</td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td class="text-center">connectionName3</td>
-                                            <td class="text-center">Modbus</td>
-                                            <td class="text-center">
-                                                192.168.1.12
-                                            </td>
-                                            <td class="project-state text-center">
-                                                <span class="badge badge-warning" style="width: 60%" ;>Unlicensed</span>
-                                            </td>
-                                            <td class="text-center">7.25</td>
-                                            <td class="text-center">4</td>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">4</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.card-body -->
-                            </div>
+                            <label>Processing Speed</label>
                         </div>
                     </div>
                 </div>
-                <!-- 오른쪽 정보 -->
+                <!-- /.Chart1 Area -->
+
+                <!-- Chart2 Area -->
                 <div class="col-md-3">
                     <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="far fa-chart-bar"></i>
+                                OnCue Chart
+                            </h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool dropdown-toggle"
+                                        data-toggle="dropdown"><i
+                                        class="fas fa-bars"></i>
+                                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            CPU Resource
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            Memory Resource
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            Disk Resource
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            Processing Speed
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            Processed Data Count
+                                        </a>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div id="chart2" class="drop"
+                                 style="height: 210px; padding: 0px; position: relative;">
+                                <canvas class="flot-base" width="246" height="280"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                <canvas class="flot-overlay" width="246" height="280"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                            </div>
+                            <label>Processed Data Count</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.Chart2 Area -->
+
+                <!-- Chart3 Area -->
+                <div class="col-md-3">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="far fa-chart-bar"></i>
+                                OnCue Chart
+                            </h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool dropdown-toggle"
+                                        data-toggle="dropdown"><i
+                                        class="fas fa-bars"></i>
+                                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            CPU Resource
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            Memory Resource
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            Disk Resource
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            Processing Speed
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            Processed Data Count
+                                        </a>
+                                        <!--                                                <div class="dropdown-divider"></div>-->
+                                        <!--                                                <a href="#" class="dropdown-item dropdown-footer">See All-->
+                                        <!--                                                    Notifications</a>-->
+                                    </div>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div id="chart3" class="drop"
+                                 style="height: 210px; padding: 0px; position: relative;">
+                                <canvas class="flot-base" width="246" height="280"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                                <canvas class="flot-overlay" width="246" height="280"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 246.406px; height: 280px;"></canvas>
+                            </div>
+                            <label>Memory</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.Chart3 Area -->
+
+                <!-- OnCue Management Area -->
+                <div class="col-md-3">
+                    <div class="card card-primary card-outline h-100">
                         <div class="card-header">
                             <h3 class="card-title">OnCue Management</h3>
                             <div class="card-tools">
@@ -366,6 +230,152 @@
                             <button type="submit" class="btn btn-danger btn-sm" style="width: 19%;">Delete</button>
                         </div>
                     </div>
+                </div>
+                <!-- /.OnCue Management Area -->
+            </div>
+            <div class="row">
+                <!-- Connected Devices -->
+                <div class="col-md-9">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">Connected Devices</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-head-fixed text-nowrap table-sm">
+                                <thead>
+                                <tr>
+                                    <th style="width: 1%">No</th>
+                                    <th style="width: 19%" class="text-center">Path Id</th>
+                                    <th style="width: 10%" class="text-center">Protocol</th>
+                                    <th style="width: 15%" class="text-center">Url</th>
+                                    <th style="width: 15%" class="text-center">Module Status</th>
+                                    <th style="width: 10%" class="text-center">Version</th>
+                                    <th style="width: 10%" class="text-center">Connected</th>
+                                    <th style="width: 10%" class="text-center">Disconnected</th>
+                                    <th style="width: 10%" class="text-center">In use</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="text-center">connectionName1</td>
+                                    <td class="text-center">Modbus</td>
+                                    <td class="text-center">
+                                        192.168.1.12
+                                    </td>
+                                    <td class="project-state text-center">
+                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
+                                    </td>
+                                    <td class="text-center">7.25</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">2</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="text-center">connectionName2</td>
+                                    <td class="text-center">Modbus</td>
+                                    <td class="text-center">
+                                        192.168.1.12
+                                    </td>
+                                    <td class="project-state text-center">
+                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
+                                    </td>
+                                    <td class="text-center">7.25</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">0</td>
+                                    <td class="text-center">3</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="text-center">connectionName3</td>
+                                    <td class="text-center">Modbus</td>
+                                    <td class="text-center">
+                                        192.168.1.12
+                                    </td>
+                                    <td class="project-state text-center">
+                                        <span class="badge badge-warning" style="width: 60%" ;>Unlicensed</span>
+                                    </td>
+                                    <td class="text-center">7.25</td>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">4</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="text-center">connectionName4</td>
+                                    <td class="text-center">OPCDA</td>
+                                    <td class="text-center">
+                                        192.168.1.155
+                                    </td>
+                                    <td class="project-state text-center">
+                                        <span class="badge badge-danger" style="width: 60%" ;>UnLoaded</span>
+                                    </td>
+                                    <td class="text-center">2.05a</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">3</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="text-center">connectionName1</td>
+                                    <td class="text-center">Modbus</td>
+                                    <td class="text-center">
+                                        192.168.1.12
+                                    </td>
+                                    <td class="project-state text-center">
+                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
+                                    </td>
+                                    <td class="text-center">7.25</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">2</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="text-center">connectionName2</td>
+                                    <td class="text-center">Modbus</td>
+                                    <td class="text-center">
+                                        192.168.1.12
+                                    </td>
+                                    <td class="project-state text-center">
+                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
+                                    </td>
+                                    <td class="text-center">7.25</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">0</td>
+                                    <td class="text-center">3</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td class="text-center">connectionName3</td>
+                                    <td class="text-center">Modbus</td>
+                                    <td class="text-center">
+                                        192.168.1.12
+                                    </td>
+                                    <td class="project-state text-center">
+                                        <span class="badge badge-warning" style="width: 60%" ;>Unlicensed</span>
+                                    </td>
+                                    <td class="text-center">7.25</td>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">4</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+                <!-- /.Connected Devices -->
+
+                <!-- OnCue Informations -->
+                <div class="col-md-3">
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
                             <div class="text-center">
@@ -403,16 +413,15 @@
                         </div>
                         <!-- /.card-body -->
                     </div>
-
                 </div>
-
+                <!-- /.OnCue Informations -->
             </div>
         </div>
     </section>
-    <!-- /.content -->
+    <!-- /.Content -->
 </div>
-<!-- /.content-wrapper -->
 
+<!-- 페이지 개별 Script -->
 <th:block layout:fragment="pageScript">
     <!-- FLOT CHARTS -->
     <script th:src="@{/plugins/flot/jquery.flot.js}"></script>
@@ -423,5 +432,4 @@
     <!-- About Dashboard -->
     <script th:src="@{/scripts/detail.js}"></script>
 </th:block>
-</body>
 </html>
