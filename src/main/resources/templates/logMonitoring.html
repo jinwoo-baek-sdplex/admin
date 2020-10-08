@@ -40,89 +40,92 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- Request Log -->
-                <div class="card card-primary card-outline">
-                    <div class="card-header">
-                        <h3 class="card-title">RealTime OnCue Log</h3>
+                <div class="col-md-12">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">RealTime OnCue Log</h3>
 
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
-                                    title="Collapse">
-                                <i class="fas fa-minus"></i></button>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                        data-toggle="tooltip"
+                                        title="Collapse">
+                                    <i class="fas fa-minus"></i></button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <form role="form">
-                            <!-- Select log domain -->
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Log Domain</label>
-                                        <div class="custom-control custom-radio vertical">
-                                            <input class="custom-control-input" type="radio" id="customRadio1"
-                                                   name="customRadio" checked="">
-                                            <label for="customRadio1" class="custom-control-label">OnCue</label>
+                        <div class="card-body">
+                            <form role="form">
+                                <!-- Select log domain -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Log Domain</label>
+                                            <div class="custom-control custom-radio vertical">
+                                                <input class="custom-control-input" type="radio" id="customRadio1"
+                                                       name="customRadio" checked="">
+                                                <label for="customRadio1" class="custom-control-label">OnCue</label>
+                                            </div>
+                                            <div class="custom-control custom-radio vertical">
+                                                <input class="custom-control-input" type="radio" id="customRadio2"
+                                                       name="customRadio">
+                                                <label for="customRadio2" class="custom-control-label">Protocol
+                                                    Module</label>
+                                            </div>
                                         </div>
-                                        <div class="custom-control custom-radio vertical">
-                                            <input class="custom-control-input" type="radio" id="customRadio2"
-                                                   name="customRadio">
-                                            <label for="customRadio2" class="custom-control-label">Protocol
-                                                Module</label>
+                                    </div>
+                                </div>
+                                <!-- Select for detail search-->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>OnCue Host Name(Alias)</label>
+                                            <select class="form-control">
+                                                <option>CJ Line 6</option>
+                                                <option>CJ Line 7</option>
+                                                <option>CJ Line 8</option>
+                                                <option>CJ Line 9</option>
+                                                <option>CJ Line 10</option>
+                                                <option>CJ Line 11</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Protocol Module</label>
+                                            <select class="form-control">
+                                                <option>Modbus</option>
+                                                <option>OPC DA</option>
+                                                <option>CIP/EIP</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Log Level</label>
+                                            <select class="form-control">
+                                                <option>Info</option>
+                                                <option>Debug</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Buffer Line Size</label>
+                                            <select class="form-control">
+                                                <option>8,100 bytes</option>
+                                                <option>4,050 bytes</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
+                            </form>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <div class="margin float-right">
+                                <button type="submit" class="btn btn-primary">Apply</button>
+                                <!--                    <button type="submit" class="btn btn-primary">Start</button>-->
+                                <!--                    <button type="submit" class="btn btn-danger">Stop</button>-->
                             </div>
-                            <!-- Select for detail search-->
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <div class="form-group">
-                                        <label>OnCue Host Name(Alias)</label>
-                                        <select class="form-control">
-                                            <option>CJ Line 6</option>
-                                            <option>CJ Line 7</option>
-                                            <option>CJ Line 8</option>
-                                            <option>CJ Line 9</option>
-                                            <option>CJ Line 10</option>
-                                            <option>CJ Line 11</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-group">
-                                        <label>Protocol Module</label>
-                                        <select class="form-control">
-                                            <option>Modbus</option>
-                                            <option>OPC DA</option>
-                                            <option>CIP/EIP</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-group">
-                                        <label>Log Level</label>
-                                        <select class="form-control">
-                                            <option>Info</option>
-                                            <option>Debug</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-group">
-                                        <label>Buffer Line Size</label>
-                                        <select class="form-control">
-                                            <option>8,100 bytes</option>
-                                            <option>4,050 bytes</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <div class="margin float-right">
-                            <button type="submit" class="btn btn-primary">Apply</button>
-                            <!--                    <button type="submit" class="btn btn-primary">Start</button>-->
-                            <!--                    <button type="submit" class="btn btn-danger">Stop</button>-->
                         </div>
                     </div>
                 </div>
