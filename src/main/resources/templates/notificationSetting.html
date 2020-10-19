@@ -10,8 +10,6 @@
     <th:block layout:fragment="pageCss">
         <!-- Ion Slider --->
         <link rel="stylesheet" th:href="@{/plugins/ion-rangeslider/css/ion.rangeSlider.min.css}">
-        <!-- Bootstrap Slider --->
-        <link rel="stylesheet" th:href="@{/plugins/bootstrap-slider/css/bootstrap-slider.min.css}">
         <!-- iCheck for checkboxes and radio inputs -->
         <link rel="stylesheet" th:href="@{/plugins/icheck-bootstrap/icheck-bootstrap.min.css}">
     </th:block>
@@ -54,60 +52,43 @@
                                 <!--                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
                             </div>
                         </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group clearfix text-center">
-                                        <label>User Activity Tracking</label>
+                        <form class="form-horizontal">
+                            <div class="card-body">
+                                <!-- checkbox -->
+                                <div class="form-group clearfix">
+                                    <div class="icheck-primary d-inline">
+                                        <input type="checkbox" id="checkboxPrimary1">
+                                        <label for="checkboxPrimary1">
+                                            User Activity Tracking
+                                        </label>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group clearfix text-center">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="checkbox" id="checkboxPrimary1">
-                                            <label for="checkboxPrimary1"></label>
-                                        </div>
+                                <div class="form-group clearfix">
+                                    <div class="icheck-primary d-inline">
+                                        <input type="checkbox" id="checkboxPrimary2">
+                                        <label for="checkboxPrimary2">
+                                            OnCue Start/Stop
+                                        </label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group clearfix text-center">
-                                        <label>OnCue Start/Stop</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group clearfix text-center">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="checkbox" id="checkboxPrimary2">
-                                            <label for="checkboxPrimary2"></label>
-                                        </div>
+                                <div class="form-group clearfix">
+                                    <div class="icheck-primary d-inline">
+                                        <input type="checkbox" id="checkboxPrimary3">
+                                        <label for="checkboxPrimary3">
+                                            Any Type of Apply
+                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group clearfix text-center">
-                                        <label>Any Type of Apply</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group clearfix text-center">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="checkbox" id="checkboxPrimary3">
-                                            <label for="checkboxPrimary3"></label>
-                                        </div>
-                                    </div>
-                                </div>
+
+                            <!-- /.card-body -->
+                            <div class="card-footer text-right">
+                                <button type="submit" class="btn btn-primary">Save</button>
                             </div>
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer text-right">
-                            <button type="submit" class="btn btn-primary">Apply</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-4">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">OnCue Threshold Setting</h3>
@@ -116,11 +97,11 @@
                                         class="fas fa-minus"></i></button>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <form role="form">
+                        <form role="form">
+                            <div class="card-body">
                                 <!-- Select OnCue -->
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label>OnCue Host Alias</label>
                                             <select class="form-control">
@@ -138,168 +119,33 @@
                                 <!-- Setting -->
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <!-- System resource threshol on total -->
+                                        <label>OnCue Threshol</label>
+                                        <br>
                                         <div class="form-group">
-                                            <label>System Threshol</label>
-                                            <div class="row">
-                                                <div class="col-sm-4 text-center">
-                                                    <label>CPU</label>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                <span class="irs irs--flat js-irs-2">
-                                                <span class="irs">
-                                                    <span class="irs-line" tabindex="0"></span>
-                                                    <span class="irs-min" style="visibility: visible;">0 %</span>
-                                                    <span class="irs-max" style="visibility: visible;">100 %</span>
-                                                    <span class="irs-from" style="visibility: hidden;">0</span>
-                                                    <span class="irs-to" style="visibility: hidden;">0</span>
-                                                    <span class="irs-single" style="left: 66.8705%;">70 %</span>
-                                                </span>
-                                                <span class="irs-grid"></span>
-                                                <span class="irs-bar irs-bar--single"
-                                                      style="left: 0px; width: 70%;"></span>
-                                                <span class="irs-shadow shadow-single" style="display: none;"></span>
-                                                <span class="irs-handle single"
-                                                      style="left: 70%;"><i></i><i></i><i></i></span>
-                                            </span>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-4 text-center">
-                                                    <label>Memory</label>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                <span class="irs irs--flat js-irs-2">
-                                                <span class="irs">
-                                                    <span class="irs-line" tabindex="0"></span>
-                                                    <span class="irs-min" style="visibility: visible;">0 %</span>
-                                                    <span class="irs-max" style="visibility: visible;">100 %</span>
-                                                    <span class="irs-from" style="visibility: hidden;">0</span>
-                                                    <span class="irs-to" style="visibility: hidden;">0</span>
-                                                    <span class="irs-single" style="left: 66.8705%;">50 %</span>
-                                                </span>
-                                                <span class="irs-grid"></span>
-                                                <span class="irs-bar irs-bar--single"
-                                                      style="left: 0px; width: 50%;"></span>
-                                                <span class="irs-shadow shadow-single" style="display: none;"></span>
-                                                <span class="irs-handle single"
-                                                      style="left: 50%;"><i></i><i></i><i></i></span>
-                                            </span>
-                                                </div>
-
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-4 text-center">
-                                                    <label>Disk Space</label>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                <span class="irs irs--flat js-irs-2">
-                                                <span class="irs">
-                                                    <span class="irs-line" tabindex="0"></span>
-                                                    <span class="irs-min" style="visibility: visible;">0 %</span>
-                                                    <span class="irs-max" style="visibility: visible;">100 %</span>
-                                                    <span class="irs-from" style="visibility: hidden;">0</span>
-                                                    <span class="irs-to" style="visibility: hidden;">0</span>
-                                                    <span class="irs-single" style="left: 66.8705%;">80 %</span>
-                                                </span>
-                                                <span class="irs-grid"></span>
-                                                <span class="irs-bar irs-bar--single"
-                                                      style="left: 0px; width: 80%;"></span>
-                                                <span class="irs-shadow shadow-single" style="display: none;"></span>
-                                                <span class="irs-handle single"
-                                                      style="left: 80%;"><i></i><i></i><i></i></span>
-                                            </span>
-                                                </div>
-
-                                            </div>
+                                            <label>CPU</label>
+                                            <input type="text" class="js-range-slider" name="cpuThreshol"
+                                                   value=""/>
                                         </div>
-                                        <!-- OnCue usage resource threshol on system -->
                                         <div class="form-group">
-                                            <label>OnCue Threshol</label>
-                                            <div class="row">
-                                                <div class="col-sm-4 text-center">
-                                                    <label>CPU</label>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                <span class="irs irs--flat js-irs-2">
-                                                <span class="irs">
-                                                    <span class="irs-line" tabindex="0"></span>
-                                                    <span class="irs-min" style="visibility: visible;">0 %</span>
-                                                    <span class="irs-max" style="visibility: visible;">100 %</span>
-                                                    <span class="irs-from" style="visibility: hidden;">0</span>
-                                                    <span class="irs-to" style="visibility: hidden;">0</span>
-                                                    <span class="irs-single" style="left: 66.8705%;">70 %</span>
-                                                </span>
-                                                <span class="irs-grid"></span>
-                                                <span class="irs-bar irs-bar--single"
-                                                      style="left: 0px; width: 70%;"></span>
-                                                <span class="irs-shadow shadow-single" style="display: none;"></span>
-                                                <span class="irs-handle single"
-                                                      style="left: 70%;"><i></i><i></i><i></i></span>
-                                            </span>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-4 text-center">
-                                                    <label>Memory</label>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                <span class="irs irs--flat js-irs-2">
-                                                <span class="irs">
-                                                    <span class="irs-line" tabindex="0"></span>
-                                                    <span class="irs-min" style="visibility: visible;">0 %</span>
-                                                    <span class="irs-max" style="visibility: visible;">100 %</span>
-                                                    <span class="irs-from" style="visibility: hidden;">0</span>
-                                                    <span class="irs-to" style="visibility: hidden;">0</span>
-                                                    <span class="irs-single" style="left: 66.8705%;">50 %</span>
-                                                </span>
-                                                <span class="irs-grid"></span>
-                                                <span class="irs-bar irs-bar--single"
-                                                      style="left: 0px; width: 50%;"></span>
-                                                <span class="irs-shadow shadow-single" style="display: none;"></span>
-                                                <span class="irs-handle single"
-                                                      style="left: 50%;"><i></i><i></i><i></i></span>
-                                            </span>
-                                                </div>
-
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-4 text-center">
-                                                    <label>Disk Space</label>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                <span class="irs irs--flat js-irs-2">
-                                                <span class="irs">
-                                                    <span class="irs-line" tabindex="0"></span>
-                                                    <span class="irs-min" style="visibility: visible;">0 %</span>
-                                                    <span class="irs-max" style="visibility: visible;">100 %</span>
-                                                    <span class="irs-from" style="visibility: hidden;">0</span>
-                                                    <span class="irs-to" style="visibility: hidden;">0</span>
-                                                    <span class="irs-single" style="left: 66.8705%;">80 %</span>
-                                                </span>
-                                                <span class="irs-grid"></span>
-                                                <span class="irs-bar irs-bar--single"
-                                                      style="left: 0px; width: 80%;"></span>
-                                                <span class="irs-shadow shadow-single" style="display: none;"></span>
-                                                <span class="irs-handle single"
-                                                      style="left: 80%;"><i></i><i></i><i></i></span>
-                                            </span>
-                                                    <!--                                                <input id="range_5" type="text" name="range_5" value="" class="irs-hidden-input" tabindex="-1" readonly="">-->
-                                                </div>
-
-                                            </div>
+                                            <label>Memory</label>
+                                            <input type="text" class="js-range-slider" name="memoryThreshol"
+                                                   value=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Disk</label>
+                                            <input type="text" class="js-range-slider" name="diskThreshol"
+                                                   value=""/>
                                         </div>
                                     </div>
                                 </div>
-
-                            </form>
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <div class="margin float-right">
-                                <button type="submit" class="btn btn-primary">Apply</button>
                             </div>
-                        </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <div class="margin float-right">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -312,7 +158,6 @@
 <th:block layout:fragment="pageScript">
     <!-- ion.rangeSlider -->
     <script th:src="@{/plugins/ion-rangeslider/js/ion.rangeSlider.min.js}"></script>
-    <!-- bootstrap-slider -->
-    <script th:src="@{/plugins/bootstrap-slider/bootstrap-slider.min.js}"></script>
+    <script th:src="@{/scripts/notificationSetting.js}"></script>
 </th:block>
 </html>

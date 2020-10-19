@@ -58,7 +58,7 @@
                             <form role="form">
                                 <!-- Select notification domain -->
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Notification Domain</label>
                                             <div class="custom-control custom-radio vertical">
@@ -78,7 +78,7 @@
                                 </div>
                                 <!-- Select for detail search-->
                                 <div class="row">
-                                    <div class="col-sm-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Notification Type</label>
                                             <select class="form-control">
@@ -87,16 +87,14 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Date range</label>
+                                            <label>Date and time range:</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="far fa-calendar-alt"></i>
-                      </span>
+                                                    <span class="input-group-text"><i class="far fa-clock"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control float-right" id="pickerTest">
+                                                <input type="text" class="form-control float-right" id="reservationtime">
                                             </div>
                                             <!-- /.input group -->
                                         </div>
@@ -131,121 +129,69 @@
                                 <thead>
                                 <tr>
                                     <th style="width: 1%">No</th>
-                                    <th style="width: 19%" class="text-center">Path Id</th>
-                                    <th style="width: 10%" class="text-center">Protocol</th>
-                                    <th style="width: 15%" class="text-center">Url</th>
-                                    <th style="width: 15%" class="text-center">Module Status</th>
-                                    <th style="width: 10%" class="text-center">Version</th>
-                                    <th style="width: 10%" class="text-center">Connected</th>
-                                    <th style="width: 10%" class="text-center">Disconnected</th>
-                                    <th style="width: 10%" class="text-center">In use</th>
+                                    <th style="width: 15%" class="text-center">Type</th>
+                                    <th style="width: 10%" class="text-center">User</th>
+                                    <th style="width: 25%" class="text-center">Action</th>
+                                    <th style="width: 25%" class="text-center">Message</th>
+                                    <th style="width: 24%" class="text-center">Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td class="text-center">connectionName1</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">2</td>
+                                    <td class="text-center">User Action</td>
+                                    <td class="text-center">Gildong</td>
+                                    <td class="text-center">Change password</td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">2020.08.20 10:29:28</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td class="text-center">connectionName2</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">3</td>
-                                    <td class="text-center">0</td>
-                                    <td class="text-center">3</td>
+                                    <td class="text-center">System Resource</td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">Cj Line 6's CPU Resouce Over 70</td>
+                                    <td class="text-center">2020.08.20 10:29:28</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td class="text-center">connectionName3</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-warning" style="width: 60%" ;>Unlicensed</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">4</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">4</td>
+                                    <td class="text-center">User Action</td>
+                                    <td class="text-center">Gildong</td>
+                                    <td class="text-center">Change password</td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">2020.08.20 10:29:28</td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td class="text-center">connectionName4</td>
-                                    <td class="text-center">OPCDA</td>
-                                    <td class="text-center">
-                                        192.168.1.155
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-danger" style="width: 60%" ;>UnLoaded</span>
-                                    </td>
-                                    <td class="text-center">2.05a</td>
-                                    <td class="text-center">3</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">3</td>
+                                    <td class="text-center">System Resource</td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">Cj Line 6's CPU Resouce Over 70</td>
+                                    <td class="text-center">2020.08.20 10:29:28</td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
-                                    <td class="text-center">connectionName1</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">2</td>
+                                    <td class="text-center">System Resource</td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">Cj Line 6's CPU Resouce Over 70</td>
+                                    <td class="text-center">2020.08.20 10:29:28</td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
-                                    <td class="text-center">connectionName2</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-success" style="width: 60%" ;>Loaded</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">3</td>
-                                    <td class="text-center">0</td>
-                                    <td class="text-center">3</td>
+                                    <td class="text-center">User Action</td>
+                                    <td class="text-center">Gildong</td>
+                                    <td class="text-center">Change password</td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">2020.08.20 10:29:28</td>
                                 </tr>
                                 <tr>
                                     <td>7</td>
-                                    <td class="text-center">connectionName3</td>
-                                    <td class="text-center">Modbus</td>
-                                    <td class="text-center">
-                                        192.168.1.12
-                                    </td>
-                                    <td class="project-state text-center">
-                                        <span class="badge badge-warning" style="width: 60%" ;>Unlicensed</span>
-                                    </td>
-                                    <td class="text-center">7.25</td>
-                                    <td class="text-center">4</td>
-                                    <td class="text-center">2</td>
-                                    <td class="text-center">4</td>
+                                    <td class="text-center">User Action</td>
+                                    <td class="text-center">Gildong</td>
+                                    <td class="text-center">Change password</td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">2020.08.20 10:29:28</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -262,5 +208,11 @@
 
 <!-- 페이지 개별 Script -->
 <th:block layout:fragment="pageScript">
+    <!-- Moment for Date Range Picker -->
+    <script th:src="@{/plugins/moment/moment.min.js}"></script>
+    <!-- Date Range Picker -->
+    <script th:src="@{/plugins/daterangepicker/daterangepicker.js}"></script>
+    <script th:src="@{/scripts/dateRangePicker.js}"></script>
+    <script th:src="@{/scripts/notificationBox.js}"></script>
 </th:block>
 </html>

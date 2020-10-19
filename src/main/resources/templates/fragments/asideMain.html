@@ -5,7 +5,7 @@
 <th:block th:fragment="lsideFragment">
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="/dashboard" class="brand-link"><img th:src="@{/images/favicon.png}" alt="AdminLTE Logo"
+        <a href="javascript:void(0);" class="brand-link" onclick="javascript:goPage('/dashboard');"><img th:src="@{/images/favicon.png}" alt="AdminLTE Logo"
                                                      class="brand-image img-circle elevation-3"
                                                      style="opacity: .8;background-color: white;">
             <span class="brand-text font-weight-light">OnCue Admin</span>
@@ -15,11 +15,11 @@
         <div class="sidebar os-host os-theme-light os-host-overflow os-host-overflow-y os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition"><div class="os-resize-observer-host"><div class="os-resize-observer observed" style="left: 0px; right: auto;"></div></div><div class="os-size-auto-observer" style="height: calc(100% + 1px); float: left;"><div class="os-resize-observer observed"></div></div><div class="os-content-glue" style="margin: 0px -8px; width: 249px; height: 879px;"></div><div class="os-padding"><div class="os-viewport os-viewport-native-scrollbars-invisible" style="overflow-y: scroll;"><div class="os-content" style="padding: 0px 8px; height: 100%; width: 100%;">
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" data-toggle="pill" role="menu" data-accordion="false">
 
                     <!-- Dashboard -->
                     <li class="nav-item">
-                        <a href="/dashboard" class="nav-link">
+                        <a href="javascript:void(0);" class="nav-link" id="dashboard" data-toggle="pill" onclick="javascript:goPage('/dashboard');">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
@@ -30,7 +30,7 @@
 
                     <!-- OnCue Details, Add OnCue -->
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                        <a href="javascript:void(0);" class="nav-link" data-toggle="pill">
                             <i class="nav-icon fas fa-copyright"></i>
                             <p>
                                 OnCue
@@ -39,7 +39,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/detail" class="nav-link">
+                                <a href="javascript:void(0);" class="nav-link" id="detail" data-toggle="pill" onclick="javascript:goPage('/detail');">
                                     <p>&emsp;</p>
                                     <i class="fas fa-power-off nav-icon text-success"></i>
                                     <p>CJ LINE 6</p>
@@ -88,7 +88,7 @@
 
                     <!-- Notification -->
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                        <a href="javascript:void(0);" class="nav-link">
                             <i class="nav-icon fas fa-bell"></i>
                             <p>
                                 Notification <i class="right fas fa-angle-left"></i>
@@ -97,7 +97,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/notificationBox" class="nav-link">
+                                <a href="javascript:void(0);" class="nav-link" id="notificationBox" onclick="javascript:goPage('/notificationBox');">
                                     <p>&emsp;</p>
                                     <i class="fas fa-bookmark nav-icon"></i>
                                     <p>Box<span class="badge badge-warning right">8</span>
@@ -105,7 +105,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/notificationSetting" class="nav-link">
+                                <a href="javascript:void(0);" class="nav-link" id="notificationSetting" onclick="javascript:goPage('/notificationSetting');">
                                     <p>&emsp;</p>
                                     <i class="fas fa-cog nav-icon"></i>
                                     <p>Setting</p>
@@ -117,19 +117,19 @@
 
                     <!-- Log -->
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link"><i class="nav-icon fas fa-align-left"></i>
+                        <a href="javascript:void(0);" class="nav-link"><i class="nav-icon fas fa-align-left"></i>
                             <p>
                                 Log <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/logMonitoring" class="nav-link"><p>&emsp;</p><i
+                                <a href="javascript:void(0);" class="nav-link" id="logMonitoring" onclick="javascript:goPage('/logMonitoring');"><p>&emsp;</p><i
                                         class="fas fa-bug nav-icon"></i>
                                     <p>Monitoring</p></a>
                             </li>
                             <li class="nav-item">
-                                <a href="/logDownload" class="nav-link"><p>&emsp;</p><i
+                                <a href="javascript:void(0);" class="nav-link" id="logDownload" onclick="javascript:goPage('/logDownload');"><p>&emsp;</p><i
                                         class="fas fa-running nav-icon"></i>
                                     <p>Download</p></a>
                             </li>
@@ -139,7 +139,7 @@
 
                     <!-- User Management -->
                     <li class="nav-item">
-                        <a href="/userManagement" class="nav-link"><i class="nav-icon fas fa-user-cog"></i>
+                        <a href="javascript:void(0);" class="nav-link" id="userManagement" onclick="javascript:goPage('/userManagement');"><i class="nav-icon fas fa-user-cog"></i>
                             <p>
                                 User Management
                             </p>
@@ -172,14 +172,5 @@
         </div></div></div><div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden"><div class="os-scrollbar-track"><div class="os-scrollbar-handle" style="width: 100%; transform: translate(0px, 0px);"></div></div></div><div class="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden"><div class="os-scrollbar-track"><div class="os-scrollbar-handle" style="height: 78.0142%; transform: translate(0px, 0px);"></div></div></div><div class="os-scrollbar-corner"></div></div>
         <!-- /.sidebar -->
     </aside>
-
-
-
-
-
-
-
-
-
 </th:block>
 </html>

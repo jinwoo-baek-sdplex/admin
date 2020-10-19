@@ -60,14 +60,14 @@
                                         <div class="form-group">
                                             <label>Log Domain</label>
                                             <div class="custom-control custom-radio vertical">
-                                                <input class="custom-control-input" type="radio" id="customRadio1"
-                                                       name="customRadio" checked="">
-                                                <label for="customRadio1" class="custom-control-label">OnCue</label>
+                                                <input class="custom-control-input" type="radio" value="0" id="onCueDomain"
+                                                       name="logSearchRadio" checked>
+                                                <label for="onCueDomain" class="custom-control-label">OnCue</label>
                                             </div>
                                             <div class="custom-control custom-radio vertical">
-                                                <input class="custom-control-input" type="radio" id="customRadio2"
-                                                       name="customRadio">
-                                                <label for="customRadio2" class="custom-control-label">Protocol
+                                                <input class="custom-control-input" type="radio" value="1" id="pmDomain"
+                                                       name="logSearchRadio">
+                                                <label for="pmDomain" class="custom-control-label">Protocol
                                                     Module</label>
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <label>Protocol Module</label>
-                                            <select class="form-control">
+                                            <select class="form-control" id="pmSelect" disabled="">
                                                 <option>Modbus</option>
                                                 <option>OPC DA</option>
                                                 <option>CIP/EIP</option>
@@ -183,71 +183,6 @@
         </div>
     </section>
     <!-- /.Content -->
-</div>
-
-<!-- modal page -->
-<div class="modal fade modeless" id="tab1-layer"
-     style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
-    <div class="modal-dialog-log">
-        <div class="modal-content ui-widget-content" id="tab1-resizable" style="width:600px; height:400px;">
-            <div class="modal-header">
-                <h4 class="modal-title">tab1 log</h4>
-                <button type="button" class="btn btn-default" onclick="startLayerLog('tab1');">보기</button>
-                <button type="button" class="btn btn-default" onclick="stopLayerLog('tab1');">정지</button>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        onclick="closeLayer('tab1');">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="log-layer" id="tab1-layer-log"></div>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-
-<div class="modal fade modeless" id="tab2-layer"
-     style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
-    <div class="modal-dialog-log">
-        <div class="modal-content ui-widget-content" id="tab2-resizable" style="width:600px; height:400px;">
-            <div class="modal-header">
-                <h4 class="modal-title">tab2 log</h4>
-                <button type="button" class="btn btn-default" onclick="startLayerLog('tab2');">보기</button>
-                <button type="button" class="btn btn-default" onclick="stopLayerLog('tab2');">정지</button>
-                <button type="button" class="close" onclick="closeLayer('tab2');">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="log-layer" id="tab2-layer-log"></div>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-
-<div class="modal fade modeless" id="tab3-layer"
-     style="display: none; width:auto; height:auto; padding-left: 17px;" aria-hidden="true">
-    <div class="modal-dialog-log">
-        <div class="modal-content ui-widget-content" id="tab3-resizable" style="width:600px; height:400px;">
-            <div class="modal-header">
-                <h4 class="modal-title">tab3 log</h4>
-                <button type="button" class="btn btn-default" onclick="startLayerLog('tab3');">보기</button>
-                <button type="button" class="btn btn-default" onclick="stopLayerLog('tab3');">정지</button>
-                <button type="button" class="close" onclick="closeLayer('tab3');">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="log-layer" id="tab3-layer-log"></div>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
 </div>
 
 <!-- 페이지 개별 Script -->

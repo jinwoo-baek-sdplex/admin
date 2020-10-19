@@ -63,14 +63,14 @@
                                         <div class="form-group">
                                             <label>Log Domain</label>
                                             <div class="custom-control custom-radio vertical">
-                                                <input class="custom-control-input" type="radio" id="customRadio1"
-                                                       name="customRadio" checked="">
-                                                <label for="customRadio1" class="custom-control-label">OnCue</label>
+                                                <input class="custom-control-input" type="radio" value="0" id="onCueDomain"
+                                                       name="logSearchRadio" checked>
+                                                <label for="onCueDomain" class="custom-control-label">OnCue</label>
                                             </div>
                                             <div class="custom-control custom-radio vertical">
-                                                <input class="custom-control-input" type="radio" id="customRadio2"
-                                                       name="customRadio">
-                                                <label for="customRadio2" class="custom-control-label">Protocol
+                                                <input class="custom-control-input" type="radio" value="1" id="pmDomain"
+                                                       name="logSearchRadio">
+                                                <label for="pmDomain" class="custom-control-label">Protocol
                                                     Module</label>
                                             </div>
                                         </div>
@@ -94,23 +94,21 @@
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <label>Protocol Module</label>
-                                            <select class="form-control">
+                                            <select class="form-control" id="pmSelect" disabled="">
                                                 <option>Modbus</option>
                                                 <option>OPC DA</option>
                                                 <option>CIP/EIP</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Date range</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="far fa-calendar-alt"></i>
-                      </span>
+                                                    <span class="input-group-text"><i class="far fa-clock"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control float-right" id="pickerTest">
+                                                <input type="text" class="form-control float-right" id="reservationtime">
                                             </div>
                                             <!-- /.input group -->
                                         </div>
@@ -265,32 +263,14 @@
 
 <!-- 페이지 개별 Script -->
 <th:block layout:fragment="pageScript">
-    <!-- dater range picker -->
+    <!-- Moment for Date Range Picker -->
+    <script th:src="@{/plugins/moment/moment.min.js}"></script>
+    <!-- Date Range Picker -->
     <script th:src="@{/plugins/daterangepicker/daterangepicker.js}"></script>
+    <script th:src="@{/scripts/dateRangePicker.js}"></script>
+
     <!-- jsGrid -->
     <script th:src="@{/plugins/jsgrid/jsgrid.min.js}"></script>
-    <script>
-        $(function () {
-            $('input[name="pickerTest"]').daterangepicker();
-
-            $("#jsGrid1").jsGrid({
-                height: "100%",
-                width: "100%",
-
-                sorting: true,
-                paging: true,
-
-                data: db.clients,
-
-                fields: [
-                    {name: "Married", type: "checkbox", title: "Is Married"},
-                    {name: "Age", type: "number", width: 50},
-                    {name: "Name", type: "text", width: 150},
-                    {name: "Address", type: "text", width: 200},
-                    {name: "Country", type: "select", items: db.countries, valueField: "Id", textField: "Name"}
-                ]
-            })
-        });
-    </script>
+    <script th:src="@{/scripts/logDownload.js}"></script>
 </th:block>
 </html>
